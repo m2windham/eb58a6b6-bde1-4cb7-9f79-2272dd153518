@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="e16cddae-bbc8-4fa4-b1aa-47495451b7ad">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "TL training",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Doug/TL%20training",
+      "driveId": "",
+      "itemId": "01S3URPTB3SPUFJURZIJBKN2GX6ZCS5HI3",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>TLtraining_4VzmHfAfvzgYvQAnuNucy</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

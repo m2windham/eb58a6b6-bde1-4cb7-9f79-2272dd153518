@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr69b_sparky.topic.SafetyFocusTime_PalnrvPorRAgU0T8TSfoN">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Safety Focus Time SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Safety Focus Time</name>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

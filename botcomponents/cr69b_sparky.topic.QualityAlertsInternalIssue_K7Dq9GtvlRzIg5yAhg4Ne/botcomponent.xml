@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.QualityAlertsInternalIssue_K7Dq9GtvlRzIg5yAhg4Ne">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Quality Alerts -Internal Issue SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Quality Alerts -Internal Issue</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

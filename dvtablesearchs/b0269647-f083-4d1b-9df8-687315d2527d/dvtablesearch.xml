@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="b0269647-f083-4d1b-9df8-687315d2527d">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Key Turn - Abnormality Training",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Doug/Key%20Turn%20-%20Abnormality%20Training",
+      "driveId": "",
+      "itemId": "01S3URPTFOBLTFWIQ3ZBH367CD2DFE3L3E",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>KeyTurnAbnormalityTraining_28dHLPLaa30GqsKzVNnSN</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

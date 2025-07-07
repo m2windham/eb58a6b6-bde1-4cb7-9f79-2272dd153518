@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="00f91985-24ae-4964-b095-85441e97a8c9">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.QIoZp3vO</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "53727Auto",
+      "webUrl": "https://apmmtab-my.sharepoint.com/personal/dwindham_apmm-tab_com/Lists/53727Auto",
+      "driveId": "",
+      "itemId": "7c3df7e5-cfe0-4e74-8c37-0b4b26410149",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "5c27a919-9e63-402f-bd4e-82baf98ec0c4",
+        "listId": "7c3df7e5-cfe0-4e74-8c37-0b4b26410149",
+        "siteId": "cd84b151-aa0a-42de-9f4e-721cbe49a41e",
+        "siteUrl": "https://apmmtab-my.sharepoint.com/personal/dwindham_apmm-tab_com"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>53727Auto_kRAiexEsmWScbev1LQF5Y</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

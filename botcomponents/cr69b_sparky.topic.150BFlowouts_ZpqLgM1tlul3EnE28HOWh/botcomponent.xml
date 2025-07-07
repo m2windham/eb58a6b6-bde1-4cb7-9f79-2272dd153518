@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.150BFlowouts_ZpqLgM1tlul3EnE28HOWh">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in 150B Flowouts SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>150B Flowouts</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

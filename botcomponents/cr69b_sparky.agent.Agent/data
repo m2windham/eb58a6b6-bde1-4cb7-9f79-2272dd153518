@@ -1,0 +1,9 @@
+kind: AgentDialog
+beginDialog:
+  kind: OnToolSelected
+  id: main
+  description: Quality Focused (Flow out, History, Abnormality Handling)
+
+settings: {}
+inputType: {}
+outputType: {}

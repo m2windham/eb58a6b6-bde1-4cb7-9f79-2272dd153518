@@ -1,0 +1,68 @@
+<botcomponent_dvtablesearchset>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.150BFlowouts_ZpqLgM1tlul3EnE28HOWh" dvtablesearchid.dvtablesearchid="7e7db12b-a2ef-4415-bebf-f97d2b5cd43b">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.3Pillar_np7B_gwrLN9axDjUUZJvP" dvtablesearchid.dvtablesearchid="2b80ba02-10f4-4185-b3e2-5b223e327ce4">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.53727Auto_iDknW4vQlljogp5Lkox4H" dvtablesearchid.dvtablesearchid="00f91985-24ae-4964-b095-85441e97a8c9">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.BlueTagWorkInstructions_a6S7CN4WoSJXs5gub2hFN" dvtablesearchid.dvtablesearchid="b8fd1aba-ae8d-4921-92fb-499ec66d3da3">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.BlueTagWorkInstructions_H4BHYpL_TLbysI7QW80ex" dvtablesearchid.dvtablesearchid="56c4782a-b6e3-4760-8a7a-dec43e92bbad">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.KeyTurnAbnormalityTraining_aDazFCM2bP64QT9mBm1OK" dvtablesearchid.dvtablesearchid="b0269647-f083-4d1b-9df8-687315d2527d">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.KPIDT_Eb8qLwEM8icM2EzRnbKPT" dvtablesearchid.dvtablesearchid="d0b8301b-0bf7-42ee-9671-6519880a1659">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.LunchandLearnAbnTraining_qe8glONgcpTxv41EBbSnH" dvtablesearchid.dvtablesearchid="33e3ed3d-27b8-4d01-b810-f9d2506fc30f">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.MPReason_hLWMYmHCKqpapufdkilAA" dvtablesearchid.dvtablesearchid="4d30b02f-eb69-4206-b716-eb1fb4eb7e5d">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.QualityAlertsInternalIssue_K7Dq9GtvlRzIg5yAhg4Ne" dvtablesearchid.dvtablesearchid="80264227-8d40-48ce-952b-496b19094a4c">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.QualityImprovement_WAatGwuST9g2DM_E8GI4B" dvtablesearchid.dvtablesearchid="f5e333a3-aced-430b-bdfb-f54c7cb40d2e">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.QualityKeyPointAudits_KlcGWZnjJm1GkdES4OQRq" dvtablesearchid.dvtablesearchid="5132e211-09c3-4ae0-bd88-3a3bc1847a4e">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.SafetyFocusTime_PalnrvPorRAgU0T8TSfoN" dvtablesearchid.dvtablesearchid="e666d7c5-87be-436e-86b5-7baa3ae35e13">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.SequenceActivity_jPYQ_FCkMGL0sXg7rShVI" dvtablesearchid.dvtablesearchid="121a7ec4-ac6c-4c42-8901-143122747041">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.SequenceActivity_l_qQNK6Kk7DxSupMpxPMt" dvtablesearchid.dvtablesearchid="c08a9476-1b6a-46af-90fe-0f73110ba57e">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.StandardWork_Y5GhuGxQzyOSJvTQk3QKt" dvtablesearchid.dvtablesearchid="2cbae3d3-9151-4ccb-a0d2-14000d4794ea">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.StdWorkAudits_9_kkBO0qYjWyH0X_0KoRF" dvtablesearchid.dvtablesearchid="060e874b-5494-4309-a741-59608242c15d">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.TLtraining_XxZ5OiYFziYuWKu9c1Obw" dvtablesearchid.dvtablesearchid="e16cddae-bbc8-4fa4-b1aa-47495451b7ad">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.Valeria_vA9ZApqBz5dmr_ab5acG8" dvtablesearchid.dvtablesearchid="7f886d80-ded6-44d4-961b-f28dedc08086">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.VendorStampingDefects_YfRVkjzY414YUXPn36mPT" dvtablesearchid.dvtablesearchid="843b90ba-ef2c-4795-bbef-a87bffd1291e">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.Z3KPI_CPCkZuKFQBC_wPOdGTK4g" dvtablesearchid.dvtablesearchid="1337b0db-58be-49e5-9612-ee8c44b79bb8">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+  <botcomponent_dvtablesearch botcomponentid.schemaname="cr69b_sparky.topic.Z3Manpower_AD5wLawf1utblzy_qwxhJ" dvtablesearchid.dvtablesearchid="6f09568a-1b05-4bf6-835b-f7f1e06c33ef">
+    <iscustomizable>1</iscustomizable>
+  </botcomponent_dvtablesearch>
+</botcomponent_dvtablesearchset>

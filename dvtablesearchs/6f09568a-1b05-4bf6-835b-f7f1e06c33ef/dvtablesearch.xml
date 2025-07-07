@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="6f09568a-1b05-4bf6-835b-f7f1e06c33ef">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.QIoZp3vO</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Z3Manpower",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Lists/Z3Manpower",
+      "driveId": "",
+      "itemId": "456fc63a-30fd-4908-8a9c-73334e368984",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "456fc63a-30fd-4908-8a9c-73334e368984",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>Z3Manpower_8u2Da0qxDeW6rz6e1tClI</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

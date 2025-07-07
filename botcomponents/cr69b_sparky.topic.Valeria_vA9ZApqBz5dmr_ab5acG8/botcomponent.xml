@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.Valeria_vA9ZApqBz5dmr_ab5acG8">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Valeria SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Valeria</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent_p5_</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

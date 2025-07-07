@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr69b_sparky.topic.53727Auto_iDknW4vQlljogp5Lkox4H">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in 53727Auto SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>53727Auto</name>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

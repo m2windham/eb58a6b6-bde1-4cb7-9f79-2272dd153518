@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr69b_sparky.topic.KPIDT_Eb8qLwEM8icM2EzRnbKPT">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in KPIDT SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>KPIDT</name>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

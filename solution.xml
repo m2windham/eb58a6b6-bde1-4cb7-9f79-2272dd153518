@@ -1,0 +1,296 @@
+<ImportExportXml version="9.2.25061.218" SolutionPackageVersion="9.2" languagecode="1033" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25061.218" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25061.00218">
+  <SolutionManifest>
+    <UniqueName>Zone3</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Zone 3" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions />
+    <Version>1.0.0.2</Version>
+    <Managed>1</Managed>
+    <Publisher>
+      <UniqueName>Doug_Windham</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="dwindham" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions />
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>dw</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>12195</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="29" id="{759a246d-7036-f011-8c4e-000d3a5bab84}" behavior="0" />
+      <RootComponent type="62" schemaName="PowerPlatformEnvironmentSettings" behavior="0" />
+      <RootComponent type="80" schemaName="mspp_PowerPageManagement" behavior="0" />
+      <RootComponent type="300" schemaName="cr49f_safetyfocustimezone3_2c3d8" behavior="0" />
+      <RootComponent type="300" schemaName="dw_zone3projectmanager_f1983" behavior="0" />
+      <RootComponent type="401" id="{02e1fca3-232a-4f58-8c93-bdd8c9cd6de9}" behavior="0" />
+      <RootComponent type="401" id="{046ab801-2756-e911-8194-000d3a6cd5a5}" behavior="0" />
+      <RootComponent type="401" id="{17a6f893-5b0b-4867-8fac-fb2eda9080b2}" behavior="0" />
+      <RootComponent type="401" id="{2bcd7b94-50bc-4767-af4a-367c63fb5487}" behavior="0" />
+      <RootComponent type="401" id="{2c444168-f8b1-4c6a-9313-2d9c03be6fea}" behavior="0" />
+      <RootComponent type="401" id="{2d9aac00-20e0-46fd-ad9b-52b2a6aae00f}" behavior="0" />
+      <RootComponent type="401" id="{2f47255b-603c-42cd-9ad3-8aac74855902}" behavior="0" />
+      <RootComponent type="401" id="{3fbd4e5c-32bc-40fc-acce-59c2821cf113}" behavior="0" />
+      <RootComponent type="401" id="{47d6c1c1-6ae8-4eed-8b0d-447f8dc6fb7b}" behavior="0" />
+      <RootComponent type="401" id="{4e72b59a-17d6-451e-8657-89fbdec56d7a}" behavior="0" />
+      <RootComponent type="401" id="{51f4da11-5702-401d-b53a-9638744e8ac9}" behavior="0" />
+      <RootComponent type="401" id="{572f57a7-7a8f-49fc-adb4-331e02c509a6}" behavior="0" />
+      <RootComponent type="401" id="{5ed4d0fd-e9d4-4026-b09b-71f83ea90c60}" behavior="0" />
+      <RootComponent type="401" id="{6225038a-8b5a-4913-bfd2-d8236f4102ba}" behavior="0" />
+      <RootComponent type="401" id="{77365cfa-7021-4cb7-a9b2-dc9823cde772}" behavior="0" />
+      <RootComponent type="401" id="{83136531-2743-466c-a9c7-ce3c953d9657}" behavior="0" />
+      <RootComponent type="401" id="{84251783-a5a4-4315-ab16-865b7b36ae6c}" behavior="0" />
+      <RootComponent type="401" id="{86419a67-205a-454f-b6fc-601394f2786d}" behavior="0" />
+      <RootComponent type="401" id="{892d3698-ba03-3d15-8e9e-843ca4ac5e7d}" behavior="0" />
+      <RootComponent type="401" id="{a0440df3-2656-e911-8194-000d3a6cd5a5}" behavior="0" />
+      <RootComponent type="401" id="{a1afa5d4-7a44-4c31-9cd2-e852a78431fa}" behavior="0" />
+      <RootComponent type="401" id="{b03a06d1-9658-4b53-a095-29c50643d657}" behavior="0" />
+      <RootComponent type="401" id="{b9b636cf-9748-47a7-b617-6df5f00f5151}" behavior="0" />
+      <RootComponent type="401" id="{baa44529-bebe-49e6-837a-80bee63b0d2c}" behavior="0" />
+      <RootComponent type="401" id="{c076eac8-f218-4feb-8ad1-7ee4fb039419}" behavior="0" />
+      <RootComponent type="401" id="{c8425db7-c5a7-4226-b38e-c93a044c0fe1}" behavior="0" />
+      <RootComponent type="401" id="{d3b07384-d9a7-4f4b-8a3d-2b0a7b8e7b7e}" behavior="0" />
+      <RootComponent type="401" id="{d612a7ce-3ee7-4f4e-896b-33052c82e30d}" behavior="0" />
+      <RootComponent type="401" id="{f1c549c2-a97e-47a5-b612-c5c2bab0f163}" behavior="0" />
+    </RootComponents>
+    <MissingDependencies>
+      <MissingDependency>
+        <Required type="61" schemaName="ActivityFeedsConfig.svg" displayName="ActivityFeedsConfig.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="ActivityFeedsRules.svg" displayName="ActivityFeedsRules.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Administration.svg" displayName="Administration.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Auditing.svg" displayName="Auditing.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="BusinessManagement.svg" displayName="BusinessManagement.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Customizations.svg" displayName="Customizations.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="D365AppForOutlook.svg" displayName="D365AppForOutlook.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="DataManagement.svg" displayName="DataManagement.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="DocumentManagement.svg" displayName="DocumentManagement.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="EmailConfig.svg" displayName="EmailConfig.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="MicrosoftAppSource.svg" displayName="MicrosoftAppSource.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="MicrosoftFlow.svg" displayName="MicrosoftFlow.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="MobileOffline.svg" displayName="MobileOffline.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="PluginTraceLog.svg" displayName="PluginTraceLog.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Process.svg" displayName="Process.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="ProductCatalog.svg" displayName="ProductCatalog.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="SalesInsights.svg" displayName="SalesInsights.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Security.svg" displayName="Security.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="ServiceManagement.svg" displayName="ServiceManagement.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Solutions.svg" displayName="Solutions.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="SolutionsHistory.svg" displayName="SolutionsHistory.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="SyncError.svg" displayName="SyncError.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="SystemJob.svg" displayName="SystemJob.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="61" schemaName="Templates.svg" displayName="Templates.svg" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="62" schemaName="PowerPlatformEnvironmentSettings" solution="PowerPlatformEnvironmentSettings (1.1.1.1576)">
+          <package appName="PowerPlatformEnvironmentSettingsApp" version="1.1.1.1576">PowerPlatformEnvironmentSettingsApp_Anchor (1.1.1.1576)</package>
+        </Required>
+        <Dependent type="62" schemaName="PowerPlatformEnvironmentSettings" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="80" schemaName="mspp_PowerPageManagement" displayName="Power Pages Management" solution="PowerPages_Apps (1.0.2501.4)">
+          <package appName="Power Pages Core Package" version="1.0.2505.160">PowerPages_Core (1.0.2505.160)</package>
+        </Required>
+        <Dependent type="80" schemaName="mspp_PowerPageManagement" displayName="Power Pages Management" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="crdfa_copilotbJ5xIp.cr.HBw34vrT" solution="ManufacturingOHS (1.0.0.58)" id.connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.HBw34vrT" />
+        <Dependent type="connectionreference" displayName="crdfa_copilotbJ5xIp.cr.HBw34vrT" id.connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.HBw34vrT" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="crdfa_copilotbJ5xIp.cr.pjmTg7J3" solution="ManufacturingOHS (1.0.0.58)" id.connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.pjmTg7J3" />
+        <Dependent type="connectionreference" displayName="crdfa_copilotbJ5xIp.cr.pjmTg7J3" id.connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.pjmTg7J3" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="crdfa_safetyAuditsInManufacturing.cr.0tT_O8hw" solution="ManufacturingOHS (1.0.0.58)" id.connectionreferencelogicalname="crdfa_safetyAuditsInManufacturing.cr.0tT_O8hw" />
+        <Dependent type="connectionreference" displayName="crdfa_safetyAuditsInManufacturing.cr.0tT_O8hw" id.connectionreferencelogicalname="crdfa_safetyAuditsInManufacturing.cr.0tT_O8hw" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="connectionreference" displayName="crdfa_sharedsharepointonline_151fb" solution="ManufacturingOHS (1.0.0.58)" id.connectionreferencelogicalname="crdfa_sharedsharepointonline_151fb" />
+        <Dependent type="connectionreference" displayName="crdfa_sharedsharepointonline_151fb" id.connectionreferencelogicalname="crdfa_sharedsharepointonline_151fb" />
+      </MissingDependency>
+      <MissingDependency>
+        <Required type="CustomAPI" displayName="AddWorkQueueItemProcessingHistoryEntry" solution="MicrosoftFlowExtensionsCore (1.9.13.0)" id.uniquename="AddWorkQueueItemProcessingHistoryEntry">
+          <package appName="MicrosoftFlowExtensionsCore" version="1.9.13.0">MicrosoftFlowExtensionsAnchor (1.9.13.0)</package>
+        </Required>
+        <Dependent type="CustomAPI" displayName="AddWorkQueueItemProcessingHistoryEntry" id.uniquename="AddWorkQueueItemProcessingHistoryEntry" />
+      </MissingDependency>
+    </MissingDependencies>
+  </SolutionManifest>
+</ImportExportXml>

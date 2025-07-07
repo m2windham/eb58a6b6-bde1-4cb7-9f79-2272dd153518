@@ -1,0 +1,867 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_sharepointonline": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr49f_sharedsharepointonline_ceb28"
+        },
+        "api": {
+          "name": "shared_sharepointonline"
+        }
+      },
+      "shared_excelonlinebusiness": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr49f_sharedexcelonlinebusiness_ed998"
+        },
+        "api": {
+          "name": "shared_excelonlinebusiness"
+        }
+      },
+      "shared_office365": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr49f_sharedoffice365_bb6df"
+        },
+        "api": {
+          "name": "shared_office365"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "When_a_new_email_arrives_(V3)": {
+          "splitOn": "@triggerOutputs()?['body/value']",
+          "metadata": {
+            "operationMetadataId": "2c5a4ed2-2a06-42ef-9d62-64c3a04eb7aa"
+          },
+          "type": "OpenApiConnectionNotification",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_office365",
+              "operationId": "OnNewEmailV3",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+            },
+            "parameters": {
+              "to": "dwindham@apmm-tab.com",
+              "toOrCc": "dwindham@apmm-tab.com",
+              "includeAttachments": true,
+              "fetchOnlyWithAttachment": true
+            },
+            "authentication": "@parameters('$authentication')"
+          },
+          "conditions": []
+        }
+      },
+      "actions": {
+        "Scope_Operations": {
+          "actions": {
+            "Condition": {
+              "actions": {
+                "Create_file": {
+                  "runAfter": {},
+                  "metadata": {
+                    "operationMetadataId": "ca091fcf-7171-4dbe-926e-6d0f1aa9f3fd"
+                  },
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                      "folderPath": "/Shared Documents/UnifiedKPI/Production",
+                      "name": "@triggerBody()?['attachments']?[0]?['name']",
+                      "body": "@triggerBody()?['attachments']?[0]?['contentBytes']"
+                    },
+                    "host": {
+                      "connectionName": "shared_sharepointonline",
+                      "operationId": "CreateFile",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  },
+                  "runtimeConfiguration": {
+                    "contentTransfer": {
+                      "transferMode": "Chunked"
+                    }
+                  }
+                },
+                "Scope_OA": {
+                  "actions": {
+                    "List_rows_present_in_a_table": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "862b8d6c-b759-4aa8-82cb-bfe9f4b424e8",
+                        "tableId": "OA"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "source": "sites/apmmtab.sharepoint.com,a81a323d-6411-49ae-ba10-0849e073e962,79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+                          "drive": "b!PTIaqBFkrkm6EAhJ4HPpYtsOz3lrqtpFqCvqdASILk-chGS9oh7AQIg555Rn3y0J",
+                          "file": "@outputs('Create_file')?['body/Id']",
+                          "table": "OA"
+                        },
+                        "host": {
+                          "connectionName": "shared_excelonlinebusiness",
+                          "operationId": "GetItems",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Apply_to_each": {
+                      "foreach": "@outputs('List_rows_present_in_a_table')?['body/value']",
+                      "actions": {
+                        "Condition_1": {
+                          "actions": {
+                            "Create_item": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "cf723f58-3cf5-4842-b780-d4121a48143e"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "parameters": {
+                                  "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                  "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                                  "item/Title": "@items('Apply_to_each')?['Part']",
+                                  "item/field_0": "@addDays('1899-12-30', int(item()?['Date']), 'MM/dd/yyyy')",
+                                  "item/field_2": "@item()?['OA']",
+                                  "item/field_3": "@item()?['Shift']",
+                                  "item/Build": "@item()?['Build']",
+                                  "item/Finish": "@item()?['Finish']",
+                                  "item/Scrap": "@item()?['Scrap']",
+                                  "item/OT": "@item()?['OT']"
+                                },
+                                "host": {
+                                  "connectionName": "shared_sharepointonline",
+                                  "operationId": "PostItem",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            }
+                          },
+                          "runAfter": {
+                            "Get_items": [
+                              "Succeeded"
+                            ]
+                          },
+                          "else": {
+                            "actions": {
+                              "For_each_1": {
+                                "foreach": "@outputs('Get_items')?['body/value']",
+                                "actions": {
+                                  "Update_item": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "a96512ff-19f4-4183-a17f-53225a937201"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "parameters": {
+                                        "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                        "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                                        "id": "@outputs('Get_items')?['body/value']?[0]?['ID']",
+                                        "item/field_2": "@item()?['OA']",
+                                        "item/Build": "@item()?['Build']",
+                                        "item/Finish": "@item()?['Finish']",
+                                        "item/Scrap": "@item()?['Scrap']",
+                                        "item/OT": "@item()?['OT']"
+                                      },
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline",
+                                        "operationId": "PatchItem",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  }
+                                },
+                                "runAfter": {},
+                                "metadata": {
+                                  "operationMetadataId": "6647260c-eab4-4c9e-9950-7b3fc29a4b4c"
+                                },
+                                "type": "Foreach"
+                              }
+                            }
+                          },
+                          "expression": {
+                            "and": [
+                              {
+                                "equals": [
+                                  "@empty(outputs('Get_items')?['body/value'])",
+                                  true
+                                ]
+                              }
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "22027199-e424-4708-9f40-92088f683c99"
+                          },
+                          "type": "If"
+                        },
+                        "Get_items": {
+                          "runAfter": {},
+                          "metadata": {
+                            "operationMetadataId": "c9714fa0-4d71-4fae-9f55-1bf285a082bf"
+                          },
+                          "type": "OpenApiConnection",
+                          "inputs": {
+                            "parameters": {
+                              "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                              "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                              "$filter": "Title eq '@{items('Apply_to_each')?['Part']}' and field_3 eq '@{items('Apply_to_each')?['Shift']}' and field_0 eq '@{formatDateTime(addDays('1899-12-30', int(items('Apply_to_each')?['Date'])), 'MM/dd/yyyy')}'"
+                            },
+                            "host": {
+                              "connectionName": "shared_sharepointonline",
+                              "operationId": "GetItems",
+                              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                            },
+                            "authentication": "@parameters('$authentication')"
+                          }
+                        }
+                      },
+                      "runAfter": {
+                        "List_rows_present_in_a_table": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "bcc76ea9-a8f6-4539-ab73-87f1ce284d95"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "fd742b2c-6657-49dd-8aff-3ad11431137f"
+                  },
+                  "type": "Scope"
+                },
+                "Scope_DT": {
+                  "actions": {
+                    "List_rows_DT": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "0ff8d298-54bd-4724-87c7-63dfd913a9d3",
+                        "tableId": "DT"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "source": "sites/apmmtab.sharepoint.com,a81a323d-6411-49ae-ba10-0849e073e962,79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+                          "drive": "b!PTIaqBFkrkm6EAhJ4HPpYtsOz3lrqtpFqCvqdASILk-chGS9oh7AQIg555Rn3y0J",
+                          "file": "@outputs('Create_file')?['body/Id']",
+                          "table": "DT"
+                        },
+                        "host": {
+                          "connectionName": "shared_excelonlinebusiness",
+                          "operationId": "GetItems",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Apply_to_DT": {
+                      "foreach": "@outputs('List_rows_DT')?['body/value']",
+                      "actions": {
+                        "Condition_2": {
+                          "actions": {
+                            "Get_items_DT": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "7111e59a-9ffa-4e44-b3cc-d5b182522958"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "parameters": {
+                                  "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                  "table": "b2394210-96c0-47b1-b581-815caa17ed09",
+                                  "$filter": "Title eq '@{items('Apply_to_DT')?['Part']}' and field_10 eq '@{items('Apply_to_DT')?['Problem']}' and field_0 eq '@{formatDateTime(addDays('1899-12-30', int(items('Apply_to_DT')?['Date'])), 'MM/dd/yyyy')}' and Shift eq '@{items('Apply_to_DT')?['Shift']}'"
+                                },
+                                "host": {
+                                  "connectionName": "shared_sharepointonline",
+                                  "operationId": "GetItems",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condition_DT": {
+                              "actions": {
+                                "Create_item_DT": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "8099d3bf-b285-4844-a878-1b36ea9521a0"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "parameters": {
+                                      "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                      "table": "b2394210-96c0-47b1-b581-815caa17ed09",
+                                      "item/Title": "@item()?['Part']",
+                                      "item/field_0": "@addDays('1899-12-30', int(item()?['Date']), 'MM/dd/yyyy')",
+                                      "item/Shift": "@item()?['Shift']",
+                                      "item/field_6": "@item()?['4M']",
+                                      "item/field_7": "@item()?['Area']",
+                                      "item/field_8": "@item()?['Mins']",
+                                      "item/field_9": "@item()?['Cause']",
+                                      "item/field_10": "@item()?['Problem']"
+                                    },
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline",
+                                      "operationId": "PostItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Get_items_DT": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "else": {
+                                "actions": {
+                                  "For_each": {
+                                    "foreach": "@outputs('Get_items_DT')?['body/value']",
+                                    "actions": {
+                                      "Update_item_DT": {
+                                        "runAfter": {},
+                                        "metadata": {
+                                          "operationMetadataId": "deda10a3-8fe2-4403-86f7-96f249bb6ca7"
+                                        },
+                                        "type": "OpenApiConnection",
+                                        "inputs": {
+                                          "parameters": {
+                                            "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                            "table": "b2394210-96c0-47b1-b581-815caa17ed09",
+                                            "id": "@outputs('Get_items_DT')?['body/value']?[0]?['ID']",
+                                            "item/field_6": "@items('For_each')?['field_6']",
+                                            "item/field_7": "@item()?['field_7']",
+                                            "item/field_8": "@item()?['field_8']",
+                                            "item/field_9": "@item()?['field_9']"
+                                          },
+                                          "host": {
+                                            "connectionName": "shared_sharepointonline",
+                                            "operationId": "PatchItem",
+                                            "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                          },
+                                          "authentication": "@parameters('$authentication')"
+                                        }
+                                      }
+                                    },
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "2e130cc7-09b2-43ab-b9b7-d13302f3a94b"
+                                    },
+                                    "type": "Foreach"
+                                  }
+                                }
+                              },
+                              "expression": {
+                                "and": [
+                                  {
+                                    "equals": [
+                                      "@empty(outputs('Get_items_DT')?['body/value'])",
+                                      true
+                                    ]
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "45af17e0-3ec3-40be-8380-7edb95ef97a9"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {},
+                          "expression": {
+                            "and": [
+                              {
+                                "equals": [
+                                  "@empty(items('Apply_to_DT')?['Date'])",
+                                  false
+                                ]
+                              }
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "506e2834-e17b-44ec-9f5d-ce96a67da111"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {
+                        "List_rows_DT": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "7389bb25-aae0-418b-a65c-5acd2c92f6ed"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "f4789ab6-c8c1-46c5-bd6a-bc8c1a287b0e"
+                  },
+                  "type": "Scope"
+                },
+                "Scope_MP": {
+                  "actions": {
+                    "List_rows_MP": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "ea2c5d4b-f89b-451d-82fa-2b30f2d6d24a"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "source": "sites/apmmtab.sharepoint.com,a81a323d-6411-49ae-ba10-0849e073e962,79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+                          "drive": "b!PTIaqBFkrkm6EAhJ4HPpYtsOz3lrqtpFqCvqdASILk-chGS9oh7AQIg555Rn3y0J",
+                          "file": "@outputs('Create_file')?['body/Id']",
+                          "table": "MP"
+                        },
+                        "host": {
+                          "connectionName": "shared_excelonlinebusiness",
+                          "operationId": "GetItems",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Apply_to_MP": {
+                      "foreach": "@outputs('List_rows_MP')?['body/value']",
+                      "actions": {
+                        "Condition_3": {
+                          "actions": {
+                            "Get_items_MP": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "c9714fa0-4d71-4fae-9f55-1bf285a082bf"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "parameters": {
+                                  "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                  "table": "456fc63a-30fd-4908-8a9c-73334e368984",
+                                  "$filter": "Title eq '@{formatDateTime(addDays('1899-12-30', int(items('Apply_to_MP')?['Date'])), 'MM/dd/yyyy')}' and Shft eq '@{items('Apply_to_MP')?['Shift']}'"
+                                },
+                                "host": {
+                                  "connectionName": "shared_sharepointonline",
+                                  "operationId": "GetItems",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condition_MP": {
+                              "actions": {
+                                "Create_item_MP": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "a3e156bd-ecd9-40cb-96ad-69e87340d4a6"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "parameters": {
+                                      "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                      "table": "456fc63a-30fd-4908-8a9c-73334e368984",
+                                      "item/Title": "@addDays('1899-12-30', int(item()?['Date']), 'MM/dd/yyyy')",
+                                      "item/TMPlan": "@item()?['TM Plan']",
+                                      "item/TMAct": "@item()?['TM Act']",
+                                      "item/TMRatio": "@item()?['TM Ratio']",
+                                      "item/TLPlan": "@item()?['TL Plan']",
+                                      "item/TLAct": "@item()?['TL act']",
+                                      "item/TLinline": "@item()?['TL InLine']",
+                                      "item/Shft": "@item()?['Shift']"
+                                    },
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline",
+                                      "operationId": "PostItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Get_items_MP": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "else": {
+                                "actions": {
+                                  "Update_item_MP": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "2bb83278-a002-4652-af07-066d0ae5989f"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "parameters": {
+                                        "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                        "table": "456fc63a-30fd-4908-8a9c-73334e368984",
+                                        "id": "@outputs('Get_items_MP')?['body/value']?[0]?['ID']",
+                                        "item/TMPlan": "@item()?['TM Plan']",
+                                        "item/TMAct": "@item()?['TM Act']",
+                                        "item/TMRatio": "@item()?['TM Ratio']",
+                                        "item/TLPlan": "@item()?['TL PLan']",
+                                        "item/TLAct": "@item()?['TL Act']",
+                                        "item/TLinline": "@item()?['TL InLine']"
+                                      },
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline",
+                                        "operationId": "PatchItem",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  }
+                                }
+                              },
+                              "expression": {
+                                "and": [
+                                  {
+                                    "equals": [
+                                      "@empty(outputs('Get_items_MP')?['body/value'])",
+                                      true
+                                    ]
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "f1d603d6-1f75-49b5-8853-67bf6bb84207"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {},
+                          "expression": {
+                            "and": [
+                              {
+                                "equals": [
+                                  "@empty(items('Apply_to_MP')?['Date'])",
+                                  false
+                                ]
+                              }
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "bf27e3a8-5494-4eee-9e6c-010fa5c9d18f"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {
+                        "List_rows_MP": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "fba15ee3-137d-4796-9c17-4fb63ae363ac"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "a2719ae1-1393-4105-ba1c-2c669529fd55"
+                  },
+                  "type": "Scope"
+                },
+                "Scope_MPReason": {
+                  "actions": {
+                    "List_rows_MPreason": {
+                      "runAfter": {},
+                      "metadata": {
+                        "operationMetadataId": "b7bc3ee8-3135-4cf2-8bb6-faa8b4c2554b"
+                      },
+                      "type": "OpenApiConnection",
+                      "inputs": {
+                        "parameters": {
+                          "source": "sites/apmmtab.sharepoint.com,a81a323d-6411-49ae-ba10-0849e073e962,79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+                          "drive": "b!PTIaqBFkrkm6EAhJ4HPpYtsOz3lrqtpFqCvqdASILk-chGS9oh7AQIg555Rn3y0J",
+                          "file": "@outputs('Create_file')?['body/Id']",
+                          "table": "MPReason"
+                        },
+                        "host": {
+                          "connectionName": "shared_excelonlinebusiness",
+                          "operationId": "GetItems",
+                          "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                        },
+                        "authentication": "@parameters('$authentication')"
+                      }
+                    },
+                    "Apply_to_MPR": {
+                      "foreach": "@outputs('List_rows_MPreason')?['body/value']",
+                      "actions": {
+                        "Condition_4": {
+                          "actions": {
+                            "Get_items_MPR": {
+                              "runAfter": {},
+                              "metadata": {
+                                "operationMetadataId": "c9714fa0-4d71-4fae-9f55-1bf285a082bf"
+                              },
+                              "type": "OpenApiConnection",
+                              "inputs": {
+                                "parameters": {
+                                  "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                  "table": "a8eccd1c-fda3-4414-9b76-bd4aa363b8e0",
+                                  "$filter": "Date eq '@{formatDateTime(addDays('1899-12-30', int(items('Apply_to_MPR')?['Date'])), 'MM/dd/yyyy')}' and Shift eq '@{items('Apply_to_MPR')?['Shift']}' and Title eq '@{items('Apply_to_MPR')?['Reason']}'"
+                                },
+                                "host": {
+                                  "connectionName": "shared_sharepointonline",
+                                  "operationId": "GetItems",
+                                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                },
+                                "authentication": "@parameters('$authentication')"
+                              }
+                            },
+                            "Condition_MP_1": {
+                              "actions": {
+                                "Create_item_MPR": {
+                                  "runAfter": {},
+                                  "metadata": {
+                                    "operationMetadataId": "0bdea2b3-d33e-4f6f-9d2c-ff12a537f03c"
+                                  },
+                                  "type": "OpenApiConnection",
+                                  "inputs": {
+                                    "parameters": {
+                                      "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                      "table": "a8eccd1c-fda3-4414-9b76-bd4aa363b8e0",
+                                      "item/Title": "@item()?['Reason']",
+                                      "item/Date": "@addDays('1899-12-30', int(item()?['Date']), 'MM/dd/yyyy')",
+                                      "item/Shift": "@item()?['Shift']"
+                                    },
+                                    "host": {
+                                      "connectionName": "shared_sharepointonline",
+                                      "operationId": "PostItem",
+                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                    },
+                                    "authentication": "@parameters('$authentication')"
+                                  }
+                                }
+                              },
+                              "runAfter": {
+                                "Get_items_MPR": [
+                                  "Succeeded"
+                                ]
+                              },
+                              "else": {
+                                "actions": {
+                                  "Update_item_MPR": {
+                                    "runAfter": {},
+                                    "metadata": {
+                                      "operationMetadataId": "224bb903-31f0-4dc0-9af5-d064121adfea"
+                                    },
+                                    "type": "OpenApiConnection",
+                                    "inputs": {
+                                      "parameters": {
+                                        "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                        "table": "a8eccd1c-fda3-4414-9b76-bd4aa363b8e0",
+                                        "id": "@outputs('Get_items_MPR')?['body/value']?[0]?['ID']",
+                                        "item/Title": "@item()?['Reason']",
+                                        "item/Date": "@addDays('1899-12-30', int(item()?['Date']), 'MM/dd/yyyy')",
+                                        "item/Shift": "@item()?['Shift']"
+                                      },
+                                      "host": {
+                                        "connectionName": "shared_sharepointonline",
+                                        "operationId": "PatchItem",
+                                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                      },
+                                      "authentication": "@parameters('$authentication')"
+                                    }
+                                  }
+                                }
+                              },
+                              "expression": {
+                                "and": [
+                                  {
+                                    "equals": [
+                                      "@empty(outputs('Get_items_MPR')?['body/value'])",
+                                      true
+                                    ]
+                                  }
+                                ]
+                              },
+                              "metadata": {
+                                "operationMetadataId": "124b52cd-1ebc-4276-8936-7d404b4b4eb0"
+                              },
+                              "type": "If"
+                            }
+                          },
+                          "runAfter": {},
+                          "expression": {
+                            "and": [
+                              {
+                                "equals": [
+                                  "@empty(items('Apply_to_MPR')?['Date'])",
+                                  false
+                                ]
+                              }
+                            ]
+                          },
+                          "metadata": {
+                            "operationMetadataId": "3f117bae-80f4-4768-baf2-3a6782336a7b"
+                          },
+                          "type": "If"
+                        }
+                      },
+                      "runAfter": {
+                        "List_rows_MPreason": [
+                          "Succeeded"
+                        ]
+                      },
+                      "metadata": {
+                        "operationMetadataId": "d54b8dad-3bd6-4081-9f00-e4fa032f937c"
+                      },
+                      "type": "Foreach"
+                    }
+                  },
+                  "runAfter": {
+                    "Create_file": [
+                      "Succeeded"
+                    ]
+                  },
+                  "metadata": {
+                    "operationMetadataId": "8f6526d4-ca9c-4e08-ab4c-ca45b65405f7"
+                  },
+                  "type": "Scope"
+                }
+              },
+              "runAfter": {},
+              "expression": {
+                "and": [
+                  {
+                    "endsWith": [
+                      "@triggerBody()?['attachments']?[0]?['name']\r\n",
+                      ".xlsx"
+                    ]
+                  }
+                ]
+              },
+              "metadata": {
+                "operationMetadataId": "6c80e798-3767-43da-8173-a61346077e9d"
+              },
+              "type": "If"
+            }
+          },
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "e7c75fe9-0b58-46bc-a829-c66518384df9"
+          },
+          "type": "Scope"
+        },
+        "Delay": {
+          "runAfter": {
+            "Scope_Operations": [
+              "Succeeded",
+              "Failed",
+              "Skipped",
+              "TimedOut"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "1593386b-2e8b-48d6-a7ff-642f5ea24a0b"
+          },
+          "type": "Wait",
+          "inputs": {
+            "interval": {
+              "count": 1,
+              "unit": "Minute"
+            }
+          }
+        },
+        "Get_files_(properties_only)": {
+          "runAfter": {
+            "Delay": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "030c7f6e-54ea-43b9-94dd-6e8941b3e8b8"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "parameters": {
+              "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+              "table": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+              "folderPath": "/Shared Documents/UnifiedKPI/Production"
+            },
+            "host": {
+              "connectionName": "shared_sharepointonline",
+              "operationId": "GetFileItems",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "For_each_2": {
+          "foreach": "@outputs('Get_files_(properties_only)')?['body/value']",
+          "actions": {
+            "Delete_file": {
+              "runAfter": {},
+              "metadata": {
+                "operationMetadataId": "24c92d20-ddc7-49be-99f8-83a6e54226e4"
+              },
+              "type": "OpenApiConnection",
+              "inputs": {
+                "parameters": {
+                  "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                  "id": "@items('For_each_2')?['{Identifier}']"
+                },
+                "host": {
+                  "connectionName": "shared_sharepointonline",
+                  "operationId": "DeleteFile",
+                  "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                },
+                "authentication": "@parameters('$authentication')"
+              }
+            }
+          },
+          "runAfter": {
+            "Get_files_(properties_only)": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "5cce59be-63b2-4e01-b3eb-8fdfd5cc91ea"
+          },
+          "type": "Foreach"
+        }
+      },
+      "outputs": {}
+    },
+    "templateName": ""
+  },
+  "schemaVersion": "1.0.0.0"
+}

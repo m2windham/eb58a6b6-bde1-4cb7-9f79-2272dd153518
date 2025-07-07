@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="5132e211-09c3-4ae0-bd88-3a3bc1847a4e">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Quality Key Point Audits",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Quality%20Key%20Point%20Audits",
+      "driveId": "",
+      "itemId": "01S3URPTHGJL5GG7HHK5A36DPUZHETI2LP",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>QualityKeyPointAudits_GyLUaLJ1XMOs8_BeijNSW</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

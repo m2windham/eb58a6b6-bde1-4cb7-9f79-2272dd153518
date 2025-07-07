@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.KeyTurnAbnormalityTraining_aDazFCM2bP64QT9mBm1OK">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Key Turn - Abnormality Training SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Key Turn - Abnormality Training</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

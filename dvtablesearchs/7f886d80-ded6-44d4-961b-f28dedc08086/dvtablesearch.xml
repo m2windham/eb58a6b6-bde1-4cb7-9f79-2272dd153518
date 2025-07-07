@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="7f886d80-ded6-44d4-961b-f28dedc08086">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.C9moot6L</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Valeria",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Valeria",
+      "driveId": "",
+      "itemId": "01S3URPTFM33S7T64Z2NGY2KYOOLEUBGVY",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>Valeria_8fgB7PKHrcsqt8ZpxxAWZ</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="80264227-8d40-48ce-952b-496b19094a4c">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Quality Alerts -Internal Issue",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Quality%20Alerts%20-Internal%20Issue",
+      "driveId": "",
+      "itemId": "01S3URPTGWIQFHISJP35EIZBKG2KQ7GNNN",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>QualityAlertsInternalIssue_qDitqRxUXVqpYtpO7N257</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

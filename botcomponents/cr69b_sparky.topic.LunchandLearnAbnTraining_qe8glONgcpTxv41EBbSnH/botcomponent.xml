@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.LunchandLearnAbnTraining_qe8glONgcpTxv41EBbSnH">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Lunch and Learn Abn Training SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Lunch and Learn Abn Training</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

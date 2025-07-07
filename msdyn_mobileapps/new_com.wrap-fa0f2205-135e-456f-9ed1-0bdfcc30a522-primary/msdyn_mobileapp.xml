@@ -1,0 +1,29 @@
+<msdyn_mobileapp msdyn_uniquename="new_com.wrap-fa0f2205-135e-456f-9ed1-0bdfcc30a522-primary">
+  <iscustomizable>1</iscustomizable>
+  <msdyn_actionbuttonhighlight>highlight</msdyn_actionbuttonhighlight>
+  <msdyn_appcenterappidaab>false</msdyn_appcenterappidaab>
+  <msdyn_appicon1024x1024>{32f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appicon1024x1024>
+  <msdyn_appicon120x120>{2ef8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appicon120x120>
+  <msdyn_appicon152x152>{2ff8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appicon152x152>
+  <msdyn_appicon167x167>{30f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appicon167x167>
+  <msdyn_appicon180x180>{31f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appicon180x180>
+  <msdyn_appiconhdpi>{34f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appiconhdpi>
+  <msdyn_appiconmdpi>{33f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appiconmdpi>
+  <msdyn_appiconxdpi>{35f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appiconxdpi>
+  <msdyn_appiconxxhdpi>{36f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appiconxxhdpi>
+  <msdyn_appiconxxxhdpi>{37f8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_appiconxxxhdpi>
+  <msdyn_buttoncolor>#82c7fc</msdyn_buttoncolor>
+  <msdyn_displayname>Safety Focus Time Zone 3</msdyn_displayname>
+  <msdyn_fillcolor>#82c7fc</msdyn_fillcolor>
+  <msdyn_isappsigningenabled>false</msdyn_isappsigningenabled>
+  <msdyn_platformtype>NotSpecified</msdyn_platformtype>
+  <msdyn_primarypublishedappname>
+    <name>cr49f_safetyfocustimezone3_2c3d8</name>
+  </msdyn_primarypublishedappname>
+  <msdyn_storagetypeforupload>AzureBlobStorage</msdyn_storagetypeforupload>
+  <msdyn_tenantsplashimage>{2df8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_tenantsplashimage>
+  <msdyn_tenantwelcomeimage>{2cf8bf44-7036-f011-8c4e-000d3a5bab84}</msdyn_tenantwelcomeimage>
+  <name>com.wrap</name>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</msdyn_mobileapp>

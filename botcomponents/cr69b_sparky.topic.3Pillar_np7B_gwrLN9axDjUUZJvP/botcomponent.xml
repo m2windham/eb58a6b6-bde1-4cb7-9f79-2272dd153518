@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.3Pillar_np7B_gwrLN9axDjUUZJvP">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in 3 Pillar SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>3 Pillar</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent_p5_</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

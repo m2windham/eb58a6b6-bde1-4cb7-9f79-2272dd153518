@@ -1,0 +1,4 @@
+kind: KnowledgeSourceConfiguration
+source:
+  kind: SharePointSearchSource
+  site: https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents

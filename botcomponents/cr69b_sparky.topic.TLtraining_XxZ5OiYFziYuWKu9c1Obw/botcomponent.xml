@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.TLtraining_XxZ5OiYFziYuWKu9c1Obw">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in TL training SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>TL training</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

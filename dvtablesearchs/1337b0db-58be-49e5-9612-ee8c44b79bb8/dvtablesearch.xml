@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="1337b0db-58be-49e5-9612-ee8c44b79bb8">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.QIoZp3vO</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Z3KPI",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Lists/Z3KPI",
+      "driveId": "",
+      "itemId": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>Z3KPI_xBjVqF5Ae47rqRT7r28wy</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr69b_sparky.topic.Z3KPI_CPCkZuKFQBC_wPOdGTK4g">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Z3KPI SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Z3KPI</name>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="33e3ed3d-27b8-4d01-b810-f9d2506fc30f">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Lunch and Learn Abn Training",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Doug/Lunch%20and%20Learn%20Abn%20Training",
+      "driveId": "",
+      "itemId": "01S3URPTC2A32ZWWLCXJBYMGVPKQUUA6MD",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>LunchandLearnAbnTraining_qd1Wn2N_zCS1Mc0xfVUw2</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

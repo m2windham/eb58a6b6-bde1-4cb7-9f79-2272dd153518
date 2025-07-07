@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.BlueTagWorkInstructions_H4BHYpL_TLbysI7QW80ex">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Blue Tag Work Instructions SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Blue Tag Work Instructions</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent_p5_</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

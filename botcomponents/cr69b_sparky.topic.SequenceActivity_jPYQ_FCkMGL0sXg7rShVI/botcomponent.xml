@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.SequenceActivity_jPYQ_FCkMGL0sXg7rShVI">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Sequence Activity SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Sequence Activity</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent_p5_</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

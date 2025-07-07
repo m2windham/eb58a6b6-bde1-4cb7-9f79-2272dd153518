@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="2cbae3d3-9151-4ccb-a0d2-14000d4794ea">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.C9moot6L</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Standard Work",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Standard%20Work",
+      "driveId": "",
+      "itemId": "01S3URPTDDRI6KMBBCRBGYBQ7KT2F73F4N",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>StandardWork_2gOxncW5AsbUxl9hvBgIs</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

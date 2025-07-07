@@ -1,0 +1,9 @@
+kind: GptComponentMetadata
+instructions:
+gptCapabilities:
+  webBrowsing: true
+  codeInterpreter: false
+
+aISettings:
+  model:
+    kind: CurrentModels

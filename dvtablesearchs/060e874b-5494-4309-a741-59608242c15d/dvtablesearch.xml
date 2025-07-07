@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="060e874b-5494-4309-a741-59608242c15d">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.C9moot6L</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Std Work Audits",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Std%20Work%20Audits",
+      "driveId": "",
+      "itemId": "01S3URPTHWM4GBNUA4RVGJ4O3EJQXMQIZB",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>StdWorkAudits_EBdU1iVk6jtwgF8ko5Ait</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

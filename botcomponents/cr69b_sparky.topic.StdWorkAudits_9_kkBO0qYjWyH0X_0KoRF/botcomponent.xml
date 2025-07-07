@@ -1,0 +1,14 @@
+<botcomponent schemaname="cr69b_sparky.topic.StdWorkAudits_9_kkBO0qYjWyH0X_0KoRF">
+  <componenttype>16</componenttype>
+  <description>This knowledge source provides information found in Std Work Audits SharePoint.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Std Work Audits</name>
+  <parentbotcomponentid>
+    <schemaname>cr69b_sparky.agent.Agent_p5_</schemaname>
+  </parentbotcomponentid>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

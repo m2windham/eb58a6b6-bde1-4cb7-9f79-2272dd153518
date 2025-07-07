@@ -1,0 +1,9 @@
+kind: AgentDialog
+beginDialog:
+  kind: OnToolSelected
+  id: main
+  description: Standard Work and Work instruction Expert
+
+settings: {}
+inputType: {}
+outputType: {}

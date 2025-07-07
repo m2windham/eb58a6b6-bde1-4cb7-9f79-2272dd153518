@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="843b90ba-ef2c-4795-bbef-a87bffd1291e">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Vendor - Stamping Defects",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Vendor%20-%20Stamping%20Defects",
+      "driveId": "",
+      "itemId": "01S3URPTD4FLWGJS6ZXVEKX3FPBXEGIN2J",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>VendorStampingDefects_c3QGSmETyL4VlwIsNvrAp</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

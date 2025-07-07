@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="56c4782a-b6e3-4760-8a7a-dec43e92bbad">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.C9moot6L</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Blue Tag Work Instructions",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Blue%20Tag%20Work%20Instructions",
+      "driveId": "",
+      "itemId": "01S3URPTG4NNEAZU6VYVFIDXGZYILPXSRD",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>BlueTagWorkInstructions_K9g7CV3DyuaPjvtGUMQBB</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

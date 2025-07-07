@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="c08a9476-1b6a-46af-90fe-0f73110ba57e">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Sequence Activity",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Sequence%20Activity",
+      "driveId": "",
+      "itemId": "01S3URPTETWJVNMFPHWJFZNWQSERO6PIP2",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>SequenceActivity_vcfGih6cHKh0LeO1gfA6o</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

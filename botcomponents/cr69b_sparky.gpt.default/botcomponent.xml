@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr69b_sparky.gpt.default">
+  <componenttype>15</componenttype>
+  <description>Sparky is your Zone 3 expert. Trained on all standard work, work instructions, abnormality, flowout, etc... Sparky has it all.</description>
+  <iscustomizable>0</iscustomizable>
+  <name>Sparky</name>
+  <parentbotid>
+    <schemaname>cr69b_sparky</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

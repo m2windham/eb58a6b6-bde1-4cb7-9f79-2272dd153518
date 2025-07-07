@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="e666d7c5-87be-436e-86b5-7baa3ae35e13">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.QIoZp3vO</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "Safety Focus Time",
+      "webUrl": "https://apmmtab-my.sharepoint.com/personal/dwindham_apmm-tab_com/Lists/Safety%20Focus%20Time",
+      "driveId": "",
+      "itemId": "a8974069-0982-420c-bffc-48ed0255488e",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "5c27a919-9e63-402f-bd4e-82baf98ec0c4",
+        "listId": "a8974069-0982-420c-bffc-48ed0255488e",
+        "siteId": "cd84b151-aa0a-42de-9f4e-721cbe49a41e",
+        "siteUrl": "https://apmmtab-my.sharepoint.com/personal/dwindham_apmm-tab_com"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>SafetyFocusTime_G1xHyPU4hnhpNaYGuEwOh</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>

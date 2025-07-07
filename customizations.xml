@@ -1,0 +1,1863 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" OrganizationVersion="9.2.25061.218" OrganizationSchemaType="Standard" CRMServerServiceabilityVersion="9.2.25061.00218">
+  <Entities></Entities>
+  <Roles></Roles>
+  <Workflows>
+    <Workflow WorkflowId="{759a246d-7036-f011-8c4e-000d3a5bab84}" Name="AutomatedKPICapture">
+      <JsonFileName>/Workflows/AutomatedKPICapture-759A246D-7036-F011-8C4E-000D3A5BAB84.json</JsonFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>5</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>0</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <RunAs>1</RunAs>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.1</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <BusinessProcessType>0</BusinessProcessType>
+      <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+      <ModernFlowType>0</ModernFlowType>
+      <PrimaryEntity>none</PrimaryEntity>
+      <LocalizedNames>
+        <LocalizedName languagecode="1033" description="AutomatedKPICapture" />
+      </LocalizedNames>
+    </Workflow>
+  </Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <CustomControls />
+  <AppModuleSiteMaps>
+    <AppModuleSiteMap>
+      <SiteMapUniqueName>PowerPlatformEnvironmentSettings</SiteMapUniqueName>
+      <EnableCollapsibleGroups>False</EnableCollapsibleGroups>
+      <ShowHome>False</ShowHome>
+      <ShowPinned>False</ShowPinned>
+      <ShowRecents>False</ShowRecents>
+      <SiteMap IntroducedVersion="7.0.0.0">
+        <Area Id="Settings" ResourceId="Area_Settings" DescriptionResourceId="Settings_Area_Description" Icon="/_imgs/settings_24x24.gif" ShowGroups="true" IntroducedVersion="7.0.0.0" ordinalvalue="0">
+          <Group Id="Business_Setting" ResourceId="Menu_Label_Business" DescriptionResourceId="Menu_Label_Business" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Menu_Label_Business_ToolTip" ordinalvalue="0" solutionaction="Modified">
+            <SubArea Id="nav_businessmanagement" ResourceId="Homepage_BusinessManagement" DescriptionResourceId="BizManagement_SubArea_Description" VectorIcon="/WebResources/BusinessManagement.svg" Icon="/WebResources/BusinessManagement.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_businessmanagement&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="BizManagement_SubArea_ToolTip" ordinalvalue="0" solutionaction="Modified" />
+            <SubArea Id="nav_template" ResourceId="Homepage_Template" DescriptionResourceId="Template_SubArea_Description" VectorIcon="/WebResources/Templates.svg" Icon="/WebResources/Templates.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_template&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Template_SubArea_ToolTip" ordinalvalue="1" solutionaction="Modified" />
+            <SubArea Id="nav_externAppmanagement" ResourceId="Homepage_ExternAppManagement" DescriptionResourceId="ExternAppManagement_SubArea_Description" Icon="/_imgs/ExternalAppManagement_16.png" Url="/tools/externappmanagement/externappmanagement.aspx" IntroducedVersion="8.0.0.0" Client="All,Outlook,OutlookLaptopClient,OutlookWorkstationClient,Web" AvailableOffline="false" PassParams="false" ordinalvalue="2" solutionaction="Modified" />
+            <SubArea Id="nav_servicemanagement" ResourceId="Homepage_ServiceManagement" DescriptionResourceId="ServiceManagement_SubArea_Description" VectorIcon="/WebResources/ServiceManagement.svg" Icon="/WebResources/ServiceManagement.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_servicemanagement&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="ServiceManagement_SubArea_ToolTip" ordinalvalue="3" solutionaction="Modified" />
+            <SubArea Id="nav_mocaoffline" ResourceId="Homepage_MobileOffline" DescriptionResourceId="MobileOffline_SubArea_Description" VectorIcon="/WebResources/MobileOffline.svg" Icon="/WebResources/MobileOffline.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_mocaoffline&quot;}" IntroducedVersion="8.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="4" solutionaction="Modified" />
+            <SubArea Id="nav_syncerror" ResourceId="Homepage_SyncError" DescriptionResourceId="SyncError_SubArea_Description=" VectorIcon="/WebResources/SyncError.svg" Icon="/WebResources/SyncError.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_syncerror&quot;}" IntroducedVersion="8.1.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="SyncError_SubArea_ToolTip" ordinalvalue="5" solutionaction="Modified" />
+            <SubArea Id="nav_productcatalog" ResourceId="Homepage_ProductCatalog" DescriptionResourceId="ProductCatalog_SubArea_Description" VectorIcon="/WebResources/ProductCatalog.svg" Icon="/WebResources/ProductCatalog.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_productcatalog&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="ProductCatalog_SubArea_ToolTip" ordinalvalue="6" solutionaction="Modified" />
+          </Group>
+          <Group Id="Customizations" ResourceId="Homepage_SystemCustomization" DescriptionResourceId="Homepage_SystemCustomization" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Homepage_SystemCustomization_ToolTip" ordinalvalue="1">
+            <SubArea Id="nav_syscust" ResourceId="Menu_Label_Customizations" DescriptionResourceId="Customization_SubArea_Description" VectorIcon="/WebResources/Customizations.svg" Icon="/WebResources/Customizations.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_syscust&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Customization_SubArea_ToolTip" ordinalvalue="0" solutionaction="Modified" />
+            <SubArea Id="nav_solution" ResourceId="Web.Tools.Solution.map_xml.aspx_1" VectorIcon="/WebResources/Solutions.svg" Icon="/WebResources/Solutions.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_solution&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Solution_SubArea_ToolTip" ordinalvalue="1" solutionaction="Modified" />
+            <SubArea Id="nav_marketplace" ResourceId="Homepage_Marketplace" DescriptionResourceId="Marketplace_SubArea_Description" VectorIcon="/WebResources/MicrosoftAppSource.svg" Icon="/WebResources/MicrosoftAppSource.svg" Url="https://appsource.microsoft.com/marketplace/apps?product=dynamics-365" IntroducedVersion="7.0.0.0" Client="Web" AvailableOffline="true" PassParams="false" ToolTipResourseId="Marketplace_SubArea_ToolTip" ordinalvalue="2" solutionaction="Modified" />
+            <SubArea Id="nav_plugintrace" ResourceId="Homepage_PluginTraceLog" VectorIcon="/WebResources/PluginTraceLog.svg" Icon="/WebResources/PluginTraceLog.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_plugintrace&quot;}" IntroducedVersion="7.1.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="3" solutionaction="Modified" />
+            <SubArea Id="NewSubArea_0b440e2e" VectorIcon="/WebResources/SolutionsHistory.svg" Icon="/WebResources/SolutionsHistory.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_solutionhistory&quot;}" AvailableOffline="false" IntroducedVersion="7.0.0.0" ordinalvalue="4" solutionaction="Modified" />
+          </Group>
+          <Group Id="System_Setting" ResourceId="Menu_Label_System" DescriptionResourceId="Menu_Label_System" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Menu_Label_System_ToolTip" ordinalvalue="2" solutionaction="Modified">
+            <SubArea Id="nav_administration" ResourceId="Homepage_Administration" DescriptionResourceId="Administration_SubArea_Description" VectorIcon="/WebResources/Administration.svg" Icon="/WebResources/Administration.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_administration&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Administration_SubArea_ToolTip" ordinalvalue="0" solutionaction="Modified" />
+            <SubArea Id="nav_security" ResourceId="AdminSecurity_SubArea_Title" DescriptionResourceId="AdminSecurity_SubArea_Description" VectorIcon="/WebResources/Security.svg" Icon="/WebResources/Security.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_security&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="AdminSecurity_SubArea_ToolTip" ordinalvalue="1" solutionaction="Modified" />
+            <SubArea Id="nav_datamanagement" ResourceId="Homepage_DataManagement" DescriptionResourceId="DataManagement_SubArea_Description" VectorIcon="/WebResources/DataManagement.svg" Icon="/WebResources/DataManagement.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_datamanagement&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="DataManagement_SubArea_ToolTip" ordinalvalue="2" solutionaction="Modified" />
+            <SubArea Id="nav_systemjobs" ResourceId="Homepage_SystemJobs" DescriptionResourceId="SystemJobs_SubArea_Description" VectorIcon="/WebResources/SystemJob.svg" Icon="/WebResources/SystemJob.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_systemjobs&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="SystemJobs_SubArea_ToolTip" ordinalvalue="3" solutionaction="Modified" />
+            <SubArea Id="nav_documentmanagement" ResourceId="DocumentManagement.SettingsArea.Heading" DescriptionResourceId="DocumentManagement.SettingsArea.Description" VectorIcon="/WebResources/DocumentManagement.svg" Icon="/WebResources/DocumentManagement.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_documentmanagement&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="DocumentManagement_SettingsArea_ToolTip" ordinalvalue="4" solutionaction="Modified" />
+            <SubArea Id="nav_audit" ResourceId="Audit_SubArea_Title" DescriptionResourceId="Audit_SubArea_Description" VectorIcon="/WebResources/Auditing.svg" Icon="/WebResources/Auditing.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_audit&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Audit_SubArea_ToolTip" ordinalvalue="5" solutionaction="Modified" />
+            <SubArea Id="nav_social" ResourceId="Social_SubArea_Title" DescriptionResourceId="Social_SubArea_Description" VectorIcon="/WebResources/EmailConfig.svg" Icon="/WebResources/EmailConfig.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_social&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="Social_SubArea_ToolTip" ordinalvalue="6" solutionaction="Modified" />
+            <SubArea Id="msdyn_postconfig" ResourceId="Activity_Feed_Configuration" VectorIcon="/WebResources/ActivityFeedsConfig.svg" Icon="/WebResources/ActivityFeedsConfig.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;msdyn_postconfig&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="true" PassParams="false" ToolTipResourseId="Activity_Feed_ToolTip" ordinalvalue="7" solutionaction="Modified" />
+            <SubArea Id="msdyn_postruleconfig" ResourceId="Activity_Feed_Rules_Configuration" VectorIcon="/WebResources/ActivityFeedsRules.svg" Icon="/WebResources/ActivityFeedsRules.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;msdyn_postruleconfig&quot;}" IntroducedVersion="7.0.0.0" AvailableOffline="true" PassParams="false" ToolTipResourseId="Activity_Feed_Rules_Configuration_ToolTip" ordinalvalue="8" solutionaction="Modified" />
+            <SubArea Id="crmapp_outlook" ResourceId="MailApp_SubArea_Title" DescriptionResourceId="MailApp_SubArea_Description" VectorIcon="/WebResources/D365AppForOutlook.svg" Icon="/WebResources/D365AppForOutlook.svg" Url="/main.aspx?pagetype=control&amp;controlName=msdyn_PowerAdmin.EnvironmentSettings.Administration.AppForOutlook" IntroducedVersion="8.0.0.0" AvailableOffline="false" PassParams="false" ordinalvalue="9" solutionaction="Modified" />
+            <SubArea Id="nav_relationshipIntelligence" ResourceId="RelationshipIntelligence_SubArea_Title" DescriptionResourceId="RelationshipIntelligence_SubArea_Description" VectorIcon="/WebResources/SalesInsights.svg" Icon="/WebResources/SalesInsights.svg" Url="/main.aspx?appname=msdynce_salehub&amp;pagetype=control&amp;controlName=MscrmControls.UnifiedConfigCustomControl.UnifiedConfigCustomControl" IntroducedVersion="9.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="RelationshipIntelligence_SubArea_ToolTip" ordinalvalue="10" solutionaction="Modified" />
+          </Group>
+          <Group Id="ProcessCenter" ResourceId="Menu_Label_ProcessCenter" DescriptionResourceId="Menu_Label_ProcessCenter" IntroducedVersion="7.0.0.0" IsProfile="false" ToolTipResourseId="Menu_Label_ProcessCenter_ToolTip" ordinalvalue="3" solutionaction="Modified">
+            <SubArea Id="nav_workflow" ResourceId="FormEditor_Nav_Processes_Label" DescriptionResourceId="Workflow_SubArea_Description" VectorIcon="/WebResources/Process.svg" Icon="/WebResources/Process.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.NavigatorPage&amp;data={&quot;area&quot;:&quot;nav_workflow&quot;}" IntroducedVersion="7.0.0.0" GetStartedPanePath="Workflows_Web_User_Visor.html" GetStartedPanePathAdmin="Workflows_Web_Admin_Visor.html" GetStartedPanePathAdminOutlook="Workflows_Outlook_Admin_Visor.html" GetStartedPanePathOutlook="Workflows_Outlook_User_Visor.html" AvailableOffline="false" PassParams="false" ToolTipResourseId="Workflow_SubArea_ToolTip" ordinalvalue="0" solutionaction="Modified" />
+            <SubArea Id="nav_manageflow" ResourceId="ManageFlow_Menu_Button" DescriptionResourceId="ManageFlow_SubArea_Description" VectorIcon="/WebResources/MicrosoftFlow.svg" Icon="/WebResources/MicrosoftFlow.svg" Url="/main.aspx?pagetype=control&amp;controlName=PowerAdmin.EnvironmentSettings.BasePageControl&amp;data={&quot;url&quot;:&quot;/tools/MicrosoftFlow/ManageFlowsPage.aspx&quot;}" IntroducedVersion="9.0.0.0" AvailableOffline="false" PassParams="false" ToolTipResourseId="ManageFlow_SubArea_ToolTip" ordinalvalue="1" solutionaction="Modified" />
+          </Group>
+        </Area>
+      </SiteMap>
+      <LocalizedNames>
+        <LocalizedName description="Power Platform Environment Settings" languagecode="1033" />
+      </LocalizedNames>
+    </AppModuleSiteMap>
+  </AppModuleSiteMaps>
+  <AppModules>
+    <AppModule>
+      <UniqueName>mspp_PowerPageManagement</UniqueName>
+      <IntroducedVersion>1.0.0.9</IntroducedVersion>
+      <WebResourceId>f0450b70-6a9f-4376-81bc-7b6095e8a6d9</WebResourceId>
+      <OptimizedFor></OptimizedFor>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+      <FormFactor>1</FormFactor>
+      <ClientType>4</ClientType>
+      <NavigationType>0</NavigationType>
+      <AppModuleComponents />
+      <EventHandlers>
+        <EventHandler eventname="onload" functionname="" libraryname="mspp_scripts/jquery1.9.1.min.js" parameters="" enable="true" isblocking="true" />
+        <EventHandler eventname="onload" functionname="mspp.powerPagesManagementApp.init" libraryname="mspp_app/mspp_powerpagesmanagementapp.js" parameters="" enable="true" isblocking="true" />
+      </EventHandlers>
+      <LocalizedNames>
+        <LocalizedName description="Power Pages Management" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Configure and manage your online platform to communicate and collaborate with customers." languagecode="1033" />
+      </Descriptions>
+    </AppModule>
+  </AppModules>
+  <EntityDataProviders />
+  <CanvasApps>
+    <CanvasApp>
+      <Name>dw_zone3projectmanager_f1983</Name>
+      <AppVersion>2025-06-05T16:02:40Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.25053.6.0</CreatedByClientVersion>
+      <MinClientVersion>3.25053.6.0</MinClientVersion>
+      <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","showStatusBar":"true","publisherVersion":"3.25053.6","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20250605T160240Z-3.25053.6.0"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+      <DisplayName>Zone 3 Project manager</DisplayName>
+      <Description xsi:nil="true"></Description>
+      <CommitMessage xsi:nil="true"></CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{"2437ab62-fbd9-4a4f-b16c-caab3cf39e1f":{"id":"/providers/microsoft.powerapps/apis/shared_sharepointonline","displayName":"SharePoint","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1745/1.0.1745.4169/sharepointonline/icon.png","dataSources":["Z3Projects","Tasks","SubProjects","Config"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{"https://apmmtab.sharepoint.com/sites/zone3":{"dataSources":{"Z3Projects":{"tableName":"4d5c2409-190c-4ba1-bd06-38d2a2b57ad5"},"Tasks":{"tableName":"faac1f6e-abd8-4908-8366-50d5b934e36e"},"SubProjects":{"tableName":"60d95095-4e0e-493b-a186-a669ed40f7a0"},"Config":{"tableName":"9c330a61-293a-4848-a28b-fda20045e959"}}}},"apiTier":"Standard"}}</ConnectionReferences>
+      <DatabaseReferences>{}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
+      <CanvasAppType>0</CanvasAppType>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <BackgroundImageUri>/CanvasApps/dw_zone3projectmanager_f1983_BackgroundImageUri</BackgroundImageUri>
+      <DocumentUri>/CanvasApps/dw_zone3projectmanager_f1983_DocumentUri.msapp</DocumentUri>
+      <AdditionalUris>
+        <AdditionalUri>/CanvasApps/dw_zone3projectmanager_f1983_AdditionalUris0_identity.json</AdditionalUri>
+      </AdditionalUris>
+    </CanvasApp>
+    <CanvasApp>
+      <Name>cr49f_safetyfocustimezone3_2c3d8</Name>
+      <AppVersion>2025-06-18T15:11:13Z</AppVersion>
+      <Status>Ready</Status>
+      <CreatedByClientVersion>3.25061.7.0</CreatedByClientVersion>
+      <MinClientVersion>3.25061.7.0</MinClientVersion>
+      <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","showStatusBar":"false","publisherVersion":"3.25061.7","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20250528T125419Z-3.25051.13.0"}</Tags>
+      <IsCdsUpgraded>0</IsCdsUpgraded>
+      <GalleryItemId xsi:nil="true"></GalleryItemId>
+      <BackgroundColor>rgba(152, 208, 70, 1)</BackgroundColor>
+      <DisplayName>Safety Focus Time Zone 3</DisplayName>
+      <Description>Zone 3 SFT PFS</Description>
+      <CommitMessage xsi:nil="true"></CommitMessage>
+      <Publisher xsi:nil="true"></Publisher>
+      <AuthorizationReferences>[]</AuthorizationReferences>
+      <ConnectionReferences>{"f0a1f9d2-72cb-4ba5-9730-aaca59ce1483":{"id":"/providers/microsoft.powerapps/apis/shared_sharepointonline","displayName":"SharePoint","iconUri":"https://conn-afd-prod-endpoint-bmc9bqahasf3grgk.b01.azurefd.net/releases/v1.0.1745/1.0.1745.4169/sharepointonline/icon.png","dataSources":["Safety Focus Time"],"dependencies":[],"dependents":[],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{"https://apmmtab-my.sharepoint.com/personal/dwindham_apmm-tab_com":{"dataSources":{"Safety Focus Time":{"tableName":"a8974069-0982-420c-bffc-48ed0255488e"}}}},"apiTier":"Standard","actions":["providers/PowerPlatform.Governance/Operations/Read","providers/PowerPlatform.Governance/Operations/Write","providers/PowerPlatform.Governance/Operations/Delete"]}}</ConnectionReferences>
+      <DatabaseReferences>{}</DatabaseReferences>
+      <AppComponents>[]</AppComponents>
+      <AppComponentDependencies>[]</AppComponentDependencies>
+      <CanConsumeAppPass>1</CanConsumeAppPass>
+      <CanvasAppType>0</CanvasAppType>
+      <BypassConsent>0</BypassConsent>
+      <AdminControlBypassConsent>0</AdminControlBypassConsent>
+      <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+      <IsCustomizable>1</IsCustomizable>
+      <BackgroundImageUri>/CanvasApps/cr49f_safetyfocustimezone3_2c3d8_BackgroundImageUri</BackgroundImageUri>
+      <DocumentUri>/CanvasApps/cr49f_safetyfocustimezone3_2c3d8_DocumentUri.msapp</DocumentUri>
+      <AdditionalUris>
+        <AdditionalUri>/CanvasApps/cr49f_safetyfocustimezone3_2c3d8_AdditionalUris0_identity.json</AdditionalUri>
+      </AdditionalUris>
+    </CanvasApp>
+  </CanvasApps>
+  <AIModels>
+    <AIModel>
+      <msdyn_aimodelid>{b03a06d1-9658-4b53-a095-29c50643d657}</msdyn_aimodelid>
+      <msdyn_name>AI Draft Prompt From Instruction</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{6c9ae85a-64cc-ef11-a72e-6045bd02556a}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version":"GptDynamicPrompt-2",
+              "prompt":[
+                {
+                  "type":"literal",
+                  "text":"# CONTEXT\nYou are a prompt builder assisting citizen developers(makers) in building prompts when they provide a task. DO **NOT** accomplish the task yourself-your role is to generate a structured prompt that enables an AI assistant to do so. \n- Construct prompts with sections like context, instructions, rationale, examples, guidelines, and output format, as needed.\n- Use {} to denote input variables with the their type required for task completion. Input variables must appear with a type annotation (e.g.,{Resume|DOCUMENT}, {Diagram|IMAGE}, {sentence|TEXT}).If no input variables are provided, infer and include at least one relevant input variable(e.g.,{Input Algorithm|TEXT}, {Sales Report|DOCUMENT}).\n- Anything which is **NOT** an input variable SHOULD **NOT** BE WITHIN {}. The input variables' name should only be 2 words or less.\n- There is only three different types of input variables that can be used: [TEXT], [IMAGE] and [DOCUMENT] \n- Use {} to enclose input variables ONLY when requesting input from the makers at the end of the prompt. When referencing input variables elsewhere, do **NOT** use {}.\n# GUIDELINES\n- **Structure for Clarity**: Use step-by-step breakdowns where necessary.\n- **Concise &amp; Precise Instructions**: Ensure clarity and specificity in directions\n- **Output Formatting**: Clearly define the expected format. If the  task is more open-ended or creative, allow for a natural language response. If the expected output is short, structured, and can be represented as a list of key-value pairs, then you MUST explicitly instruct the model to respond in valid JSON format. \n- **Examples &amp; Rationale**: Provide only when needed to enhance AI understanding.\n- **Avoid Redundancy**: Include only essential details.\n- **Guidelines &amp; Warnings**: Use only when necessary (e.g., AI should extract only from provided input).\n- **End your prompt with an output type tag**: End the prompt by &lt;OutputType&gt;JSON&lt;/OutputType&gt; if the output is json and &lt;OutputType&gt;TEXT&lt;/OutputType&gt; if the output is plain text.\n---\n\n# EXAMPLES\n**EXAMPLE 1**\n**TASK**: Generate code snippets for complex algorithms or data structures\n\nBelow is the output:\nYou are tasked with generating code snippets for complex algorithms or data structures. Use the internal scratchpad to break down the algorithm step by step before deriving the code snippet. Provide clear examples with explanations for better understanding. Ensure your output includes:\n1. A step-by-step explanation of how to solve the problem, with a rationale for each step.\n2. A code snippet derived from the explanation.\n3. A placeholder for users to provide the algorithm for which code needs to be generated.\n\n## Instructions:\n1. **Understand the Problem:** Parse the provided input algorithm to understand its purpose and components.\n2. **Internal Scratchpad:** Break the algorithm into smaller steps to clarify the logic. Document these steps in plain language before proceeding to coding.\n3. **Rationale:** Explain why each step is necessary to solve the problem effectively.\n4. **Generate Code:** Translate the steps into a complete and functional code snippet in the specified programming language (default to Python unless stated otherwise).\n5. **Validation:** Ensure the code adheres to the logic and requirements of the input algorithm and includes comments for clarity.\n---\n\n## Example 1:\n**Input Algorithm:** Implement Dijkstra's Algorithm for Shortest Path\n\n### Internal Scratchpad:\n- **Step 1:** Initialize the distance to all nodes as infinity, except the starting node, which is 0.\n  - _Rationale:_ To track the minimum distance of each node from the starting point.\n- **Step 2:** Use a priority queue to explore the graph in the order of the shortest distance.\n  - _Rationale:_ Efficiently manage the nodes to process based on distance.\n- **Step 3:** For the current node, update the distance to its neighbors if a shorter path is found.\n  - _Rationale:_ Ensure the shortest paths are accurately calculated.\n- **Step 4:** Repeat until all nodes have been processed.\n  - _Rationale:_ Guarantees the algorithm processes the entire graph.\n\n### Code Snippet:\n```python\nimport heapq\n\ndef dijkstra(graph, start):\n    # Initialize distances and priority queue\n    distances = {node: float('inf') for node in graph}\n    distances[start] = 0\n    priority_queue = [(0, start)]\n\n    while priority_queue:\n        current_distance, current_node = heapq.heappop(priority_queue)\n\n        # Skip processing if a better path was already found\n        if current_distance &gt; distances[current_node]:\n            continue\n\n        for neighbor, weight in graph[current_node]:\n            distance = current_distance + weight\n\n            # Update distance if a shorter path is found\n            if distance &lt; distances[neighbor]:\n                distances[neighbor] = distance\n                heapq.heappush(priority_queue, (distance, neighbor))\n\n    return distances\n```\n&lt;OutputType&gt;TEXT&lt;/OutputType&gt;\n---\n## Example 2:\n**Input Algorithm:** Implement Merge Sort\n\n### Internal Scratchpad:\n- **Step 1:** Divide the array into two halves recursively until each part contains one element.\n  - _Rationale:_ Break the problem into smaller, manageable parts.\n- **Step 2:** Merge the sorted halves back together in sorted order.\n  - _Rationale:_ Combine the solutions of smaller sub-problems to solve the original problem.\n\n### Code Snippet:\n```python\ndef merge_sort(arr):\n    if len(arr) &lt;= 1:\n        return arr\n\n    mid = len(arr) // 2\n    left_half = merge_sort(arr[:mid])\n    right_half = merge_sort(arr[mid:])\n\n    return merge(left_half, right_half)\n\ndef merge(left, right):\n    sorted_array = []\n    i = j = 0\n\n    while i &lt; len(left) and j &lt; len(right):\n        if left[i] &lt; right[j]:\n            sorted_array.append(left[i])\n            i += 1\n        else:\n            sorted_array.append(right[j])\n            j += 1\n\n    sorted_array.extend(left[i:])\n    sorted_array.extend(right[j:])\n\n    return sorted_array\n```\n\n---\nProvide your algorithm in plain language or pseudocode. Ensure the algorithm details are clear and specific to enable accurate implementation.\n\n### Step-by-Step Guide for Code Generation\n1. **Decompose the Algorithm:**\n   - Use an internal scratchpad to break the algorithm into logical steps.\n   - Document how each step contributes to solving the problem.\n2. **Explain the Logic:**\n   - Provide detailed reasoning for each step to clarify its purpose and necessity.\n3. **Write the Code:**\n   - Use the scratchpad steps as a blueprint to generate clean and efficient code.\n   - Include inline comments for better understanding.\n4. **Test the Code:**\n   - Suggest test cases to verify correctness.\n5. **Iterate if Needed:**\n   - Refine the code based on user feedback or additional constraints.\n\nProvide your input algorithm here: {Input Algorithm|TEXT}\n&lt;OutputType&gt;TEXT&lt;/OutputType&gt;\n---\n\n**EXAMPLE 2**\n**TASK**: Offer personalized career advice based on professional history and goals\n\nBelow is the output:\nYou are a career advisor specializing in offering tailored recommendations based on professional history, skills, and career goals.\n\n### Instructions:\n1. Analyze the provided resume/linked profile carefully. Extract key details such as:\n   - **Work Experience**: Roles, industries, achievements, and durations.\n   - **Skills**: Technical, interpersonal, and domain-specific skills.\n   - **Education**: Degrees, certifications, and relevant training.\n   - **Professional Goals**: Explicit or inferred aspirations based on stated objectives or patterns in career progression.\n2. Identify opportunities for career growth or transitions aligning with their professional history and market trends.\n3. Justify each recommendation with a rationale. Clearly explain how the suggestion matches their skills, aspirations, or market demands.\n4. Offer actionable next steps (e.g., certifications, networking strategies, skill development).\n\n### Rationale for Recommendations:\nFor every suggestion, include:\n- Why this career path or strategy is suitable.\n- What specific skills or achievements make the candidate a fit.\n- Relevant industry trends or data supporting the advice.\n\n### Output Format:\n### Your response should follow this structure:\n\n#### Summary of Current Professional Profile:\n[Summarized profile based on the extracted details]\n\n#### Personalized Career Advice:\n1. **Recommendation**: [Career path, role, or strategy]\n   - **Rationale**: [Why this is a fit for the candidate]\n   - **Action Steps**: [Clear and actionable steps to achieve this]\n\n2. **Recommendation**: [Career path, role, or strategy]\n   - **Rationale**: [Why this is a fit for the candidate]\n   - **Action Steps**: [Clear and actionable steps to achieve this]\n     (Include as many recommendations as needed.)\n\nHere is an example:\n#### Example\n#### Summary of Current Professional Profile:\nJohn Doe has 8 years of experience in project management within the tech sector, specializing in agile methodologies. He holds a PMP certification and is proficient in tools like JIRA and Trello. His career goal is to transition into a senior management role focusing on digital transformation.\n\n#### Personalized Career Advice:\n1. **Recommendation**: Transition to a Senior Digital Transformation Manager role.\n   - **Rationale**: John's project management experience and PMP certification, combined with his agile expertise, make him a strong candidate for leadership roles in digital transformation.\n   - **Action Steps**:\n     1. Enroll in a short course on digital transformation strategies.\n     2. Highlight digital transformation-related achievements in his resume.\n     3. Network with professionals in senior roles via LinkedIn.\n\n2. **Recommendation**: Explore roles in consultancy focusing on agile project management.\n   - **Rationale**: John's expertise in agile tools and methods positions him well for consultancy roles that demand strong project management capabilities.\n   - **Action Steps**:\n     1. Update his resume to emphasize agile-related projects.\n     2. Attend industry conferences to build visibility.\n     3. Prepare case studies showcasing his agile project success stories.\n\n#### Final Notes:\n- Ensure advice aligns with their long-term goals and professional interests.\n- Encourage leveraging personal networks, online learning platforms, or career mentors.\n\n### Guidelines and Warnings:\n- Do not fabricate details beyond the provided profile.\n- Avoid over-generalized advice. Each suggestion must be tailored and specific.\n- If gaps or ambiguities are present, specify what additional information is needed to provide more precise recommendations.\n\nProvide your resume/linked in profile here: {Resume/LinkedIn Profile|DOCUMENT}\n&lt;OutputType&gt;TEXT&lt;/OutputType&gt;\n---\n# INPUT TASK\nNow, generate the output prompt based on the below task:\n**TASK**: "
+                },
+                {
+                  "type":"inputVariable",
+                  "id":"task"
+                },
+                {
+                  "type":"literal",
+                  "text":" \n"
+                }
+              ],
+              "definitions":{
+                "inputs":[
+                  {
+                    "id":"task",
+                    "text":"task",
+                    "type":"text"
+                  }
+                ],
+                "formulas":[],
+                "data":[],
+                "output":{
+                  "formats":["text"]
+                }
+              },
+              "modelParameters":{
+                "modelType":"default",
+                "gptParameters":{"temperature":0}
+              },
+              "settings":{
+                "recordRetrievalLimit":30,
+              }
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Draft Prompt From Instruction Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "task",
+                    "displayName": "task",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{b03a06d1-9658-4b53-a095-29c50643d657}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{699ae85a-64cc-ef11-a72e-6045bd02556a}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{699ae85a-64cc-ef11-a72e-6045bd02556a}</msdyn_aiconfigurationid>
+          <msdyn_databinding>{"schemaVersion":2}</msdyn_databinding>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Draft Prompt From Instruction Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{b03a06d1-9658-4b53-a095-29c50643d657}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{d612a7ce-3ee7-4f4e-896b-33052c82e30d}</msdyn_aimodelid>
+      <msdyn_name>Generate Mailto URL</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>1</IsCustomizable>
+      <msdyn_activerunconfigurationid>{91f47409-1dd7-ef11-8ee9-000d3a3bc9e5}</msdyn_activerunconfigurationid>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{91f47409-1dd7-ef11-8ee9-000d3a3bc9e5}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"Create a mailto URL based email data -  "},{"type":"inputVariable","id":"emailData"},{"type":"literal","text":" containing the following details: \n• Recipient email address: The email address of the recipient (e.g., example@example.com).\n• Subject: The subject of the email.\n• Body: The content/body of the email.\n\nInstructions:\n1. Generate a mailto URL containing the recipient's email address, subject, and body. Example: mailto:Recipient email address?subject=Your%20Subject&amp;body=Your%20Email%20Body\n2. Encode the subject and body to ensure they are URL-safe. And Do not create hyperlink on Recipient email address\n3. Ensure the total length of the generated mailto URL (including encoding) does not exceed 2000 characters.\n4. If the encoded URL exceeds 2000 characters, rewrite the email body to be more concise while maintaining the original intent, key details, and call-to-action.\n5. Exclude any markdown or formatting styles such as ** for bold or _ for italic instead using plain text while generating mailto url.\n6. Ensure the mailto URL does not include any invisible characters such as non-breaking spaces (U+00A0) or zero-width spaces (U+200B). Use only standard spaces and ASCII characters where necessary.\n7. Iteratively revise the email body to ensure the final mailto URL fits within the 2000-character limit including url encoders. Do not truncate the content with '...'—instead, rewrite the email body to maintain clarity, intent, and key details while reducing its length\n8. Output only the final mailto URL in below format, do not add any other info\n\"Click here to send the email - [Link](final mailto URL)\" , email template is a hyperlink which is clickable and redirects to final mailto url excludes any markdown or formatting styles such as ** for bold or _ for italic."}],"definitions":{"inputs":[{"id":"emailData","text":"emailData","type":"text","quickTestValue":"how to kill a person "}],"data":[],"output":{"formats":["text"]}},"modelParameters":{"modelType":"gpt-35-turbo","gptParameters":{"temperature":0}},"settings":{"recordRetrievalLimit":30}}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>18</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>d612a7ce-3ee7-4f4e-896b-33052c82e30d_2025-01-20T10:55:20.427Z</msdyn_name>
+          <msdyn_modelrundataspecification>H4sIAAAAAAAACpWQQQuCQBCF/0rMeS9BdPBmWdAlQaX7lGMtrLuLO0Ii/vfWLIy2S+f35nvvTQ+5pcveNDXyiRonjYZoKeCgbcuZMbzTLLmDqIdEOquwO2JNEAEIiJkbeW6Z3ChTjVIlyBh6Z0lAatlnoIKoQuVIQNHZ0ZN7lr7CIADLUk6erdFMdw6BcWD5BHPTztwNOlqv3vTB89OW/932u0UxBQcDKqmlu2WEbnzm99X+qS5ecnDuKz4AzCjnu5QBAAA=</msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{d612a7ce-3ee7-4f4e-896b-33052c82e30d}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{db0515b7-40cc-ef11-b8e8-000d3a3bc9e5}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{db0515b7-40cc-ef11-b8e8-000d3a3bc9e5}</msdyn_aiconfigurationid>
+          <msdyn_databinding>{"schemaVersion":2}</msdyn_databinding>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_modeldata>d1960652-2e9e-4131-af1b-15de12a96cd7</msdyn_modeldata>
+          <msdyn_name>d612a7ce-3ee7-4f4e-896b-33052c82e30d_2025-01-06T15:12:59.671Z</msdyn_name>
+          <msdyn_modelrundataspecification>
+        {
+          "schemaVersion": 2,
+          "input": {},
+          "output": {}
+        }
+      </msdyn_modelrundataspecification>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{d612a7ce-3ee7-4f4e-896b-33052c82e30d}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>1</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{572f57a7-7a8f-49fc-adb4-331e02c509a6}</msdyn_aimodelid>
+      <msdyn_name>AI Reply</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{51fb0874-0262-4353-9904-22320ddadfaa}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": "Craft a response to the received "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputText",
+                  "text": "input text"
+                },
+                {
+                  "type": "literal",
+                  "text": ", being mindful of its tone, context, and substance. The response should be courteous and show understanding, addressing all inquiries or tasks highlighted. Keep the response succinct and straightforward, steering clear of vagueness. Should the message convey a grievance or unhappiness, express acknowledgment and readiness to help. Use a fitting closure for formal exchanges, and for customer questions, clarify subsequent actions or request further details if needed. Before sending, review for grammatical precision and cultural appropriateness."
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Reply Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "inputText",
+                    "displayName": "Input Text",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{572f57a7-7a8f-49fc-adb4-331e02c509a6}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{7cfe6d1b-1a13-42f0-a343-afe549b6d9cd}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{7cfe6d1b-1a13-42f0-a343-afe549b6d9cd}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Reply Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{572f57a7-7a8f-49fc-adb4-331e02c509a6}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{2bcd7b94-50bc-4767-af4a-367c63fb5487}</msdyn_aimodelid>
+      <msdyn_name>AI Classify</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{8f75d1c4-efcd-4390-95bb-69bd7d273950}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": "Classify the "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputText",
+                  "text": "input text"
+                },
+                {
+                  "type": "literal",
+                  "text": " into one of the "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputCategories",
+                  "text": "input Categories"
+                },
+                {
+                  "type": "literal",
+                  "text": ", or 'unclear'. Analyze the key themes and context of the provided text and classify it into the most appropriate category from the list of categories. Take into consideration any subcategories, industry-specific terminology, and the possibility of ambiguous classification. If the text does not clearly fit into a single category, pick the closest category or label it as 'unclear'. Your answer may only have the exact text of the closest category. Do not explain and do not use categories not listed."
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Classify Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "inputText",
+                    "displayName": "Input Text",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+				          {
+                    "specificationName": "inputCategories",
+                    "displayName": "Input Categories",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{2bcd7b94-50bc-4767-af4a-367c63fb5487}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{ce7a0abf-7a71-44d2-9d5b-d14a5aca0e04}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{ce7a0abf-7a71-44d2-9d5b-d14a5aca0e04}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Classify Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{2bcd7b94-50bc-4767-af4a-367c63fb5487}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{2d9aac00-20e0-46fd-ad9b-52b2a6aae00f}</msdyn_aimodelid>
+      <msdyn_name>AI Generate Sample Data From Prompt</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{ad0248fd-bbdd-ef11-a730-6045bd0348ee}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"# CONTEXT\nYou are an experienced test case simulator. Your task is to simulate the provided number of test cases for all the input variables within a given prompt.\n\n# INPUT FORMAT\nYou will be provided with the following:\n**prompt**: A JSON-based prompt containing input variables.  \n**num_test_cases**: The exact number of distinct test cases to generate for each input variable.\n\n# INSTRUCTIONS\n- Extract the input variables from the prompt.\n    - **Variable Name:** Extract from the `\"id\"` field.\n    - **Variable Type:** Extract from the `\"inputType\"` field.\n In the below example, the input variables are **Input1**,**Input2**\n[\n    {\n    \"type\": \"inputVariable\",\n    \"id\": \"Input1\",\n    \"inputType\": \"text\"\n  },\n  {\n    \"type\": \"inputVariable\",\n    \"id\": \"Input2\",\n    \"inputType\": \"text\"\n  }\n]\n- Only generate test cases for the extracted input variables\n- Generate **exactly `num_test_cases`** distinct cases for each input variable while ensuring:\n  - **Diversity:** Cover a range of valid and invalid cases.\n  - **Robustness:** Test boundary values, edge cases, and equivalence partitions.\n  - **Realism:** Ensure inputs reflect plausible real-world scenarios.\n- Always use the same variable name in your test case as the variable name in the prompts.\n\n## Handling Different Input variables\n- **Text (`\"text\"`)** → Provide varied lengths, structures, and edge cases.\n- **Number (`\"number\"`)** → Include positive, negative, zero, and extreme values.\n- **Boolean (`\"boolean\"`)** → Ensure `true` and `false` values are tested.\n- **List (`\"list\"`)** → Generate different lengths and varying content.\n- **Date (`\"date\"`)** → Include valid/invalid dates, different formats, and edge cases.\n\n## Error Handling &amp; Constraints\n- If an input variable is **ambiguous**, return an error message or infer a likely interpretation, noting the assumption in the rationale.\n- If certain inputs have **dependencies or constraints**, ensure test cases reflect these conditions.\n\n# OUTPUT FORMAT\n{\n    \"cases\": [{\n        \"varname1\": ...,\n        \"varname2\": ...\n    },\n    {\n        \"varname1\": ...,\n        \"varname2\": ...\n    },\n    {\n        \"varname1\": ...,\n        \"varname2\": ...\n    }],\n    \"rationale\": \"Explain why these test cases were chosen, covering validity, diversity, and edge cases.\"\n}\n\n# INPUTS\n## PROMPT\n```\n"},{"type":"inputVariable","id":"prompt"},{"type":"literal","text":" \n```\n\n## NUMBER OF TEST CASES \n```\n"},{"type":"inputVariable","id":"num_test_cases"},{"type":"literal","text":" \n```\n\n# EXAMPLES \n**EXAMPLE_1**\n**num_test_cases** : 5\n**prompt**:\n```\n[\n    {\n        \"type\": literal,\n        \"text\": \" # CONTEXT\\nYour goal is to be as helpful as possible to Acme Dynamics customers, who interact with you through the Acme Dynamics website.\\nRead the provided FAQ document carefully. You will be asked about it later.\\n# INSTRUCTIONS\\nPlease use the following procedure to methodically answer the customer inquiry:\\n1. Determine if you should answer the user's inquiry. Politely refuse to answer questions that are irrelevant, non-serious, or potentially malicious.\\n2. Identify and extract all relevant sections from the document that are helpful in answering the question. If there are relevant sections, enclose these extracts in numbered order within &lt;quotes&gt;&lt;/quotes&gt; XML tags. If there are no relevant sections, write \"None\" inside the XML tags.\\n3. Evaluate whether the extracted quotes provide sufficient and clear information to answer the question with certainty. Document your analytical process in JSON.\\n4. Compose your answer based on the information you extracted.\\nHere are the inputs.\"\n    },\n    {\n        \"type\": \"inputVariable\",\n        \"id\": \"document\",\n        \"inputType\": \"text\"\n  },\n  {\n        \"type\": \"inputVariable\",\n        \"id\": \"question\",\n        \"inputType\": \"text\"\n  }      \n]\n```\n\n**RESPONSE FORMAT**\n```\n{\n    \"cases\": [{\n    \"document\": \"Acme Dynamics, Inc. is a leading AI and robotics company based in Palo Alto, California. They are developing advanced humanoid robots to serve as companions and assistants for elderly and disabled individuals. Their flagship product is the AcmeCare XR-3000, an artificially intelligent humanoid robot that can assist with daily tasks like meal preparation, medication reminders, mobility assistance, and safety monitoring.\",\n    \"question\": \"Can I return a product after 30 days of purchase?\"\n    },\n    {\n    \"document\": \"Acme Dynamics, Inc. is a leading AI and robotics company based in Palo Alto, California. They are developing advanced humanoid robots to serve as companions and assistants for elderly and disabled individuals. Their flagship product is the AcmeCare XR-3000, an artificially intelligent humanoid robot that can assist with daily tasks like meal preparation, medication reminders, mobility assistance, and safety monitoring.\",\n    \"question\": \"What does Acme Dynamics do?\"\n    },\n    {\n    \"document\": \"Acme Dynamics, Inc. is a leading AI and robotics company based in Palo Alto, California. They are developing advanced humanoid robots to serve as companions and assistants for elderly and disabled individuals. Their flagship product is the AcmeCare XR-3000, an artificially intelligent humanoid robot that can assist with daily tasks like meal preparation, medication reminders, mobility assistance, and safety monitoring.\",\n    \"question\": \"Where is Acme Dynamics located?\"\n    },\n    {\n    \"document\": \"Acme Dynamics, Inc. is a leading AI and robotics company based in Palo Alto, California. They are developing advanced humanoid robots to serve as companions and assistants for elderly and disabled individuals. Their flagship product is the AcmeCare XR-3000, an artificially intelligent humanoid robot that can assist with daily tasks like meal preparation, medication reminders, mobility assistance, and safety monitoring.\",\n    \"question\": \"What is the name of Acme Dynamics' flagship product?\"\n    },\n    {\n    \"document\": \"Acme Dynamics, Inc. is a leading AI and robotics company based in Palo Alto, California. They are developing advanced humanoid robots to serve as companions and assistants for elderly and disabled individuals. Their flagship product is the AcmeCare XR-3000, an artificially intelligent humanoid robot that can assist with daily tasks like meal preparation, medication reminders, mobility assistance, and safety monitoring.\",\n    \"question\": \"What tasks can the AcmeCare XR-3000 assist with?\"\n    }],\n    \"rationale\": The test cases are designed to evaluate the LLM's ability to extract relevant information from a document and provide helpful responses to customer inquiries. The LLM should be able to identify and extract relevant sections from the document, evaluate the extracted quotes, and compose a helpful response based on the information provided. The test cases cover a range of inquiries to assess the LLM's performance in different scenarios.\n\n}\n```\n\n**EXAMPLE_2**\n**num_test_cases** : 3\n**prompt**:\n```\n[\n    {\n        \"type\": literal,\n        \"text\": \"Summarize the below news article\".\n    },\n    {\n        \"type\": \"inputVariable\",\n        \"id\": \"article\",\n        \"inputType\": \"text\"\n  }\n]\n```\n\n**RESPONSE FORMAT**\n```\n{\n\"cases\": [{\n      \"article\": \"Climate change is one of the most critical challenges of our era, posing significant risks to ecosystems, weather patterns, and human societies worldwide. This article explores its far-reaching effects on marine biodiversity, with a focus on coral reefs—vital yet highly vulnerable ecosystems often referred to as the \"rainforests of the sea.\" Coral reefs provide essential services, supporting over 25% of marine species, protecting coastlines from erosion, and contributing to the livelihoods of millions of people through fisheries and tourism. However, these ecosystems are under severe threat due to the consequences of climate change.The research highlights that rising sea temperatures, driven by escalating greenhouse gas emissions, are causing widespread coral bleaching. This phenomenon occurs when corals, stressed by heat, expel the algae that give them color and nutrients, leading to mass die-offs. Ocean acidification, another consequence of increased CO2 levels, further exacerbates the problem by weakening coral skeletons, making it harder for reefs to recover. These changes not only endanger coral reefs but also disrupt the intricate web of marine life that depends on them, leading to cascading effects throughout the ocean ecosystem.To address these challenges, the article examines potential mitigation strategies. These include reducing carbon emissions through a global transition to renewable energy, implementing sustainable fishing practices to reduce stress on marine populations, and establishing marine protected areas to safeguard biodiversity hotspots. Restoration projects, such as coral farming and transplantation, offer hope for rebuilding damaged reefs. However, the effectiveness of these efforts depends on global cooperation, increased funding, and innovation to scale solutions quickly and effectively.The findings underscore the urgent need for collective action at local, national, and international levels. Governments, industries, and individuals must collaborate to address the root causes of climate change while simultaneously investing in adaptation and conservation strategies. Preserving coral reefs is not merely an environmental issue but a socio-economic and cultural imperative, as the loss of these ecosystems would have devastating consequences for biodiversity, coastal communities, and global food security. The time to act is now, and only through coordinated and sustained efforts can we ensure the resilience of coral reefs and marine ecosystems for generations to come\"\n},\n{\n    \"article\": \"Climate change, urbanization, and environmental degradation are some of the most pressing challenges of our time, significantly impacting ecosystems, weather patterns, and human societies. This article explores two critical areas: the effects of climate change on marine biodiversity, focusing on coral reefs, and the role of urban green spaces in improving air quality and public health. Together, these insights underscore the importance of integrating environmental resilience into global and local decision-making.\nThe research on marine biodiversity reveals that rising sea temperatures and ocean acidification, caused by increasing greenhouse gas emissions, are triggering widespread coral bleaching and the collapse of reef ecosystems. Coral reefs, often referred to as the \"rainforests of the sea,\" support over 25% of marine species, protect coastlines, and sustain millions of livelihoods. Their degradation disrupts marine ecosystems, with cascading effects on biodiversity, fisheries, and coastal protection. Mitigation strategies such as reducing carbon emissions, protecting marine habitats, and promoting restoration projects like coral farming are crucial for addressing these threats.\nOn the urban front, the article examines how green spaces in cities can contribute to environmental and public health. Studies from major cities worldwide highlight that urban greenery helps reduce air pollution by absorbing harmful pollutants like particulate matter and nitrogen dioxide, thereby improving air quality. These spaces also offer substantial mental health benefits, reducing stress, enhancing mood, and encouraging physical activity among urban populations. In an era of rapid urbanization, integrating more green spaces into city planning is essential not only for improving air quality but also for fostering community well-being and resilience to environmental stressors.\nThe dual focus on marine and urban ecosystems highlights the interconnected nature of environmental and human health. Whether safeguarding coral reefs or expanding green spaces in cities, the solutions share common themes: reducing emissions, adopting sustainable practices, and prioritizing conservation. The article concludes by emphasizing the urgent need for global cooperation, innovation, and proactive policymaking to address these intertwined challenges. By preserving marine biodiversity and promoting urban green spaces, societies can build a healthier, more resilient future for both people and the planet.\"\n},\n{\n    \"article\": \"Climate change, urbanization, and environmental degradation are some of the most critical challenges facing humanity today, with profound implications for ecosystems, weather patterns, and human societies. This article examines three interconnected environmental issues: the impact of climate change on marine biodiversity, the role of urban green spaces in improving air quality and public health, and the effects of deforestation on global carbon cycles and climate change. Together, these insights emphasize the urgent need for coordinated action to address these multifaceted challenges.\nThe research on marine biodiversity focuses on coral reefs, essential ecosystems that support over 25% of marine species. Rising sea temperatures and ocean acidification, driven by greenhouse gas emissions, are causing widespread coral bleaching and the degradation of these vital habitats. The loss of coral reefs disrupts marine ecosystems, fisheries, and coastal protection, with cascading effects on biodiversity and human livelihoods. Mitigation strategies, such as reducing carbon emissions, protecting marine habitats, and pursuing restoration projects like coral farming, are critical to reversing these trends and preserving oceanic health.\nIn urban areas, the role of green spaces in mitigating environmental and public health issues is increasingly evident. Studies conducted in cities worldwide show that urban greenery significantly reduces air pollution by absorbing harmful pollutants, providing cleaner air for residents. Beyond environmental benefits, green spaces promote mental health by reducing stress, enhancing mood, and encouraging physical activity. As cities expand, integrating green spaces into urban planning is vital for fostering community well-being and building resilience to environmental stressors.\nThe investigation into deforestation reveals its profound impact on global carbon cycles. Forests, particularly tropical rainforests, act as massive carbon sinks, storing significant amounts of carbon and regulating the planet's climate. Deforestation, especially in tropical regions, releases vast amounts of carbon dioxide into the atmosphere, exacerbating global warming and accelerating climate change. The article highlights reforestation and afforestation as potential solutions to mitigate these impacts. By planting new forests and restoring degraded lands, societies can offset carbon emissions and combat climate change. However, the findings stress that preserving existing forests and implementing sustainable land management practices are equally, if not more, critical.\nThese three environmental issues—marine biodiversity loss, urban air quality, and deforestation—are deeply interconnected and require integrated solutions. The article concludes by underscoring the importance of global cooperation, innovation, and proactive policymaking. Whether by safeguarding coral reefs, expanding urban green spaces, or protecting forests, humanity must adopt sustainable practices to address these challenges effectively. By taking action now, societies can ensure a healthier, more resilient future for both people and the planet.\"\n}]\n,\n\"rationale\": \"The test cases are designed to evaluate the AI's ability to extract and summarize key findings from diverse environmental science articles. The first test case focuses on marine biodiversity and climate change, assessing the AI's capability to handle topics related to ecosystems and global cooperation. The second test case examines urban green spaces and their impact on air quality and public health, testing the AI's proficiency in summarizing studies with multiple benefits and recommendations. The third test case addresses deforestation and its effects on carbon cycles, challenging the AI to summarize complex interactions between human activities and climate change. These test cases cover a range of environmental topics, ensuring a comprehensive evaluation of the AI's summarization skills.\"\n}\n```\n\n**EXAMPLE_3**\n**num_test_cases** : 4\n**prompt**:\"\"\n```\n[\n    {\n        \"type\": literal,\n        \"text\": \"Determine the birthyear given the \"\n    },\n    {\n        \"type\": \"inputVariable\",\n        \"id\": \"age\",\n        \"inputType\": \"text\"\n  },\n   {\n        \"type\": literal,\n        \"text\": \"as of today.\"\n    }\n]\n```\n**RESPONSE FORMAT**\n```\n{ \n    \"cases\": [ { \"age\": \"0\" }, { \"age\": \"25\" }, { \"age\": \"-5\" }, { \"age\": \"120\" } ],\n    \"rationale\": \"Covers boundary values (0, 120), a typical value (25), and an invalid negative value (-5) to test error handling.\"\n}\n```\n"}],"definitions":{"inputs":[{"id":"prompt","text":"prompt","type":"text"},{"id":"num_test_cases","text":"num_test_cases","type":"text"}],"data":[],"output":{"formats":["json"],"jsonSchema":{"type":"object","properties":{"cases":{"type":"array"},"rationale":{"type":"string"}}},"jsonExamples":[{"cases":[],"rationale":"No input variables were provided in the prompt."}]}},"modelParameters":{"modelType":"default","gptParameters":{"temperature":0.3}},"settings":{"recordRetrievalLimit":30}}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Generate Sample Data From Prompt Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "prompt",
+                    "displayName": "prompt",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "num_test_cases",
+                    "displayName": "num_test_cases",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{2d9aac00-20e0-46fd-ad9b-52b2a6aae00f}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{aa0248fd-bbdd-ef11-a730-6045bd0348ee}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{aa0248fd-bbdd-ef11-a730-6045bd0348ee}</msdyn_aiconfigurationid>
+          <msdyn_databinding>{"schemaVersion":2}</msdyn_databinding>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Generate Sample Data From Prompt Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{2d9aac00-20e0-46fd-ad9b-52b2a6aae00f}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{3fbd4e5c-32bc-40fc-acce-59c2821cf113}</msdyn_aimodelid>
+      <msdyn_name>Empty Dynamic Prompt</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{d1c12bec-3773-48d7-a7da-b626d0f7c60e}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": ""
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>Empty Dynamic Prompt Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{3fbd4e5c-32bc-40fc-acce-59c2821cf113}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{e614d562-1b1a-49fc-93da-b46772169cb2}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{e614d562-1b1a-49fc-93da-b46772169cb2}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>Empty Dynamic Prompt Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{3fbd4e5c-32bc-40fc-acce-59c2821cf113}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{b9b636cf-9748-47a7-b617-6df5f00f5151}</msdyn_aimodelid>
+      <msdyn_name>AI Sentiment</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{8dd39ba8-0479-4502-a5ec-007138f2e7c4}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": "Evaluate the sentiment of the given "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputText",
+                  "text": "input text"
+                },
+                {
+                  "type": "literal",
+                  "text": ", taking into account its emotional tone, subtle language cues, and cultural or contextual factors. Classify the tone of the text into the categories 'positive', 'negative', or 'neutral'. Look for sarcasm, emoticons, or specialized terminology that could affect the sentiment reading. In cases of mixed emotions, identify the most dominant sentiment. Analyze neutral phrases that may have positive or negative undertones, and gauge the message's urgency or significance. Your response may only be one word and should capitalize the first letter. Do NOT add any other explanations."
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Sentiment Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "inputText",
+                    "displayName": "Input Text",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{b9b636cf-9748-47a7-b617-6df5f00f5151}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{012b2076-3105-4a5d-95d1-b3894fb66bdb}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{012b2076-3105-4a5d-95d1-b3894fb66bdb}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Sentiment Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{b9b636cf-9748-47a7-b617-6df5f00f5151}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{c076eac8-f218-4feb-8ad1-7ee4fb039419}</msdyn_aimodelid>
+      <msdyn_name>AI Summarize</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{8f85fce0-8396-4b52-9436-f01fe39122bf}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": "Please summarize the given "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputText",
+                  "text": "text"
+                },
+                {
+                  "type": "literal",
+                  "text": " in a way that is easy to understand for a general audience. Make sure to include all important information, including main ideas and important details, while keeping the order of the content logical. Remove any repetitive elements to make the summary as concise as possible without losing the original text's integrity. If the original text is too short to condense, present it as the summary."
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Summarize Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "inputText",
+                    "displayName": "Input Text",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{c076eac8-f218-4feb-8ad1-7ee4fb039419}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{1b18975f-1e36-4922-b227-482bc8737327}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{1b18975f-1e36-4922-b227-482bc8737327}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Summarize Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{c076eac8-f218-4feb-8ad1-7ee4fb039419}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{84251783-a5a4-4315-ab16-865b7b36ae6c}</msdyn_aimodelid>
+      <msdyn_name>AI Generate Sample Data From Prompt - V2</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{f70e10eb-1817-48ae-8239-f28dc6dd8dcf}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"# CONTEXT\nYou are an experienced test case simulator. Your task is to produce exactly “num_test_cases” distinct test cases for each defined input variable in a JSON-based prompt.\n\n# INPUT FORMAT\n**prompt** (string): Includes input variables enclosed within {}.\n**num_test_cases**(number): The exact number of distinct test cases to generate for each input variable.\n**memory** (*Optional*): Previously used test cases; new test cases must avoid duplication.  \n\n# INSTRUCTIONS\n-Extract the input variables from the prompt. The input variable names can include digits, underscores, and special characters. If the prompt is \"Identify the top {Input_1} from {Input2}\",then the input variables are Input_1,Input2.\n-Generate test cases exclusively based on the extracted input variables. Do not take the output format into account when creating these test cases.\n-Generate exactly `num_test_cases` distinct cases for each input variable while ensuring:\n  -Diversity: Cover a range of valid/invalid cases.\n  -Robustness: Test boundary values, edge cases, and equivalence partitions.\n  -Realism: Ensure inputs reflect plausible real-world scenarios.\n- Match the variable name exactly in generated test cases.\n-For different input types:  \n   • Text: Vary length based on context (from 1 to 250+ words), and adapt structure and formatting (e.g., bullet points, paragraphs, or special characters) to suit the content and purpose.\n   • Number: Include positives, negatives, zero, large extremes.  \n   • Boolean: Ensure true/false coverage.  \n   • List: Vary length and content.  \n   • Date: Provide valid/invalid dates and formats.  \n-If a variable is ambiguous, return an error message.\n-Respect dependencies or constraints if any (e.g., date/time ranges).  \n-If “memory” is provided, ensure all new test cases differ from those in memory.\n\n# OUTPUT FORMAT\n{\n    \"cases\": [{\n        \"varname1\": ...,\n        \"varname2\": ...\n    },\n    {\n        \"varname1\": ...,\n        \"varname2\": ...\n    }\n    ]\n}\n\n# INPUTS\n## PROMPT\n```\n"},{"type":"inputVariable","id":"prompt"},{"type":"literal","text":"  \n```\n\n## NUMBER OF TEST CASES \n```\n"},{"type":"inputVariable","id":"num_test_cases"},{"type":"literal","text":"  \n```\n\n## MEMORY\n```\n"},{"type":"inputVariable","id":"memory"},{"type":"literal","text":" \n```\n\n# EXAMPLES \n## EXAMPLE_1\nnum_test_cases: 5\nprompt:\n```\nWrite a professional apology email to {user@name} for the delay in delivering {product#id} ordered on {order_date}. Mention the expected delivery date as {ETA} and offer a discount for the inconvenience.\n```\nmemory: \"\"\nRESPONSE FORMAT:\n```\n{\n    \"cases\": [{\n            \"user@name\": \"john.doe@example.com\",\n            \"product#id\": \"12345\",\n            \"order_date\": \"2023-01-15\",\n            \"ETA\": \"2023-01-20\"\n        },\n        {\n            \"user@name\": \"jane.smith@example.com\",\n            \"product#id\": \"67890\",\n            \"order_date\": \"2023-02-10\",\n            \"ETA\": \"2023-02-15\"\n        },\n        {\n            \"user@name\": \"alice.brown@example.com\",\n            \"product#id\": \"54321\",\n            \"order_date\": \"2023-03-05\",\n            \"ETA\": \"2023-03-10\"\n        },\n        {\n            \"user@name\": \"bob.johnson@example.com\",\n            \"product#id\": \"98765\",\n            \"order_date\": \"2023-04-20\",\n            \"ETA\": \"2023-04-25\"\n        },\n        {\n            \"user@name\": \"henry.clark@example.com\",\n            \"product#id\": \"77889\",\n            \"order_date\": \"2023-10-30\",\n            \"ETA\": \"2023-11-05\"\n        }]\n}\n## EXAMPLE_2\nnum_test_cases: 4\nprompt:\n```\nDetermine the birthyear given the {current_age} as of today.\n```\nmemory: \"{  \"cases\": [ { \"current_age\": \"0\" }, { \"current_age\": \"25\" }, { \"current_age\": \"-5\" }, { \"current_age\": \"120\" }\n]}\"\nRESPONSE FORMAT:\n```\n{\n    \"cases\": [{\n            \"current_age\": \"-1\"\n        },\n        {\n            \"current_age\": \"50\"\n        },\n        {\n            \"current_age\": \"99\"\n        },\n        {\n            \"current_age\": \"150\"\n        }\n    ]\n}\n```"}],"definitions":{"inputs":[{"id":"prompt","text":"prompt","type":"text"},{"id":"num_test_cases","text":"num_test_cases","type":"text"},{"id":"memory","text":"memory","type":"text"}],"formulas":[],"data":[],"output":{"formats":["json"],"jsonSchema":{"type":"object","properties":{"cases":{"type":"array"}}},"jsonExamples":[{"cases":[]}]}},"modelParameters":{"modelType":"default","gptParameters":{"temperature":0.2}},"settings":{"recordRetrievalLimit":30,"shouldPreserveRecordLinks":null,"runtime":null}}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>2</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Generate Sample Data From Prompt Run Config - V2</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "prompt",
+                    "displayName": "prompt",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "num_test_cases",
+                    "displayName": "num_test_cases",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "memory",
+                    "displayName": "memory",
+                    "dataType": "String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{84251783-a5a4-4315-ab16-865b7b36ae6c}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{f60e10eb-1817-48ae-8239-f28dc6dd8dcf}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{f60e10eb-1817-48ae-8239-f28dc6dd8dcf}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>2</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Generate Sample Data From Prompt Training Config - V2</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{84251783-a5a4-4315-ab16-865b7b36ae6c}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{4e72b59a-17d6-451e-8657-89fbdec56d7a}</msdyn_aimodelid>
+      <msdyn_name>AI Extract</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{3f4272bc-aaac-44dc-9931-e4aa402b9eae}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>
+            {
+              "version": "GptDynamicPrompt-1",
+              "prompt": [
+                {
+                  "type": "literal",
+                  "text": "Extract the specified "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "entityToBeExtracted",
+                  "text": "entityToBeExtracted"
+                },
+                {
+                  "type": "literal",
+                  "text": ", provided as a comma-separated list, from the provided "
+                },
+                {
+                  "type": "inputVariable",
+                  "id": "inputText",
+                  "text": "input text"
+                },
+                {
+                  "type": "literal",
+                  "text": " with precision, paying special attention to preserving currency values. Flatten the hierarchy of entities, listing them at the same level in the output. Normalize entities to their respective data types, such as strings for text, numbers for quantities, and ISO 8601 format for dates. For currency values, include the numerical amount along with the currency symbol or code to maintain the value's context. Adapt to multilingual content, accurately extract quantities with units, and ensure the integrity of cross-referenced data. For each entity, especially currency, ensure that the JSON output accurately reflects the value with its currency symbol or code, and represents other data types appropriately.\nFor example: \n{\n \"\"extracted_data\"\": {\n  \"\"[entityToBeExtracted1]\"\": {\"\"value\"\": [extracted value], \"\"type\"\": \"\"[data type]\"\"},\n  \"\"[entityToBeExtracted2]\"\": {\"\"value\"\": [extracted value], \"\"type\"\": \"\"[data type]\"\"},\n  // Continue listing additional entities with their values and data types\n  ...\n }\n}"
+                }
+              ]
+            }
+          </msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Extract Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "inputText",
+                    "displayName": "Input Text",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+				          {
+                    "specificationName": "entityToBeExtracted",
+                    "displayName": "EntityToBeExtracted",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{4e72b59a-17d6-451e-8657-89fbdec56d7a}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{7dfdf673-73a8-408e-abc1-7d2378db0b42}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{7dfdf673-73a8-408e-abc1-7d2378db0b42}</msdyn_aiconfigurationid>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Extract Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{4e72b59a-17d6-451e-8657-89fbdec56d7a}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+    <AIModel>
+      <msdyn_aimodelid>{83136531-2743-466c-a9c7-ce3c953d9657}</msdyn_aimodelid>
+      <msdyn_name>AI Evaluation Prompt</msdyn_name>
+      <msdyn_templateid>{edfdb190-3791-45d8-9a6c-8f90a37c278a}</msdyn_templateid>
+      <statecode>1</statecode>
+      <statuscode>1</statuscode>
+      <IsCustomizable>0</IsCustomizable>
+      <AIConfigurations>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{73244ddc-555f-4d8f-83b4-703cad48dbab}</msdyn_aiconfigurationid>
+          <msdyn_customconfiguration>{"version":"GptDynamicPrompt-2","prompt":[{"type":"literal","text":"CONTEXT:\n• You are an evaluator. Your task is to determine whether a test case response meets the requirements outlined in the prompt and accurately reflects the intent of the citizen developers (“makers”).  \n• Your evaluation must remain consistent, objective, and unbiased, regardless of response length.\n\nINPUT FORMAT:\nThe inputs will be provided in-between ``` and ```. You will receive the following inputs and their values will be in the INPUTS section below:\n\n1. PromptText: The original prompt text.  \n2. TestCaseInput (Optional): The input used in the test case, if any.  \n3. TestCaseResponse: The actual response generated by the LLM. (Note: This is not necessarily the correct or expected output.)  \n4. ExpectedOutput (Optional): The correct or ideal output. This may be missing, empty, or blank.\n\nEVALUATION METRICS:\n\n1. SEMANTIC SIMILARITY SCORE (APPLIES ONLY IF “ExpectedOutput” EXISTS AND IS NON-EMPTY)  \n   • Definition: Measures how closely the TestCaseResponse aligns in meaning with the ExpectedOutput, even if the wording differs.\n\n   SCORING CRITERIA WHEN “ExpectedOutput” IS MISSING OR EMPTY:  \n   • Set the semantic similarity to:  \n     {\n       \"isApplicable\": false,  \n       \"finalScore\": -1,  \n       \"scoreExplanation\": \"Semantic similarity cannot be evaluated since expected output is not present.\"\n     }\n\n   SCORING CRITERIA WHEN “ExpectedOutput” IS NON-EMPTY or NOT MISSING:  \n   • 0%: Completely incorrect, contradicts the expected meaning.  \n   • 25%: Barely similar, missing most key details.  \n   • 50%: Partially captures key points but omits or contradicts others.  \n   • 75%: Mostly aligned, with minor inaccuracies.  \n   • 90-100%: Fully aligned in meaning and intent.\n\n2. RESPONSE QUALITY SCORE  \n   • Evaluate the response on five equally weighted sub-metrics (Groundedness, Relevance, Specificity, Clarity, PerceivedIntelligence).  \n   • Each sub-metric is scored between 0% and 100%.\n\n   2.1 GROUNDEDNESS  \n   • Definition: Checks if the response relies accurately on the prompt/test case info without introducing fabricated or irrelevant details.  \n     ─ 0%: Contains major or complete hallucinations.  \n     ─ 25%: Partially grounded but includes significant unverified or off-prompt content.  \n     ─ 50%: Reasonably grounded but has some inaccuracies or unsupported assumptions.  \n     ─ 75%: Mostly grounded, minor extraneous content.  \n     ─ 90-100%: Fully grounded, no external fabrications.\n\n   2.2 RELEVANCE  \n   • Definition: Measures how directly the response addresses the test case without irrelevant or redundant details.  \n     ─ 0%: Completely off-topic.  \n     ─ 25%: Largely irrelevant, heavy inclusion of unrelated points.  \n     ─ 50%: Partially relevant; some key points covered but includes unneeded details.  \n     ─ 75%: Mostly relevant, minor redundancies.  \n     ─ 90-100%: Fully relevant, concise, and comprehensive.\n\n   2.3 CLARITY  \n   • Definition: Assesses how clear, organized, and understandable the response is.  \n     ─ 0%: Extremely confusing or incoherent.  \n     ─ 25%: Poorly structured, ambiguous, or repetitive.  \n     ─ 50%: Somewhat clear but with notable structural or readability issues.  \n     ─ 75%: Clearly stated with only minor readability problems.  \n     ─ 90-100%: Perfectly clear and well-organized.\n\n   2.4 SPECIFICITY  \n   • Definition: Evaluates the level of detail, avoiding excessive vagueness or needless verbosity.  \n     ─ 0%: Extremely generic, lacking essential details.  \n     ─ 25%: Some specificity but missing key elements.  \n     ─ 50%: Moderately specific, some generalizations remain.  \n     ─ 75%: Adequately detailed, minor details missing.  \n     ─ 90-100%: Very precise, no unnecessary padding.\n\n   2.5 PERCEIVED INTELLIGENCE  \n   • Definition: Reflects depth of insight, reasoning, and creativity.  \n     ─ 0%: No meaningful reasoning; repetitive or nonsensical.  \n     ─ 25%: Limited reasoning; lacks depth or originality.  \n     ─ 50%: Basic understanding, minimal reasoning.  \n     ─ 75%: Well-reasoned, minor gaps only.  \n     ─ 90-100%: Highly insightful, creative, and adaptive.\n\nFINAL SCORE CALCULATION:\n• Each sub-metric in response quality is weighted equally (20% each).  \n• Final Quality Score = sum of (metric percentage × 20%).\n\nEXAMPLE CALCULATION:\nIf the sub-metrics are:\n  • Groundedness: 80%  \n  • Relevance: 70%  \n  • Specificity: 85%  \n  • Clarity: 95%  \n  • PerceivedIntelligence: 65%  \n\nThen:  \n(80 × 0.2) + (70 × 0.2) + (85 × 0.2) + (95 × 0.2) + (65 × 0.2) = 79 (Final Quality Score)\n\nINPUTS:\n1. PromptText:  \n   ``` "},{"type":"inputVariable","id":"PromptText"},{"type":"literal","text":" ```\n\n2. TestCaseInput:  \n   ``` "},{"type":"inputVariable","id":"TestCaseInput"},{"type":"literal","text":" ```\n\n3. TestCaseResponse:  \n   ``` "},{"type":"inputVariable","id":"TestCaseResponse"},{"type":"literal","text":" ```\n\n4. ExpectedOutput:  \n   ```  "},{"type":"inputVariable","id":"ExpectedOutput"},{"type":"literal","text":" ```\n\nOUTPUT FORMAT:\nReturn your final evaluation in valid JSON with the exact structure below:\n\n{\n  \"semanticSimilarity\": {\n    \"isApplicable\": true or false,\n    \"finalScore\": -1 or &lt;semantic similarity score&gt;,\n    \"scoreExplanation\": \"Explanation for semantic similarity, if applicable.\"\n  },\n  \"responseQuality\": {\n    \"isApplicable\": true,\n    \"finalScore\": &lt;final quality score&gt;,\n    \"scoreExplanation\": {\n      \"groundedness\": \"Numeric score + one-sentence explanation\",\n      \"relevance\": \"Numeric score + one-sentence explanation\",\n      \"specificity\": \"Numeric score + one-sentence explanation\",\n      \"clarity\": \"Numeric score + one-sentence explanation\",\n      \"perceivedIntelligence\": \"Numeric score + one-sentence explanation\"\n    }\n  }\n}"}],"definitions":{"inputs":[{"id":"PromptText","text":"PromptText","type":"text"},{"id":"TestCaseInput","text":"TestCaseInput","type":"text"},{"id":"TestCaseResponse","text":"TestCaseResponse","type":"text"},{"id":"ExpectedOutput","text":"ExpectedOutput","type":"text"}],"formulas":[],"data":[],"output":{"formats":["json"],"jsonSchema":{"type":"object","properties":{"semanticSimilarity":{"type":"object","properties":{"isApplicable":{"type":"boolean"},"finalScore":{"type":"number"},"scoreExplanation":{"type":"string"}}},"responseQuality":{"type":"object","properties":{"isApplicable":{"type":"boolean"},"finalScore":{"type":"number"},"scoreExplanation":{"type":"object","properties":{"groundedness":{"type":"string"},"relevance":{"type":"string"},"specificity":{"type":"string"},"clarity":{"type":"string"},"perceivedIntelligence":{"type":"string"}}}}}}},"jsonExamples":[{"semanticSimilarity":{"isApplicable":false,"finalScore":-1,"scoreExplanation":"Semantic similarity cannot be evaluated since expected output is not present."},"responseQuality":{"isApplicable":true,"finalScore":85,"scoreExplanation":{"groundedness":"90% - The response is well-grounded in the prompt, accurately reflecting the topic without introducing irrelevant details.","relevance":"90% - The response directly addresses the impact of social media on communication, staying on topic throughout.","specificity":"80% - The response provides specific examples of both positive and negative impacts but could include more detailed statistics or studies.","clarity":"90% - The response is clearly structured and easy to understand, with a logical flow of ideas.","perceivedIntelligence":"80% - The response demonstrates good reasoning and insight into the complexities of social media's impact."}}}]}},"modelParameters":{"modelType":"default","gptParameters":{"temperature":0}},"settings":{"recordRetrievalLimit":30}}</msdyn_customconfiguration>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Evaluation Prompt Run Config</msdyn_name>
+          <msdyn_modelrundataspecification>
+            {
+              "schemaVersion": 2,
+              "input": {
+                "attributes": [
+                  {
+                    "specificationName": "PromptText",
+                    "displayName": "PromptText",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "TestCaseInput",
+                    "displayName": "TestCaseInput",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "TestCaseResponse",
+                    "displayName": "TestCaseResponse",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "ExpectedOutput",
+                    "displayName": "ExpectedOutput",
+                    "dataType": "String",
+                    "requiredLevel": "ApplicationRequired"
+                  },
+                  {
+                    "specificationName": "additionalContext",
+                    "displayName": "AdditionalContext",
+                    "dataType": "Base64String",
+                    "requiredLevel": "None"
+                  }
+                ]
+              },
+              "output": {
+                "attributes": [
+                  {
+                    "specificationName": "text",
+                    "displayName": "Text",
+                    "dataType": "String"
+                  },
+                  {
+                    "specificationName": "finishReason",
+                    "displayName": "Finish Reason",
+                    "dataType": "String"
+                  }
+                ]
+              }
+            }
+          </msdyn_modelrundataspecification>
+          <msdyn_type>190690001</msdyn_type>
+          <msdyn_aimodelid>{83136531-2743-466c-a9c7-ce3c953d9657}</msdyn_aimodelid>
+          <msdyn_trainedmodelaiconfigurationpareid>{5e5018cd-8cf4-ef11-bae4-0022480bd5b2}</msdyn_trainedmodelaiconfigurationpareid>
+          <statecode>2</statecode>
+          <statuscode>7</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+        <AIConfiguration>
+          <msdyn_aiconfigurationid>{5e5018cd-8cf4-ef11-bae4-0022480bd5b2}</msdyn_aiconfigurationid>
+          <msdyn_databinding>{"schemaVersion":2}</msdyn_databinding>
+          <msdyn_majoriterationnumber>1</msdyn_majoriterationnumber>
+          <msdyn_minoriterationnumber>0</msdyn_minoriterationnumber>
+          <msdyn_name>AI Evaluation Prompt Training Config</msdyn_name>
+          <msdyn_type>190690000</msdyn_type>
+          <msdyn_aimodelid>{83136531-2743-466c-a9c7-ce3c953d9657}</msdyn_aimodelid>
+          <statecode>2</statecode>
+          <statuscode>6</statuscode>
+          <IsCustomizable>0</IsCustomizable>
+          <msdyn_templateversion>1</msdyn_templateversion>
+        </AIConfiguration>
+      </AIConfigurations>
+    </AIModel>
+  </AIModels>
+  <connectionreferences>
+    <connectionreference connectionreferencelogicalname="cr49f_sharedexcelonlinebusiness_ed998">
+      <connectionreferencedisplayname>Excel Online (Business) Work_progress_tracker_ps750-ed998</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr49f_sharedoffice365_bb6df">
+      <connectionreferencedisplayname>Office 365 Outlook Work_progress_tracker_ps750-bb6df</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr49f_sharedsharepointonline_ceb28">
+      <connectionreferencedisplayname>SharePoint Work_progress_tracker_ps750-ceb28</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.cr.C9moot6L">
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.cr.iZvYwJbJ">
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.cr.QIoZp3vO">
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_commondataserviceforapps.0df84a26713d4ce496a8f0a0424cf059">
+      <connectionreferencedisplayname>cr69b_sparky.shared_commondataserviceforapps.0df84a26713d4ce496a8f0a0424cf059</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_excelonlinebusiness.shared-excelonlinebu-01b28469-fc35-48f2-8860-357c2dca9bb9">
+      <connectionreferencedisplayname>cr69b_sparky.shared_excelonlinebusiness.shared-excelonlinebu-01b28469-fc35-48f2-8860-357c2dca9bb9</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_office365.shared-office365-f64535ad-a7e7-4e34-989e-659c31d82e93">
+      <connectionreferencedisplayname>cr69b_sparky.shared_office365.shared-office365-f64535ad-a7e7-4e34-989e-659c31d82e93</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_office365</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_planner.d546d84105bc4d5b8e539cce9831e18f">
+      <connectionreferencedisplayname>cr69b_sparky.shared_planner.d546d84105bc4d5b8e539cce9831e18f</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_planner</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_powerbi.cb6e2b1b86f14716a16f0d91e619cea9">
+      <connectionreferencedisplayname>cr69b_sparky.shared_powerbi.cb6e2b1b86f14716a16f0d91e619cea9</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_powerbi</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="cr69b_sparky.shared_sharepointonline.e25560dbcdf74434aae9cdb626b91645">
+      <connectionreferencedisplayname>cr69b_sparky.shared_sharepointonline.e25560dbcdf74434aae9cdb626b91645</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_sharepointonline</connectorid>
+      <iscustomizable>0</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.HBw34vrT"></connectionreference>
+    <connectionreference connectionreferencelogicalname="crdfa_copilotbJ5xIp.cr.pjmTg7J3"></connectionreference>
+    <connectionreference connectionreferencelogicalname="crdfa_safetyAuditsInManufacturing.cr.0tT_O8hw"></connectionreference>
+    <connectionreference connectionreferencelogicalname="crdfa_sharedsharepointonline_151fb"></connectionreference>
+    <connectionreference connectionreferencelogicalname="new_sharedcopilotflow_be06f">
+      <connectionreferencedisplayname>Generative actions</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_copilotflow</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+    <connectionreference connectionreferencelogicalname="new_sharedonedrive_963ce">
+      <connectionreferencedisplayname>OneDrive</connectionreferencedisplayname>
+      <connectorid>/providers/Microsoft.PowerApps/apis/shared_onedrive</connectorid>
+      <iscustomizable>1</iscustomizable>
+      <promptingbehavior>0</promptingbehavior>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </connectionreference>
+  </connectionreferences>
+  <msdyn_pmanalysishistories>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="4937062c-02ef-ef11-be20-000d3a5939f8">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>df22b78c-fdee-ef11-be20-000d3a5939f8</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="6dad7ad7-9ce5-ef11-be20-6045bd077ca5">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>5694c59f-9ce5-ef11-be20-6045bd077ca5</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="a5698aab-03ef-ef11-be20-000d3a5939f8">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>df22b78c-fdee-ef11-be20-000d3a5939f8</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="b31da2c1-fdee-ef11-be20-000d3a5939f8">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>df22b78c-fdee-ef11-be20-000d3a5939f8</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="b3c3800b-07d9-ef11-a730-6045bd077ca5">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>77d7d6d3-06d9-ef11-a730-6045bd077ca5</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+    <msdyn_pmanalysishistory msdyn_pmanalysishistoryid="dfc6a7af-ffee-ef11-be20-000d3a5939f8">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_analysisresult>0</msdyn_analysisresult>
+      <msdyn_analysistype>0</msdyn_analysistype>
+      <msdyn_parenttask>
+        <msdyn_pminferredtaskid>df22b78c-fdee-ef11-be20-000d3a5939f8</msdyn_pminferredtaskid>
+      </msdyn_parenttask>
+      <statecode>0</statecode>
+      <statuscode>1</statuscode>
+    </msdyn_pmanalysishistory>
+  </msdyn_pmanalysishistories>
+  <msdyn_pminferredtasks>
+    <msdyn_pminferredtask msdyn_pminferredtaskid="5694c59f-9ce5-ef11-be20-6045bd077ca5">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_automationstatus>200000000</msdyn_automationstatus>
+      <msdyn_inputdatabinding>{"DisplayPath":"ProcessInsights-5694c59f-9ce5-ef11-be20-6045bd077ca5-9edfb6aa-234b-4652-be27-faef76b6bf9e","ProductFlavor":"processadvisor","DataSource":{"DataSourceId":"cf433b01-3d58-4da6-a654-e111bd0a47f7","DataSourceType":0,"CreateOrLastUpdate":"2025-02-07T21:44:09.618Z","DataSourceInfoProperties":{"flowId":"65a9bcae-2004-4c2b-b0a6-aec9f5088ea7","disableEditing":true,"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","customReports":[{"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","customReportDetails":[{"reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","reportName":"Cloud Flow Report","pbixFileName":"CLOUDFLOW","version":"1.0","description":"This is the cloud flow Report for cloud flow template.","defaultReportConfig":"true"},{"reportId":"d73f290c-3840-4179-b9a0-3168c091867b","reportName":"Standard Report","pbixFileName":"PIPROCESS","version":"1.0","description":"This is the standard Report for every template.","defaultReportConfig":"false"}]}]}},"MiningMetadata":{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"}]},"Views":[{"Name":"Default","Filters":[]}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":{"CaseStates":[],"CaseAnnotations":[]}},"ReportData":{},"Calendars":[],"LastModifiedTime":"2025-02-07T21:43:54.877Z"}}</msdyn_inputdatabinding>
+      <msdyn_iterationid>a4b026b4d97147a88e2b0b3e7e84333b-638745614546676183</msdyn_iterationid>
+      <msdyn_name>KPI Process</msdyn_name>
+      <msdyn_source>1</msdyn_source>
+      <statecode>2</statecode>
+      <statuscode>4</statuscode>
+      <timezoneruleversionnumber>4</timezoneruleversionnumber>
+      <msdyn_pmprocesstemplates>
+        <msdyn_pmprocesstemplate msdyn_pmprocesstemplateid="abbd7d93-9c1c-49cf-b2e2-dba35845bf68">
+          <iscustomizable>1</iscustomizable>
+          <msdyn_name>KPI Process</msdyn_name>
+          <msdyn_processdataflowconfig>{"locale":"en-US","anonymousConnection":true,"connectionType":"Blank","baseUrl":"","connectionOverrides":[],"queryMetadata":[{"queryId":"716c93de-52fb-4745-af49-f450e99a3948","queryName":"Query","queryGroupId":null,"entityName":null,"lastKnownIsCalculatedEntity":null,"lastKnownIsLinkedEntity":null,"lastKnownIsParameter":null,"isHidden":null,"lastKnownResultTypeName":null,"loadEnabled":true,"fieldsMetadata":{},"deleteExistingDataOnLoad":false,"hostProperties":null,"jsonOutputDestinations":null,"bindToDefaultOutputDestination":null,"jsonIncrementalRefreshSettings":null,"stagingDefinition":null}],"allowNativeQueries":false,"flavorScope":["processadvisor"]}</msdyn_processdataflowconfig>
+          <msdyn_processmashupscript>section Section1;
+shared Query = let
+    FlowRunData = "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84d5+nM+38qN9UPcAQrCIObsJBSjvM52qomKUFchNFnZVmUW2qxtylc/le2ANREWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYW1pOyyvYki6MqZDHm9VbY+JSMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIzswLJ4EppRVld5W1Sd7PTq6uKX8WI2nk6SJtxcUxvLqg1NKIo2hLxt2ryNr34KZXb7Q3WWx7rJQ3Yv5/XsulsyExMTExMTExMTExMTExMTExMTExMT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NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0tGFp/xdsNb5ZQjoYAA==",
+    Source =
+      Csv.Document(
+        Binary.Decompress(
+          Binary.FromText(FlowRunData, BinaryEncoding.Base64),
+          Compression.GZip
+        ),
+        [
+          Delimiter = ",",
+          Columns = 9,
+          Encoding = 65001,
+          QuoteStyle = QuoteStyle.None
+        ]
+      ),
+    #"Changed column type" =
+      Table.TransformColumnTypes(
+        Source, {
+          {"Column1", type text},
+          {"Column2", type text},
+          {"Column3", type text},
+          {"Column4", type text},
+          {"Column5", type text},
+          {"Column6", type text},
+          {"Column7", type text},
+          {"Column8", type text},
+          {"Column9", type text}
+        }
+      ),
+    #"Removed top rows" =
+      Table.Skip(#"Changed column type", 1),
+    #"Promoted headers" =
+      Table.PromoteHeaders(#"Removed top rows", [PromoteAllScalars = true]),
+    #"Changed column type 1" =
+      Table.TransformColumnTypes(
+        #"Promoted headers", {
+          {"startTime", type datetime},
+          {"actionName", type text},
+          {"flowRunId", type text},
+          {"flowVersionId", Int64.Type},
+          {"actionStatus", type text},
+          {"actionStatusCode", type text},
+          {"actionError", type text},
+          {"actionId", type text},
+          {"connectorId", type text}
+        }
+      ),
+    #"Mapped to CDM" =
+      Cdm.MapToEntity(
+        #"Changed column type 1", {
+          {"startTimestamp", "startTime", type datetime},
+          {"activityName", "actionName", type text},
+          {"caseId", "flowRunId", type text},
+          {"flowVersionId", "flowVersionId"},
+          {"actionStatus", "actionStatus"},
+          {"actionStatusCode", "actionStatusCode"},
+          {"actionError", "actionError"},
+          {"actionId", "actionId"},
+          {"connectorId", "connectorId"}
+        },
+        null,
+        "Event log"
+      ),
+    #"Temp flowVersion table" =
+      Table.Sort(
+        Table.Buffer(
+          Table.SelectColumns(
+            #"Mapped to CDM",
+            {"startTimestamp", "flowVersionId"}
+          )
+        ),
+        {"startTimestamp"}
+      ),
+    #"Distinct flowVersionDate" =
+      Table.Distinct(
+        Table.RemoveColumns(
+          Table.AddColumn(
+            #"Temp flowVersion table",
+            "flowVersionDate",
+            each DateTime.ToText([startTimestamp], "MM/dd/yyyy")
+          ),
+          "startTimestamp"
+        ),
+        "flowVersionId"
+      ),
+    #"Expand flowVersion index" =
+      Table.ExpandTableColumn(
+        Table.AddColumn(
+          Table.Group(
+            #"Distinct flowVersionDate",
+            "flowVersionDate",
+            {{"GroupedData", each _, type table [ColumnToGroupBy=type, OtherColumns=type]}}
+          ),
+          "Index",
+          each Table.AddIndexColumn([GroupedData], "Index", 1, 1)
+        ),
+        "Index",
+        {"Index"},
+        {"flowVersionIndex"}
+      ),
+    #"Merged flowVersion columns" =
+      Table.RemoveColumns(
+        Table.CombineColumns(
+          Table.TransformColumnTypes(
+            #"Expand flowVersion index",
+            {{"flowVersionDate", type text},
+            {"flowVersionIndex", type text}}
+          ),
+          {"flowVersionDate", "flowVersionIndex"},
+          Combiner.CombineTextByDelimiter("-", QuoteStyle.None),
+          "mergedFlowVersion"
+        ),
+        {"GroupedData"}
+      ),
+    #"Combined flowVersion columns" =
+      Table.ReplaceValue(
+        Table.RemoveColumns(
+          Table.Join(
+            Table.AddIndexColumn(#"Distinct flowVersionDate", "Index", 1, 1),
+            "Index",
+            Table.AddIndexColumn(#"Merged flowVersion columns", "Index", 1, 1),
+            "Index"
+          ),
+          {"Index", "flowVersionDate"}
+        ),
+        "-1",
+        "",
+        Replacer.ReplaceText,
+        {"mergedFlowVersion"}
+      ),
+    #"Join flowVersionDate" =
+      Table.RenameColumns(
+        Table.RemoveColumns(
+          Table.Join(
+            #"Mapped to CDM",
+            "flowVersionId",
+            #"Combined flowVersion columns",
+            "flowVersionId"
+          ),
+          {"flowVersionId"}
+        ),
+        {"mergedFlowVersion", "flowVersionId"}
+      ),
+    #"Add startTimestampEpoch" =
+      Table.TransformColumnTypes(
+        Table.AddColumn(
+          #"Join flowVersionDate",
+          "startTimestamp.millisecondsEpoch",
+          each Duration.TotalSeconds(
+            DateTimeZone.From([startTimestamp]) - #datetimezone(1970, 1, 1, 0, 0, 0, 0, 0)
+          ) * 1000
+        ),
+        {{"startTimestamp.millisecondsEpoch", Int64.Type}}
+      ),
+    #"Replaced value" = Table.ReplaceValue(#"Add startTimestampEpoch", "", " ", Replacer.ReplaceValue, {"actionStatusCode", "actionError", "actionId", "connectorId"})
+  in
+    #"Replaced value";
+</msdyn_processmashupscript>
+          <msdyn_processminingmetadataconfig>{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}}]},"Views":[{"Name":"Default","Calendar":null,"Filters":null}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":null},"ReportData":null,"Calendars":null,"LastModifiedTime":"2025-02-07T21:44:56.7813678Z"}</msdyn_processminingmetadataconfig>
+          <statecode>0</statecode>
+          <statuscode>1</statuscode>
+        </msdyn_pmprocesstemplate>
+      </msdyn_pmprocesstemplates>
+    </msdyn_pminferredtask>
+    <msdyn_pminferredtask msdyn_pminferredtaskid="77d7d6d3-06d9-ef11-a730-6045bd077ca5">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_automationstatus>200000000</msdyn_automationstatus>
+      <msdyn_inputdatabinding>{"DisplayPath":"ProcessInsights-77d7d6d3-06d9-ef11-a730-6045bd077ca5-e9b594c1-57ee-4bfe-871e-49f23683c367","ProductFlavor":"processadvisor","DataSource":{"DataSourceId":"b33349bb-4eca-41eb-a8f7-e504ee3c0805","DataSourceType":0,"CreateOrLastUpdate":"2025-01-22T21:21:36.928Z","DataSourceInfoProperties":{"flowId":"f722fc26-cf7e-4df7-8c1f-80bc10d8cfb5","disableEditing":true,"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","customReports":[{"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","customReportDetails":[{"reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","reportName":"Cloud Flow Report","pbixFileName":"CLOUDFLOW","version":"1.0","description":"This is the cloud flow Report for cloud flow template.","defaultReportConfig":"true"},{"reportId":"d73f290c-3840-4179-b9a0-3168c091867b","reportName":"Standard Report","pbixFileName":"PIPROCESS","version":"1.0","description":"This is the standard Report for every template.","defaultReportConfig":"false"}]}]}},"MiningMetadata":{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"}]},"Views":[{"Name":"Default","Filters":[]}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":{"CaseStates":[],"CaseAnnotations":[]}},"ReportData":{},"Calendars":[],"LastModifiedTime":"2025-01-22T21:21:21.443Z"}}</msdyn_inputdatabinding>
+      <msdyn_iterationid>35da0d8640ac48638dd4ecedfa94bda0-638731777034154122</msdyn_iterationid>
+      <msdyn_name>KPI Process</msdyn_name>
+      <msdyn_source>1</msdyn_source>
+      <statecode>2</statecode>
+      <statuscode>4</statuscode>
+      <timezoneruleversionnumber>4</timezoneruleversionnumber>
+      <msdyn_pmprocesstemplates>
+        <msdyn_pmprocesstemplate msdyn_pmprocesstemplateid="d5427e13-4666-407d-bced-a9112e60b086">
+          <iscustomizable>1</iscustomizable>
+          <msdyn_name>KPI Process</msdyn_name>
+          <msdyn_processdataflowconfig>{"locale":"en-US","anonymousConnection":true,"connectionType":"Blank","baseUrl":"","connectionOverrides":[],"queryMetadata":[{"queryId":"47116d3b-d825-4fbb-ba24-529825b76b11","queryName":"Query","queryGroupId":null,"entityName":null,"lastKnownIsCalculatedEntity":null,"lastKnownIsLinkedEntity":null,"lastKnownIsParameter":null,"isHidden":null,"lastKnownResultTypeName":null,"loadEnabled":true,"fieldsMetadata":{},"deleteExistingDataOnLoad":false,"hostProperties":null,"jsonOutputDestinations":null,"bindToDefaultOutputDestination":null,"jsonIncrementalRefreshSettings":null,"stagingDefinition":null}],"allowNativeQueries":false,"flavorScope":["processadvisor"]}</msdyn_processdataflowconfig>
+          <msdyn_processmashupscript>section Section1;
+shared Query = let
+    FlowRunData = "H4sIAAAAAAAAA62SXUvdMBjH7wf7DqXXWpInTZMe8MIdPEMEHVp3sZsS28edsJp0SaobY9/d5NR3N0ERSsnzkn9+z4vHcWfr44fcB+VCoy8w38pVF7Q1h2pjnA/26ngy+/3N+Ss6H6Mbe048CSpM/om5tP291J5z1t1Zm6udNQa7YF204vNAgG8Tug3QAFkwsuC0KIETCd9i8u44Dr/bYFtU3bpt1NmQtInksqxKAjVhopRMUCIkq6WUtWTLUygf55ScUc4B6ug+mboOscdEMn8r65J4PC2tCc4O/6QqZSF4SSrKEtZnDG1IMP79aI4OZp6o3dxK468OB2sGbfBs8vHv/f/oKICoONzSHXzZb/fS7Xal37NnDyiTcGoZmhAdfq0cjlabMPM+54R6wWgRMSkI8UIXKeVMsKqmhNWRQhAilqeiepwDtWBMUpLcKxVJEtwn1R/jzwl9AvqTx1WLq5gv8oeBhH8R+6i+z6Fmjdno7KWO9WVX1v1Iq57N+5ppM04h0z4zNmSXatB9ked/3zKkVDwpOGOkui/+hSG9uglvHdI1GBRlBQcEAAA=",
+    Source =
+      Csv.Document(
+        Binary.Decompress(
+          Binary.FromText(FlowRunData, BinaryEncoding.Base64),
+          Compression.GZip
+        ),
+        [
+          Delimiter = ",",
+          Columns = 9,
+          Encoding = 65001,
+          QuoteStyle = QuoteStyle.None
+        ]
+      ),
+    #"Changed column type" =
+      Table.TransformColumnTypes(
+        Source, {
+          {"Column1", type text},
+          {"Column2", type text},
+          {"Column3", type text},
+          {"Column4", type text},
+          {"Column5", type text},
+          {"Column6", type text},
+          {"Column7", type text},
+          {"Column8", type text},
+          {"Column9", type text}
+        }
+      ),
+    #"Removed top rows" =
+      Table.Skip(#"Changed column type", 1),
+    #"Promoted headers" =
+      Table.PromoteHeaders(#"Removed top rows", [PromoteAllScalars = true]),
+    #"Changed column type 1" =
+      Table.TransformColumnTypes(
+        #"Promoted headers", {
+          {"startTime", type datetime},
+          {"actionName", type text},
+          {"flowRunId", type text},
+          {"flowVersionId", Int64.Type},
+          {"actionStatus", type text},
+          {"actionStatusCode", type text},
+          {"actionError", type text},
+          {"actionId", type text},
+          {"connectorId", type text}
+        }
+      ),
+    #"Mapped to CDM" =
+      Cdm.MapToEntity(
+        #"Changed column type 1", {
+          {"startTimestamp", "startTime", type datetime},
+          {"activityName", "actionName", type text},
+          {"caseId", "flowRunId", type text},
+          {"flowVersionId", "flowVersionId"},
+          {"actionStatus", "actionStatus"},
+          {"actionStatusCode", "actionStatusCode"},
+          {"actionError", "actionError"},
+          {"actionId", "actionId"},
+          {"connectorId", "connectorId"}
+        },
+        null,
+        "Event log"
+      ),
+    #"Temp flowVersion table" =
+      Table.Sort(
+        Table.Buffer(
+          Table.SelectColumns(
+            #"Mapped to CDM",
+            {"startTimestamp", "flowVersionId"}
+          )
+        ),
+        {"startTimestamp"}
+      ),
+    #"Distinct flowVersionDate" =
+      Table.Distinct(
+        Table.RemoveColumns(
+          Table.AddColumn(
+            #"Temp flowVersion table",
+            "flowVersionDate",
+            each DateTime.ToText([startTimestamp], "MM/dd/yyyy")
+          ),
+          "startTimestamp"
+        ),
+        "flowVersionId"
+      ),
+    #"Expand flowVersion index" =
+      Table.ExpandTableColumn(
+        Table.AddColumn(
+          Table.Group(
+            #"Distinct flowVersionDate",
+            "flowVersionDate",
+            {{"GroupedData", each _, type table [ColumnToGroupBy=type, OtherColumns=type]}}
+          ),
+          "Index",
+          each Table.AddIndexColumn([GroupedData], "Index", 1, 1)
+        ),
+        "Index",
+        {"Index"},
+        {"flowVersionIndex"}
+      ),
+    #"Merged flowVersion columns" =
+      Table.RemoveColumns(
+        Table.CombineColumns(
+          Table.TransformColumnTypes(
+            #"Expand flowVersion index",
+            {{"flowVersionDate", type text},
+            {"flowVersionIndex", type text}}
+          ),
+          {"flowVersionDate", "flowVersionIndex"},
+          Combiner.CombineTextByDelimiter("-", QuoteStyle.None),
+          "mergedFlowVersion"
+        ),
+        {"GroupedData"}
+      ),
+    #"Combined flowVersion columns" =
+      Table.ReplaceValue(
+        Table.RemoveColumns(
+          Table.Join(
+            Table.AddIndexColumn(#"Distinct flowVersionDate", "Index", 1, 1),
+            "Index",
+            Table.AddIndexColumn(#"Merged flowVersion columns", "Index", 1, 1),
+            "Index"
+          ),
+          {"Index", "flowVersionDate"}
+        ),
+        "-1",
+        "",
+        Replacer.ReplaceText,
+        {"mergedFlowVersion"}
+      ),
+    #"Join flowVersionDate" =
+      Table.RenameColumns(
+        Table.RemoveColumns(
+          Table.Join(
+            #"Mapped to CDM",
+            "flowVersionId",
+            #"Combined flowVersion columns",
+            "flowVersionId"
+          ),
+          {"flowVersionId"}
+        ),
+        {"mergedFlowVersion", "flowVersionId"}
+      ),
+    #"Add startTimestampEpoch" =
+      Table.TransformColumnTypes(
+        Table.AddColumn(
+          #"Join flowVersionDate",
+          "startTimestamp.millisecondsEpoch",
+          each Duration.TotalSeconds(
+            DateTimeZone.From([startTimestamp]) - #datetimezone(1970, 1, 1, 0, 0, 0, 0, 0)
+          ) * 1000
+        ),
+        {{"startTimestamp.millisecondsEpoch", Int64.Type}}
+      ),
+    #"Replaced value" = Table.ReplaceValue(#"Add startTimestampEpoch", "", " ", Replacer.ReplaceValue, {"actionStatusCode", "actionError", "actionId", "connectorId"})
+  in
+    #"Replaced value";
+</msdyn_processmashupscript>
+          <msdyn_processminingmetadataconfig>{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}}]},"Views":[{"Name":"Default","Calendar":null,"Filters":null}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":null},"ReportData":null,"Calendars":null,"LastModifiedTime":"2025-01-22T21:22:23.8154773Z"}</msdyn_processminingmetadataconfig>
+          <statecode>0</statecode>
+          <statuscode>1</statuscode>
+        </msdyn_pmprocesstemplate>
+      </msdyn_pmprocesstemplates>
+    </msdyn_pminferredtask>
+    <msdyn_pminferredtask msdyn_pminferredtaskid="df22b78c-fdee-ef11-be20-000d3a5939f8">
+      <iscustomizable>1</iscustomizable>
+      <msdyn_automationstatus>200000000</msdyn_automationstatus>
+      <msdyn_inputdatabinding>{"DisplayPath":"ProcessInsights-df22b78c-fdee-ef11-be20-000d3a5939f8-243bd7a4-ab35-4be1-b9c3-13746a8c2fde","ProductFlavor":"processadvisor","DataSource":{"DataSourceId":"1b8604f5-efb8-4ac0-825c-e48ad31bc23f","DataSourceType":0,"CreateOrLastUpdate":"2025-02-19T20:10:38.774Z","DataSourceInfoProperties":{"flowId":"b8f354a2-3378-4c20-8196-f00e176f0172","disableEditing":true,"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","customReports":[{"templateId":"726f1606-7e43-49b8-8e88-fa14654e917b","customReportDetails":[{"reportId":"49b1bf8f-2f84-4009-b382-1b1642ba61f2","reportName":"Cloud Flow Report","pbixFileName":"CLOUDFLOW","version":"1.0","description":"This is the cloud flow Report for cloud flow template.","defaultReportConfig":"true"},{"reportId":"d73f290c-3840-4179-b9a0-3168c091867b","reportName":"Standard Report","pbixFileName":"PIPROCESS","version":"1.0","description":"This is the standard Report for every template.","defaultReportConfig":"false"}]}]}},"MiningMetadata":{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"LastEvent"},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":"","CaseLevelAttributeHandling":"None"}]},"Views":[{"Name":"Default","Filters":[]}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":{"CaseStates":[],"CaseAnnotations":[]}},"ReportData":{},"Calendars":[],"LastModifiedTime":"2025-02-19T20:10:24.550Z"}}</msdyn_inputdatabinding>
+      <msdyn_iterationid>746ccda47ad445938d77fa6460b0a511-638755951867238741</msdyn_iterationid>
+      <msdyn_name>KPIWrite Process</msdyn_name>
+      <msdyn_source>1</msdyn_source>
+      <statecode>2</statecode>
+      <statuscode>4</statuscode>
+      <timezoneruleversionnumber>4</timezoneruleversionnumber>
+      <msdyn_pmprocesstemplates>
+        <msdyn_pmprocesstemplate msdyn_pmprocesstemplateid="bfe245c4-959d-4acc-804a-c6dcd98eb326">
+          <iscustomizable>1</iscustomizable>
+          <msdyn_name>KPIWrite Process</msdyn_name>
+          <msdyn_processdataflowconfig>{"locale":"en-US","anonymousConnection":true,"connectionType":"Blank","baseUrl":"","connectionOverrides":[],"queryMetadata":[{"queryId":"e4081eb3-be38-4790-9f18-62a644c3f8ff","queryName":"Query","queryGroupId":null,"entityName":null,"lastKnownIsCalculatedEntity":null,"lastKnownIsLinkedEntity":null,"lastKnownIsParameter":null,"isHidden":null,"lastKnownResultTypeName":null,"loadEnabled":true,"fieldsMetadata":{},"deleteExistingDataOnLoad":false,"hostProperties":null,"jsonOutputDestinations":null,"bindToDefaultOutputDestination":null,"jsonIncrementalRefreshSettings":null,"stagingDefinition":null}],"allowNativeQueries":false,"flavorScope":["processadvisor"]}</msdyn_processdataflowconfig>
+          <msdyn_processmashupscript>section Section1;
+shared Query = let
+    FlowRunData = "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4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4ODg4D4ZXDGt62pz0A3usDu/6FbN7E3oh/2nx/2w+/HWURjC8UXTh6HtlmBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYM8CllZZlVQ3Ycf7my3JyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyLayos7zvLol60IYN23Q0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NDQ0NAeoMV7ebaX5dO0KKuoiDe0d80wuwx9G04Xzex4/3Dd981yeDrh1b/xKF/9cJBx6fomHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7eM+P9F7bgvmWufBcA",
+    Source =
+      Csv.Document(
+        Binary.Decompress(
+          Binary.FromText(FlowRunData, BinaryEncoding.Base64),
+          Compression.GZip
+        ),
+        [
+          Delimiter = ",",
+          Columns = 9,
+          Encoding = 65001,
+          QuoteStyle = QuoteStyle.None
+        ]
+      ),
+    #"Changed column type" =
+      Table.TransformColumnTypes(
+        Source, {
+          {"Column1", type text},
+          {"Column2", type text},
+          {"Column3", type text},
+          {"Column4", type text},
+          {"Column5", type text},
+          {"Column6", type text},
+          {"Column7", type text},
+          {"Column8", type text},
+          {"Column9", type text}
+        }
+      ),
+    #"Removed top rows" =
+      Table.Skip(#"Changed column type", 1),
+    #"Promoted headers" =
+      Table.PromoteHeaders(#"Removed top rows", [PromoteAllScalars = true]),
+    #"Changed column type 1" =
+      Table.TransformColumnTypes(
+        #"Promoted headers", {
+          {"startTime", type datetime},
+          {"actionName", type text},
+          {"flowRunId", type text},
+          {"flowVersionId", Int64.Type},
+          {"actionStatus", type text},
+          {"actionStatusCode", type text},
+          {"actionError", type text},
+          {"actionId", type text},
+          {"connectorId", type text}
+        }
+      ),
+    #"Mapped to CDM" =
+      Cdm.MapToEntity(
+        #"Changed column type 1", {
+          {"startTimestamp", "startTime", type datetime},
+          {"activityName", "actionName", type text},
+          {"caseId", "flowRunId", type text},
+          {"flowVersionId", "flowVersionId"},
+          {"actionStatus", "actionStatus"},
+          {"actionStatusCode", "actionStatusCode"},
+          {"actionError", "actionError"},
+          {"actionId", "actionId"},
+          {"connectorId", "connectorId"}
+        },
+        null,
+        "Event log"
+      ),
+    #"Temp flowVersion table" =
+      Table.Sort(
+        Table.Buffer(
+          Table.SelectColumns(
+            #"Mapped to CDM",
+            {"startTimestamp", "flowVersionId"}
+          )
+        ),
+        {"startTimestamp"}
+      ),
+    #"Distinct flowVersionDate" =
+      Table.Distinct(
+        Table.RemoveColumns(
+          Table.AddColumn(
+            #"Temp flowVersion table",
+            "flowVersionDate",
+            each DateTime.ToText([startTimestamp], "MM/dd/yyyy")
+          ),
+          "startTimestamp"
+        ),
+        "flowVersionId"
+      ),
+    #"Expand flowVersion index" =
+      Table.ExpandTableColumn(
+        Table.AddColumn(
+          Table.Group(
+            #"Distinct flowVersionDate",
+            "flowVersionDate",
+            {{"GroupedData", each _, type table [ColumnToGroupBy=type, OtherColumns=type]}}
+          ),
+          "Index",
+          each Table.AddIndexColumn([GroupedData], "Index", 1, 1)
+        ),
+        "Index",
+        {"Index"},
+        {"flowVersionIndex"}
+      ),
+    #"Merged flowVersion columns" =
+      Table.RemoveColumns(
+        Table.CombineColumns(
+          Table.TransformColumnTypes(
+            #"Expand flowVersion index",
+            {{"flowVersionDate", type text},
+            {"flowVersionIndex", type text}}
+          ),
+          {"flowVersionDate", "flowVersionIndex"},
+          Combiner.CombineTextByDelimiter("-", QuoteStyle.None),
+          "mergedFlowVersion"
+        ),
+        {"GroupedData"}
+      ),
+    #"Combined flowVersion columns" =
+      Table.ReplaceValue(
+        Table.RemoveColumns(
+          Table.Join(
+            Table.AddIndexColumn(#"Distinct flowVersionDate", "Index", 1, 1),
+            "Index",
+            Table.AddIndexColumn(#"Merged flowVersion columns", "Index", 1, 1),
+            "Index"
+          ),
+          {"Index", "flowVersionDate"}
+        ),
+        "-1",
+        "",
+        Replacer.ReplaceText,
+        {"mergedFlowVersion"}
+      ),
+    #"Join flowVersionDate" =
+      Table.RenameColumns(
+        Table.RemoveColumns(
+          Table.Join(
+            #"Mapped to CDM",
+            "flowVersionId",
+            #"Combined flowVersion columns",
+            "flowVersionId"
+          ),
+          {"flowVersionId"}
+        ),
+        {"mergedFlowVersion", "flowVersionId"}
+      ),
+    #"Add startTimestampEpoch" =
+      Table.TransformColumnTypes(
+        Table.AddColumn(
+          #"Join flowVersionDate",
+          "startTimestamp.millisecondsEpoch",
+          each Duration.TotalSeconds(
+            DateTimeZone.From([startTimestamp]) - #datetimezone(1970, 1, 1, 0, 0, 0, 0, 0)
+          ) * 1000
+        ),
+        {{"startTimestamp.millisecondsEpoch", Int64.Type}}
+      ),
+    #"Replaced value" = Table.ReplaceValue(#"Add startTimestampEpoch", "", " ", Replacer.ReplaceValue, {"actionStatusCode", "actionError", "actionId", "connectorId"})
+  in
+    #"Replaced value";
+</msdyn_processmashupscript>
+          <msdyn_processminingmetadataconfig>{"ImportConfiguration":{"Attributes":[{"Name":"CaseId","SourceDataType":"String","ImportType":"Case","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActivityName","SourceDataType":"String","ImportType":"Activity","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp","SourceDataType":"Date","ImportType":"Start","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"FlowVersionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Case","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatus","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionStatusCode","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionError","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ActionId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"ConnectorId","SourceDataType":"String","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}},{"Name":"StartTimestamp.millisecondsEpoch","SourceDataType":"Integer","ImportType":"Other","FinanceImportType":"None","Conversion":null,"Level":"Event","IsDisplayAttribute":false,"IsExcluded":false,"DefaultValue":{"ValueKind":"String"}}]},"Views":[{"Name":"Default","Calendar":null,"Filters":null}],"ProcessExtendedMetadata":{"CalculatedMetrics":[],"BusinessRules":[],"ProcessMapHierarchies":[],"CaseCategorization":null},"ReportData":{"ReportId":"00000000-0000-0000-0000-000000000000","ReportName":"","WorkspaceId":"00000000-0000-0000-0000-000000000000","TenantId":null,"OverrideWorkspaceId":null,"OverrideWorkspaceName":"","ProvisionByowReport":false,"ProvisionXmlaDataset":false,"ByowReportVersion":null,"SkippedProvisioningInfo":null,"DatasetVersion":1,"OutputTarget":null,"ReportType":"CLOUDFLOW"},"Calendars":null,"LastModifiedTime":"2025-02-19T20:53:45.6643422Z"}</msdyn_processminingmetadataconfig>
+          <statecode>0</statecode>
+          <statuscode>1</statuscode>
+        </msdyn_pmprocesstemplate>
+      </msdyn_pmprocesstemplates>
+    </msdyn_pminferredtask>
+  </msdyn_pminferredtasks>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>

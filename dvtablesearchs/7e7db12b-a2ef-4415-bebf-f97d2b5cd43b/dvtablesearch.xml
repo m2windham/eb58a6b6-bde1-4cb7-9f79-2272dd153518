@@ -1,0 +1,29 @@
+<dvtablesearch dvtablesearchid="7e7db12b-a2ef-4415-bebf-f97d2b5cd43b">
+  <connectionreference>
+    <connectionreferencelogicalname>cr69b_sparky.cr.iZvYwJbJ</connectionreferencelogicalname>
+  </connectionreference>
+  <iscustomizable>0</iscustomizable>
+  <knowledgeconfig>{
+  "$kind": "IngestionBasedGraphSearchConfiguration",
+  "driveItems": [
+    {
+      "$kind": "GraphDriveItemSyncDetails",
+      "displayName": "150B Flowouts",
+      "webUrl": "https://apmmtab.sharepoint.com/sites/zone3/Shared%20Documents/Doug/150B%20Flowouts",
+      "driveId": "",
+      "itemId": "01S3URPTGOFBC666N54JHZGDHGXPCRAMEQ",
+      "sharepointIds": {
+        "$kind": "SharepointIds",
+        "webId": "79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+        "listId": "bd64849c-1ea2-40c0-8839-e79467df2d09",
+        "siteId": "a81a323d-6411-49ae-ba10-0849e073e962",
+        "siteUrl": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}</knowledgeconfig>
+  <name>150BFlowouts_j1hx5iBkQggrjuAilc3u6</name>
+  <searchtype>1</searchtype>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</dvtablesearch>
