@@ -1,0 +1,784 @@
+{
+  "flows": [
+    {
+      "name": "Sparky-GetSafetyFocusTimeRecords",
+      "displayName": "Sparky: Get Safety Focus Time Records",
+      "description": "Retrieves safety focus time records for Sparky bot interactions",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "PowerPlatformForBusiness",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "filter": {"type": "string"},
+                  "top": {"type": "integer"},
+                  "employee": {"type": "string"},
+                  "dateFrom": {"type": "string"},
+                  "dateTo": {"type": "string"}
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "Initialize_Filter": {
+            "runAfter": {},
+            "type": "InitializeVariable",
+            "inputs": {
+              "variables": [
+                {
+                  "name": "FilterExpression",
+                  "type": "string",
+                  "value": "@{if(empty(triggerBody()?['filter']), '', triggerBody()?['filter'])}"
+                }
+              ]
+            }
+          },
+          "Build_Date_Filter": {
+            "runAfter": {
+              "Initialize_Filter": ["Succeeded"]
+            },
+            "type": "Condition",
+            "expression": {
+              "and": [
+                {
+                  "not": {
+                    "equals": [
+                      "@triggerBody()?['dateFrom']",
+                      "@null"
+                    ]
+                  }
+                }
+              ]
+            },
+            "actions": {
+              "Set_Date_Filter": {
+                "type": "SetVariable",
+                "inputs": {
+                  "name": "FilterExpression",
+                  "value": "@{if(empty(variables('FilterExpression')), concat('Date ge ''', triggerBody()?['dateFrom'], ''''), concat(variables('FilterExpression'), ' and Date ge ''', triggerBody()?['dateFrom'], ''''))}"
+                }
+              }
+            }
+          },
+          "Get_Safety_Records": {
+            "runAfter": {
+              "Build_Date_Filter": ["Succeeded"]
+            },
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "GetItems",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "table": "Safety Focus Time",
+                "$filter": "@variables('FilterExpression')",
+                "$top": "@{if(empty(triggerBody()?['top']), 100, triggerBody()?['top'])}",
+                "$orderby": "Date desc"
+              }
+            },
+            "runtimeConfiguration": {
+              "paginationPolicy": {
+                "minimumItemCount": 1
+              }
+            }
+          },
+          "Format_Response": {
+            "runAfter": {
+              "Get_Safety_Records": ["Succeeded"]
+            },
+            "type": "Compose",
+            "inputs": {
+              "success": true,
+              "data": "@outputs('Get_Safety_Records')?['body']?['value']",
+              "count": "@length(outputs('Get_Safety_Records')?['body']?['value'])",
+              "summary": {
+                "totalEntries": "@length(outputs('Get_Safety_Records')?['body']?['value'])",
+                "totalMinutes": "@sum(outputs('Get_Safety_Records')?['body']?['value'], 'Duration')",
+                "averageMinutes": "@if(greater(length(outputs('Get_Safety_Records')?['body']?['value']), 0), div(sum(outputs('Get_Safety_Records')?['body']?['value'], 'Duration'), length(outputs('Get_Safety_Records')?['body']?['value'])), 0)"
+              }
+            }
+          },
+          "Return_Results": {
+            "runAfter": {
+              "Format_Response": ["Succeeded"]
+            },
+            "type": "Response",
+            "inputs": {
+              "statusCode": 200,
+              "body": "@outputs('Format_Response')"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Sparky-CreateSafetyFocusTimeEntry",
+      "displayName": "Sparky: Create Safety Focus Time Entry",
+      "description": "Creates a new safety focus time entry via Sparky bot",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "PowerPlatformForBusiness",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {"type": "string"},
+                  "date": {"type": "string"},
+                  "duration": {"type": "integer"},
+                  "employee": {"type": "string"},
+                  "description": {"type": "string"},
+                  "department": {"type": "string"},
+                  "safetyType": {"type": "string"}
+                },
+                "required": ["title", "date", "duration", "employee"]
+              }
+            }
+          }
+        },
+        "actions": {
+          "Validate_Input": {
+            "runAfter": {},
+            "type": "Condition",
+            "expression": {
+              "and": [
+                {
+                  "not": {
+                    "equals": [
+                      "@triggerBody()?['title']",
+                      "@null"
+                    ]
+                  }
+                },
+                {
+                  "greater": [
+                    "@triggerBody()?['duration']",
+                    0
+                  ]
+                }
+              ]
+            },
+            "actions": {
+              "Create_Safety_Entry": {
+                "type": "ApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "PostItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "table": "Safety Focus Time",
+                    "item": {
+                      "Title": "@triggerBody()?['title']",
+                      "Date": "@triggerBody()?['date']",
+                      "Duration": "@triggerBody()?['duration']",
+                      "Employee": "@triggerBody()?['employee']",
+                      "Description": "@if(empty(triggerBody()?['description']), 'Added via Sparky bot', triggerBody()?['description'])",
+                      "Department": "@if(empty(triggerBody()?['department']), 'Zone 3', triggerBody()?['department'])",
+                      "SafetyType": "@if(empty(triggerBody()?['safetyType']), 'General', triggerBody()?['safetyType'])",
+                      "CreatedBy": "Sparky Bot",
+                      "CreatedDate": "@utcNow()"
+                    }
+                  }
+                }
+              },
+              "Success_Response": {
+                "runAfter": {
+                  "Create_Safety_Entry": ["Succeeded"]
+                },
+                "type": "Response",
+                "inputs": {
+                  "statusCode": 201,
+                  "body": {
+                    "success": true,
+                    "message": "Safety focus time entry created successfully",
+                    "data": "@outputs('Create_Safety_Entry')?['body']",
+                    "id": "@outputs('Create_Safety_Entry')?['body']?['ID']",
+                    "summary": "Created entry for @{triggerBody()?['employee']} - @{triggerBody()?['duration']} minutes on @{triggerBody()?['date']}"
+                  }
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Validation_Error": {
+                  "type": "Response",
+                  "inputs": {
+                    "statusCode": 400,
+                    "body": {
+                      "success": false,
+                      "error": "Invalid input data",
+                      "message": "Title, employee, date, and duration (greater than 0) are required fields"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Sparky-GetProjectInformation",
+      "displayName": "Sparky: Get Project Information",
+      "description": "Retrieves comprehensive project information including tasks and status",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "PowerPlatformForBusiness",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "projectName": {"type": "string"},
+                  "projectId": {"type": "string"},
+                  "status": {"type": "string"},
+                  "includeCompleted": {"type": "boolean"}
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "Build_Project_Filter": {
+            "runAfter": {},
+            "type": "InitializeVariable",
+            "inputs": {
+              "variables": [
+                {
+                  "name": "ProjectFilter",
+                  "type": "string",
+                  "value": "@{if(not(empty(triggerBody()?['projectId'])), concat('ID eq ', triggerBody()?['projectId']), if(not(empty(triggerBody()?['projectName'])), concat('substringof(''', triggerBody()?['projectName'], ''', Title)'), ''))}"
+                }
+              ]
+            }
+          },
+          "Get_Projects": {
+            "runAfter": {
+              "Build_Project_Filter": ["Succeeded"]
+            },
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "GetItems",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "table": "Z3Projects",
+                "$filter": "@variables('ProjectFilter')",
+                "$orderby": "Modified desc"
+              }
+            }
+          },
+          "Process_Projects": {
+            "runAfter": {
+              "Get_Projects": ["Succeeded"]
+            },
+            "type": "Foreach",
+            "foreach": "@outputs('Get_Projects')?['body']?['value']",
+            "actions": {
+              "Get_Project_Tasks": {
+                "type": "ApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "GetItems",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "table": "Tasks",
+                    "$filter": "ProjectID eq @{items('Process_Projects')?['ID']}",
+                    "$orderby": "Priority desc, DueDate asc"
+                  }
+                }
+              },
+              "Get_SubProjects": {
+                "runAfter": {
+                  "Get_Project_Tasks": ["Succeeded"]
+                },
+                "type": "ApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "GetItems",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "table": "SubProjects",
+                    "$filter": "ParentProjectID eq @{items('Process_Projects')?['ID']}"
+                  }
+                }
+              },
+              "Calculate_Progress": {
+                "runAfter": {
+                  "Get_SubProjects": ["Succeeded"]
+                },
+                "type": "Compose",
+                "inputs": {
+                  "totalTasks": "@length(outputs('Get_Project_Tasks')?['body']?['value'])",
+                  "completedTasks": "@length(filter(outputs('Get_Project_Tasks')?['body']?['value'], lambda('x', equals(item()?['Status'], 'Completed'))))",
+                  "inProgressTasks": "@length(filter(outputs('Get_Project_Tasks')?['body']?['value'], lambda('x', equals(item()?['Status'], 'In Progress'))))",
+                  "overdueTasks": "@length(filter(outputs('Get_Project_Tasks')?['body']?['value'], lambda('x', and(less(item()?['DueDate'], utcNow()), not(equals(item()?['Status'], 'Completed'))))))"
+                }
+              }
+            }
+          },
+          "Format_Project_Response": {
+            "runAfter": {
+              "Process_Projects": ["Succeeded"]
+            },
+            "type": "Compose",
+            "inputs": {
+              "success": true,
+              "projects": "@outputs('Get_Projects')?['body']?['value']",
+              "projectCount": "@length(outputs('Get_Projects')?['body']?['value'])",
+              "enhancedData": "@body('Process_Projects')"
+            }
+          },
+          "Return_Project_Data": {
+            "runAfter": {
+              "Format_Project_Response": ["Succeeded"]
+            },
+            "type": "Response",
+            "inputs": {
+              "statusCode": 200,
+              "body": "@outputs('Format_Project_Response')"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Sparky-UpdateTaskStatus",
+      "displayName": "Sparky: Update Task Status",
+      "description": "Updates task status and logs completion information",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "PowerPlatformForBusiness",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "taskId": {"type": "string"},
+                  "status": {"type": "string"},
+                  "notes": {"type": "string"},
+                  "completedBy": {"type": "string"},
+                  "actualHours": {"type": "number"},
+                  "percentComplete": {"type": "integer"}
+                },
+                "required": ["taskId", "status"]
+              }
+            }
+          }
+        },
+        "actions": {
+          "Validate_Task_ID": {
+            "runAfter": {},
+            "type": "Condition",
+            "expression": {
+              "and": [
+                {
+                  "not": {
+                    "equals": [
+                      "@triggerBody()?['taskId']",
+                      "@null"
+                    ]
+                  }
+                },
+                {
+                  "not": {
+                    "equals": [
+                      "@triggerBody()?['status']",
+                      "@null"
+                    ]
+                  }
+                }
+              ]
+            },
+            "actions": {
+              "Get_Current_Task": {
+                "type": "ApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "GetItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "table": "Tasks",
+                    "id": "@triggerBody()?['taskId']"
+                  }
+                }
+              },
+              "Prepare_Update_Data": {
+                "runAfter": {
+                  "Get_Current_Task": ["Succeeded"]
+                },
+                "type": "Compose",
+                "inputs": {
+                  "Status": "@triggerBody()?['status']",
+                  "Notes": "@if(empty(triggerBody()?['notes']), concat('Status updated to ', triggerBody()?['status'], ' via Sparky bot'), triggerBody()?['notes'])",
+                  "CompletedBy": "@if(empty(triggerBody()?['completedBy']), 'Sparky Bot User', triggerBody()?['completedBy'])",
+                  "CompletedDate": "@if(equals(triggerBody()?['status'], 'Completed'), utcNow(), null)",
+                  "ActualHours": "@triggerBody()?['actualHours']",
+                  "PercentComplete": "@if(equals(triggerBody()?['status'], 'Completed'), 100, if(equals(triggerBody()?['status'], 'Not Started'), 0, triggerBody()?['percentComplete']))",
+                  "LastModified": "@utcNow()",
+                  "ModifiedBy": "Sparky Bot"
+                }
+              },
+              "Update_Task": {
+                "runAfter": {
+                  "Prepare_Update_Data": ["Succeeded"]
+                },
+                "type": "ApiConnection",
+                "inputs": {
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "PatchItem",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "table": "Tasks",
+                    "id": "@triggerBody()?['taskId']",
+                    "item": "@outputs('Prepare_Update_Data')"
+                  }
+                }
+              },
+              "Check_Project_Completion": {
+                "runAfter": {
+                  "Update_Task": ["Succeeded"]
+                },
+                "type": "Condition",
+                "expression": {
+                  "equals": [
+                    "@triggerBody()?['status']",
+                    "Completed"
+                  ]
+                },
+                "actions": {
+                  "Get_Project_Tasks": {
+                    "type": "ApiConnection",
+                    "inputs": {
+                      "host": {
+                        "connectionName": "shared_sharepointonline",
+                        "operationId": "GetItems",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                      },
+                      "parameters": {
+                        "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                        "table": "Tasks",
+                        "$filter": "ProjectID eq @{outputs('Get_Current_Task')?['body']?['ProjectID']}"
+                      }
+                    }
+                  },
+                  "Calculate_Project_Progress": {
+                    "runAfter": {
+                      "Get_Project_Tasks": ["Succeeded"]
+                    },
+                    "type": "Compose",
+                    "inputs": {
+                      "totalTasks": "@length(outputs('Get_Project_Tasks')?['body']?['value'])",
+                      "completedTasks": "@length(filter(outputs('Get_Project_Tasks')?['body']?['value'], lambda('x', equals(item()?['Status'], 'Completed'))))",
+                      "projectCompletion": "@div(length(filter(outputs('Get_Project_Tasks')?['body']?['value'], lambda('x', equals(item()?['Status'], 'Completed')))), length(outputs('Get_Project_Tasks')?['body']?['value']))"
+                    }
+                  }
+                }
+              },
+              "Success_Response": {
+                "runAfter": {
+                  "Check_Project_Completion": ["Succeeded"]
+                },
+                "type": "Response",
+                "inputs": {
+                  "statusCode": 200,
+                  "body": {
+                    "success": true,
+                    "message": "Task status updated successfully",
+                    "task": "@outputs('Update_Task')?['body']",
+                    "previousStatus": "@outputs('Get_Current_Task')?['body']?['Status']",
+                    "newStatus": "@triggerBody()?['status']",
+                    "projectProgress": "@if(equals(triggerBody()?['status'], 'Completed'), outputs('Calculate_Project_Progress'), null)"
+                  }
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Validation_Error_Response": {
+                  "type": "Response",
+                  "inputs": {
+                    "statusCode": 400,
+                    "body": {
+                      "success": false,
+                      "error": "Invalid input",
+                      "message": "Task ID and status are required fields"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Sparky-GetKPIData",
+      "displayName": "Sparky: Get KPI Data",
+      "description": "Retrieves KPI data and performance metrics for Zone 3",
+      "definition": {
+        "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+        "contentVersion": "1.0.0.0",
+        "parameters": {
+          "$connections": {
+            "defaultValue": {},
+            "type": "Object"
+          }
+        },
+        "triggers": {
+          "manual": {
+            "type": "Request",
+            "kind": "PowerPlatformForBusiness",
+            "inputs": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "dateRange": {"type": "string"},
+                  "kpiType": {"type": "string"},
+                  "department": {"type": "string"},
+                  "includeTargets": {"type": "boolean"}
+                }
+              }
+            }
+          }
+        },
+        "actions": {
+          "Calculate_Date_Range": {
+            "runAfter": {},
+            "type": "Switch",
+            "expression": "@triggerBody()?['dateRange']",
+            "cases": {
+              "today": {
+                "case": "today",
+                "actions": {
+                  "Set_Today_Range": {
+                    "type": "InitializeVariable",
+                    "inputs": {
+                      "variables": [
+                        {
+                          "name": "StartDate",
+                          "type": "string",
+                          "value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                        },
+                        {
+                          "name": "EndDate", 
+                          "type": "string",
+                          "value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "week": {
+                "case": "week",
+                "actions": {
+                  "Set_Week_Range": {
+                    "type": "InitializeVariable",
+                    "inputs": {
+                      "variables": [
+                        {
+                          "name": "StartDate",
+                          "type": "string",
+                          "value": "@formatDateTime(addDays(utcNow(), -7), 'yyyy-MM-dd')"
+                        },
+                        {
+                          "name": "EndDate",
+                          "type": "string", 
+                          "value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              "month": {
+                "case": "month",
+                "actions": {
+                  "Set_Month_Range": {
+                    "type": "InitializeVariable",
+                    "inputs": {
+                      "variables": [
+                        {
+                          "name": "StartDate",
+                          "type": "string",
+                          "value": "@formatDateTime(addDays(utcNow(), -30), 'yyyy-MM-dd')"
+                        },
+                        {
+                          "name": "EndDate",
+                          "type": "string",
+                          "value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "default": {
+              "actions": {
+                "Set_Default_Range": {
+                  "type": "InitializeVariable",
+                  "inputs": {
+                    "variables": [
+                      {
+                        "name": "StartDate",
+                        "type": "string",
+                        "value": "@formatDateTime(addDays(utcNow(), -7), 'yyyy-MM-dd')"
+                      },
+                      {
+                        "name": "EndDate",
+                        "type": "string",
+                        "value": "@formatDateTime(utcNow(), 'yyyy-MM-dd')"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "Get_Safety_KPIs": {
+            "runAfter": {
+              "Calculate_Date_Range": ["Succeeded"]
+            },
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "GetItems",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "table": "Safety Focus Time",
+                "$filter": "Date ge '@{variables('StartDate')}' and Date le '@{variables('EndDate')}'",
+                "$orderby": "Date desc"
+              }
+            }
+          },
+          "Get_Project_KPIs": {
+            "runAfter": {
+              "Get_Safety_KPIs": ["Succeeded"]
+            },
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "GetItems",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "table": "Z3Projects",
+                "$filter": "Modified ge '@{variables('StartDate')}'"
+              }
+            }
+          },
+          "Calculate_KPI_Metrics": {
+            "runAfter": {
+              "Get_Project_KPIs": ["Succeeded"]
+            },
+            "type": "Compose",
+            "inputs": {
+              "safetyMetrics": {
+                "totalEntries": "@length(outputs('Get_Safety_KPIs')?['body']?['value'])",
+                "totalMinutes": "@sum(outputs('Get_Safety_KPIs')?['body']?['value'], 'Duration')",
+                "averagePerEntry": "@if(greater(length(outputs('Get_Safety_KPIs')?['body']?['value']), 0), div(sum(outputs('Get_Safety_KPIs')?['body']?['value'], 'Duration'), length(outputs('Get_Safety_KPIs')?['body']?['value'])), 0)",
+                "uniqueEmployees": "@length(union(outputs('Get_Safety_KPIs')?['body']?['value'], 'Employee'))"
+              },
+              "projectMetrics": {
+                "totalProjects": "@length(outputs('Get_Project_KPIs')?['body']?['value'])",
+                "activeProjects": "@length(filter(outputs('Get_Project_KPIs')?['body']?['value'], lambda('x', equals(item()?['Status'], 'In Progress'))))",
+                "completedProjects": "@length(filter(outputs('Get_Project_KPIs')?['body']?['value'], lambda('x', equals(item()?['Status'], 'Completed'))))",
+                "overdueProjects": "@length(filter(outputs('Get_Project_KPIs')?['body']?['value'], lambda('x', and(less(item()?['DueDate'], utcNow()), not(equals(item()?['Status'], 'Completed'))))))"
+              },
+              "dateRange": {
+                "from": "@variables('StartDate')",
+                "to": "@variables('EndDate')",
+                "type": "@if(empty(triggerBody()?['dateRange']), 'week', triggerBody()?['dateRange'])"
+              }
+            }
+          },
+          "Return_KPI_Data": {
+            "runAfter": {
+              "Calculate_KPI_Metrics": ["Succeeded"]
+            },
+            "type": "Response",
+            "inputs": {
+              "statusCode": 200,
+              "body": {
+                "success": true,
+                "kpiData": "@outputs('Calculate_KPI_Metrics')",
+                "rawData": {
+                  "safetyData": "@outputs('Get_Safety_KPIs')?['body']?['value']",
+                  "projectData": "@outputs('Get_Project_KPIs')?['body']?['value']"
+                },
+                "generatedAt": "@utcNow()"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,265 @@
+{
+  "connectors": [
+    {
+      "name": "SparkySharePointConnector",
+      "displayName": "Sparky SharePoint Operations",
+      "description": "Custom connector for Sparky bot to interact with Zone 3 SharePoint lists",
+      "iconBrandColor": "#da3b01",
+      "connectionParameters": {
+        "site": {
+          "type": "string",
+          "uiDefinition": {
+            "displayName": "SharePoint Site URL",
+            "description": "The URL of your SharePoint site",
+            "constraints": {
+              "required": "true"
+            }
+          }
+        }
+      },
+      "actions": {
+        "GetSafetyFocusTimeRecords": {
+          "displayName": "Get Safety Focus Time Records",
+          "description": "Retrieve safety focus time entries",
+          "visibility": "important",
+          "operation": {
+            "operationId": "GetSafetyFocusTimeRecords",
+            "summary": "Get Safety Focus Time Records",
+            "description": "Retrieves safety focus time entries from SharePoint list",
+            "parameters": [
+              {
+                "name": "site",
+                "in": "path",
+                "required": true,
+                "type": "string",
+                "x-ms-summary": "SharePoint Site",
+                "description": "SharePoint site URL"
+              },
+              {
+                "name": "filter",
+                "in": "query",
+                "required": false,
+                "type": "string",
+                "x-ms-summary": "Filter",
+                "description": "OData filter expression"
+              },
+              {
+                "name": "top",
+                "in": "query",
+                "required": false,
+                "type": "integer",
+                "x-ms-summary": "Top Count",
+                "description": "Number of items to retrieve"
+              }
+            ],
+            "responses": {
+              "200": {
+                "description": "Success",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "Id": {"type": "integer"},
+                          "Title": {"type": "string"},
+                          "Date": {"type": "string"},
+                          "Duration": {"type": "integer"},
+                          "Employee": {"type": "string"},
+                          "Description": {"type": "string"}
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "CreateSafetyFocusTimeEntry": {
+          "displayName": "Create Safety Focus Time Entry",
+          "description": "Create new safety focus time entry",
+          "visibility": "important",
+          "operation": {
+            "operationId": "CreateSafetyFocusTimeEntry",
+            "summary": "Create Safety Focus Time Entry",
+            "description": "Creates a new safety focus time entry in SharePoint",
+            "parameters": [
+              {
+                "name": "site",
+                "in": "path",
+                "required": true,
+                "type": "string",
+                "x-ms-summary": "SharePoint Site"
+              },
+              {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Title": {"type": "string", "x-ms-summary": "Title"},
+                    "Date": {"type": "string", "x-ms-summary": "Date"},
+                    "Duration": {"type": "integer", "x-ms-summary": "Duration (minutes)"},
+                    "Employee": {"type": "string", "x-ms-summary": "Employee Name"},
+                    "Description": {"type": "string", "x-ms-summary": "Description"}
+                  },
+                  "required": ["Title", "Date", "Duration", "Employee"]
+                }
+              }
+            ]
+          }
+        },
+        "GetProjectInfo": {
+          "displayName": "Get Project Information",
+          "description": "Retrieve project and related task information",
+          "visibility": "important",
+          "operation": {
+            "operationId": "GetProjectInfo",
+            "summary": "Get Project Information",
+            "description": "Retrieves project details and associated tasks",
+            "parameters": [
+              {
+                "name": "site",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "projectName",
+                "in": "query",
+                "required": false,
+                "type": "string",
+                "x-ms-summary": "Project Name"
+              },
+              {
+                "name": "projectId",
+                "in": "query",
+                "required": false,
+                "type": "string",
+                "x-ms-summary": "Project ID"
+              }
+            ]
+          }
+        },
+        "UpdateTaskStatus": {
+          "displayName": "Update Task Status",
+          "description": "Update the status of a project task",
+          "visibility": "important",
+          "operation": {
+            "operationId": "UpdateTaskStatus",
+            "summary": "Update Task Status",
+            "description": "Updates task status and completion information",
+            "parameters": [
+              {
+                "name": "site",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "taskId",
+                "in": "path",
+                "required": true,
+                "type": "string",
+                "x-ms-summary": "Task ID"
+              },
+              {
+                "name": "body",
+                "in": "body",
+                "required": true,
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "Status": {"type": "string", "x-ms-summary": "Status"},
+                    "Notes": {"type": "string", "x-ms-summary": "Notes"},
+                    "CompletedBy": {"type": "string", "x-ms-summary": "Completed By"}
+                  },
+                  "required": ["Status"]
+                }
+              }
+            ]
+          }
+        },
+        "GetKPIData": {
+          "displayName": "Get KPI Data",
+          "description": "Retrieve KPI tracking information",
+          "visibility": "important",
+          "operation": {
+            "operationId": "GetKPIData",
+            "summary": "Get KPI Data",
+            "description": "Retrieves KPI metrics and performance data",
+            "parameters": [
+              {
+                "name": "site",
+                "in": "path",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "dateRange",
+                "in": "query",
+                "required": false,
+                "type": "string",
+                "x-ms-summary": "Date Range",
+                "description": "Date range for KPI data (today, week, month)"
+              },
+              {
+                "name": "kpiType",
+                "in": "query",
+                "required": false,
+                "type": "string",
+                "x-ms-summary": "KPI Type",
+                "description": "Type of KPI to retrieve"
+              }
+            ]
+          }
+        }
+      },
+      "swagger": "2.0",
+      "info": {
+        "title": "Sparky SharePoint Operations",
+        "description": "Custom connector for Sparky bot SharePoint integration",
+        "version": "1.0"
+      },
+      "host": "graph.microsoft.com",
+      "basePath": "/v1.0",
+      "schemes": ["https"],
+      "consumes": ["application/json"],
+      "produces": ["application/json"],
+      "securityDefinitions": {
+        "oauth2_auth": {
+          "type": "oauth2",
+          "flow": "accessCode",
+          "authorizationUrl": "https://login.microsoftonline.com/common/oauth2/authorize",
+          "tokenUrl": "https://login.microsoftonline.com/common/oauth2/token",
+          "scopes": {
+            "Sites.ReadWrite.All": "Read and write to SharePoint sites"
+          }
+        }
+      },
+      "security": [{"oauth2_auth": ["Sites.ReadWrite.All"]}]
+    }
+  ],
+  "connectionReferences": [
+    {
+      "logicalName": "cr69b_sparky_sharepoint_lists",
+      "displayName": "Sparky SharePoint Lists",
+      "connectorId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline",
+      "connectionParameters": {
+        "site": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    },
+    {
+      "logicalName": "cr69b_sparky_sharepoint_custom",
+      "displayName": "Sparky SharePoint Custom",
+      "connectorId": "SparkySharePointConnector",
+      "connectionParameters": {
+        "site": "https://apmmtab.sharepoint.com/sites/zone3"
+      }
+    }
+  ]
+}
