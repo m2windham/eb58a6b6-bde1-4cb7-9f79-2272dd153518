@@ -1,0 +1,651 @@
+{
+  "name": "Enhanced_AutomatedKPICapture_v2",
+  "displayName": "Enhanced Automated KPI Capture v2.0",
+  "description": "Advanced KPI capture with parallel processing, intelligent error handling, and real-time analytics",
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+    "contentVersion": "2.0.0.0",
+    "parameters": {
+      "$connections": {
+        "defaultValue": {},
+        "type": "Object"
+      },
+      "$authentication": {
+        "defaultValue": {},
+        "type": "SecureObject"
+      }
+    },
+    "triggers": {
+      "When_a_new_email_arrives_V4": {
+        "splitOn": "@triggerOutputs()?['body/value']",
+        "metadata": {
+          "operationMetadataId": "enhanced-email-trigger"
+        },
+        "type": "OpenApiConnectionNotification",
+        "inputs": {
+          "host": {
+            "connectionName": "shared_office365",
+            "operationId": "OnNewEmailV4",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+          },
+          "parameters": {
+            "to": "dwindham@apmm-tab.com",
+            "toOrCc": "dwindham@apmm-tab.com",
+            "includeAttachments": true,
+            "fetchOnlyWithAttachment": true,
+            "subjectFilter": "KPI Data"
+          },
+          "authentication": "@parameters('$authentication')"
+        }
+      },
+      "Scheduled_KPI_Processing": {
+        "type": "Recurrence",
+        "inputs": {
+          "frequency": "Hour",
+          "interval": 1,
+          "schedule": {
+            "minutes": [0, 30]
+          }
+        }
+      }
+    },
+    "actions": {
+      "Initialize_Performance_Tracking": {
+        "runAfter": {},
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "ProcessingStartTime",
+              "type": "string",
+              "value": "@utcNow()"
+            },
+            {
+              "name": "ProcessingMetrics",
+              "type": "object",
+              "value": {
+                "startTime": "@utcNow()",
+                "totalRecords": 0,
+                "successfulRecords": 0,
+                "failedRecords": 0,
+                "processingErrors": [],
+                "performance": {
+                  "emailProcessingTime": 0,
+                  "fileValidationTime": 0,
+                  "dataProcessingTime": 0,
+                  "sharePointWriteTime": 0
+                }
+              }
+            }
+          ]
+        }
+      },
+      "Initialize_Error_Handling": {
+        "runAfter": {
+          "Initialize_Performance_Tracking": ["Succeeded"]
+        },
+        "type": "InitializeVariable",
+        "inputs": {
+          "variables": [
+            {
+              "name": "ErrorLog",
+              "type": "array",
+              "value": []
+            },
+            {
+              "name": "RetryCount",
+              "type": "integer",
+              "value": 0
+            },
+            {
+              "name": "MaxRetries",
+              "type": "integer",
+              "value": 3
+            }
+          ]
+        }
+      },
+      "Email_Processing_Scope": {
+        "runAfter": {
+          "Initialize_Error_Handling": ["Succeeded"]
+        },
+        "type": "Scope",
+        "actions": {
+          "Validate_Email_Attachment": {
+            "type": "Condition",
+            "expression": {
+              "and": [
+                {
+                  "greater": [
+                    "@length(triggerBody()?['attachments'])",
+                    0
+                  ]
+                },
+                {
+                  "contains": [
+                    "@triggerBody()?['attachments']?[0]?['name']",
+                    ".xlsx"
+                  ]
+                }
+              ]
+            },
+            "actions": {
+              "Create_File_With_Validation": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                    "folderPath": "/Shared Documents/UnifiedKPI/Production",
+                    "name": "@{formatDateTime(utcNow(), 'yyyy-MM-dd_HH-mm-ss')}_@{triggerBody()?['attachments']?[0]?['name']}",
+                    "body": "@triggerBody()?['attachments']?[0]?['contentBytes']"
+                  },
+                  "host": {
+                    "connectionName": "shared_sharepointonline",
+                    "operationId": "CreateFile",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                },
+                "runtimeConfiguration": {
+                  "contentTransfer": {
+                    "transferMode": "Chunked"
+                  },
+                  "secureData": {
+                    "properties": ["inputs", "outputs"]
+                  }
+                }
+              },
+              "File_Size_Validation": {
+                "runAfter": {
+                  "Create_File_With_Validation": ["Succeeded"]
+                },
+                "type": "Condition",
+                "expression": {
+                  "and": [
+                    {
+                      "greater": [
+                        "@outputs('Create_File_With_Validation')?['body/Size']",
+                        1024
+                      ]
+                    },
+                    {
+                      "less": [
+                        "@outputs('Create_File_With_Validation')?['body/Size']",
+                        52428800
+                      ]
+                    }
+                  ]
+                },
+                "actions": {
+                  "Set_Processing_File": {
+                    "type": "SetVariable",
+                    "inputs": {
+                      "name": "ProcessingMetrics",
+                      "value": "@setProperty(variables('ProcessingMetrics'), 'fileId', outputs('Create_File_With_Validation')?['body/Id'])"
+                    }
+                  }
+                },
+                "else": {
+                  "actions": {
+                    "Log_File_Size_Error": {
+                      "type": "AppendToArrayVariable",
+                      "inputs": {
+                        "name": "ErrorLog",
+                        "value": {
+                          "timestamp": "@utcNow()",
+                          "error": "File size validation failed",
+                          "details": "File size: @{outputs('Create_File_With_Validation')?['body/Size']} bytes",
+                          "severity": "High"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Log_Attachment_Error": {
+                  "type": "AppendToArrayVariable",
+                  "inputs": {
+                    "name": "ErrorLog",
+                    "value": {
+                      "timestamp": "@utcNow()",
+                      "error": "Invalid email attachment",
+                      "details": "No valid Excel file found in email",
+                      "severity": "High"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Parallel_Data_Processing": {
+        "runAfter": {
+          "Email_Processing_Scope": ["Succeeded"]
+        },
+        "type": "Foreach",
+        "foreach": "@createArray('OA', 'DT', 'MP')",
+        "actions": {
+          "Process_Data_Sheet": {
+            "type": "Scope",
+            "actions": {
+              "Get_Sheet_Data_With_Retry": {
+                "type": "Until",
+                "expression": "@or(greater(variables('RetryCount'), variables('MaxRetries')), not(empty(variables('SheetData'))))",
+                "limit": {
+                  "count": 5,
+                  "timeout": "PT10M"
+                },
+                "actions": {
+                  "List_Rows_From_Sheet": {
+                    "type": "OpenApiConnection",
+                    "inputs": {
+                      "parameters": {
+                        "source": "sites/apmmtab.sharepoint.com,a81a323d-6411-49ae-ba10-0849e073e962,79cf0edb-aa6b-45da-a82b-ea7404882e4f",
+                        "drive": "b!PTIaqBFkrkm6EAhJ4HPpYtsOz3lrqtpFqCvqdASILk-chGS9oh7AQIg555Rn3y0J",
+                        "file": "@variables('ProcessingMetrics')?['fileId']",
+                        "table": "@{items('Parallel_Data_Processing')}"
+                      },
+                      "host": {
+                        "connectionName": "shared_excelonlinebusiness",
+                        "operationId": "GetItems",
+                        "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+                      },
+                      "authentication": "@parameters('$authentication')"
+                    },
+                    "runtimeConfiguration": {
+                      "paginationPolicy": {
+                        "minimumItemCount": 1
+                      }
+                    }
+                  },
+                  "Data_Quality_Validation": {
+                    "runAfter": {
+                      "List_Rows_From_Sheet": ["Succeeded"]
+                    },
+                    "type": "Compose",
+                    "inputs": {
+                      "validRecords": "@length(filter(outputs('List_Rows_From_Sheet')?['body/value'], lambda('record', and(not(empty(item()?['Date'])), not(empty(item()?['Part']))))))",
+                      "totalRecords": "@length(outputs('List_Rows_From_Sheet')?['body/value'])",
+                      "dataQualityScore": "@div(length(filter(outputs('List_Rows_From_Sheet')?['body/value'], lambda('record', and(not(empty(item()?['Date'])), not(empty(item()?['Part'])))))), max(length(outputs('List_Rows_From_Sheet')?['body/value']), 1))"
+                    }
+                  },
+                  "Process_Valid_Records": {
+                    "runAfter": {
+                      "Data_Quality_Validation": ["Succeeded"]
+                    },
+                    "type": "Condition",
+                    "expression": {
+                      "greater": [
+                        "@outputs('Data_Quality_Validation')?['validRecords']",
+                        0
+                      ]
+                    },
+                    "actions": {
+                      "Batch_Process_Records": {
+                        "type": "Foreach",
+                        "foreach": "@chunk(filter(outputs('List_Rows_From_Sheet')?['body/value'], lambda('record', and(not(empty(item()?['Date'])), not(empty(item()?['Part']))))), 10)",
+                        "actions": {
+                          "Process_Record_Batch": {
+                            "type": "Foreach",
+                            "foreach": "@items('Batch_Process_Records')",
+                            "actions": {
+                              "Smart_Record_Processing": {
+                                "type": "Switch",
+                                "expression": "@items('Parallel_Data_Processing')",
+                                "cases": {
+                                  "OA_Processing": {
+                                    "case": "OA",
+                                    "actions": {
+                                      "Process_OA_Record": {
+                                        "type": "Scope",
+                                        "actions": {
+                                          "Check_Existing_OA_Record": {
+                                            "type": "OpenApiConnection",
+                                            "inputs": {
+                                              "parameters": {
+                                                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                                "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                                                "$filter": "Title eq '@{items('Process_Record_Batch')?['Part']}' and field_3 eq '@{items('Process_Record_Batch')?['Shift']}' and field_0 eq '@{formatDateTime(addDays('1899-12-30', int(items('Process_Record_Batch')?['Date'])), 'MM/dd/yyyy')}'"
+                                              },
+                                              "host": {
+                                                "connectionName": "shared_sharepointonline",
+                                                "operationId": "GetItems",
+                                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                              },
+                                              "authentication": "@parameters('$authentication')"
+                                            }
+                                          },
+                                          "Upsert_OA_Record": {
+                                            "runAfter": {
+                                              "Check_Existing_OA_Record": ["Succeeded"]
+                                            },
+                                            "type": "Condition",
+                                            "expression": {
+                                              "equals": [
+                                                "@length(outputs('Check_Existing_OA_Record')?['body/value'])",
+                                                0
+                                              ]
+                                            },
+                                            "actions": {
+                                              "Create_New_OA_Record": {
+                                                "type": "OpenApiConnection",
+                                                "inputs": {
+                                                  "parameters": {
+                                                    "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                                    "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                                                    "item": {
+                                                      "Title": "@items('Process_Record_Batch')?['Part']",
+                                                      "field_0": "@formatDateTime(addDays('1899-12-30', int(items('Process_Record_Batch')?['Date'])), 'MM/dd/yyyy')",
+                                                      "field_2": "@coalesce(items('Process_Record_Batch')?['OA'], 0)",
+                                                      "field_3": "@items('Process_Record_Batch')?['Shift']",
+                                                      "Build": "@coalesce(items('Process_Record_Batch')?['Build'], 0)",
+                                                      "Finish": "@coalesce(items('Process_Record_Batch')?['Finish'], 0)",
+                                                      "Scrap": "@coalesce(items('Process_Record_Batch')?['Scrap'], 0)",
+                                                      "OT": "@coalesce(items('Process_Record_Batch')?['OT'], 0)",
+                                                      "ProcessedBy": "Enhanced_KPI_Capture_v2",
+                                                      "ProcessedDate": "@utcNow()",
+                                                      "DataQuality": "Validated"
+                                                    }
+                                                  },
+                                                  "host": {
+                                                    "connectionName": "shared_sharepointonline",
+                                                    "operationId": "PostItem",
+                                                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                                  },
+                                                  "authentication": "@parameters('$authentication')"
+                                                }
+                                              }
+                                            },
+                                            "else": {
+                                              "actions": {
+                                                "Update_Existing_OA_Record": {
+                                                  "type": "OpenApiConnection",
+                                                  "inputs": {
+                                                    "parameters": {
+                                                      "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                                      "table": "8c4560c5-ab02-448b-9ba0-57386d3ad8d5",
+                                                      "id": "@outputs('Check_Existing_OA_Record')?['body/value']?[0]?['ID']",
+                                                      "item": {
+                                                        "field_2": "@coalesce(items('Process_Record_Batch')?['OA'], outputs('Check_Existing_OA_Record')?['body/value']?[0]?['field_2'])",
+                                                        "Build": "@coalesce(items('Process_Record_Batch')?['Build'], outputs('Check_Existing_OA_Record')?['body/value']?[0]?['Build'])",
+                                                        "Finish": "@coalesce(items('Process_Record_Batch')?['Finish'], outputs('Check_Existing_OA_Record')?['body/value']?[0]?['Finish'])",
+                                                        "Scrap": "@coalesce(items('Process_Record_Batch')?['Scrap'], outputs('Check_Existing_OA_Record')?['body/value']?[0]?['Scrap'])",
+                                                        "OT": "@coalesce(items('Process_Record_Batch')?['OT'], outputs('Check_Existing_OA_Record')?['body/value']?[0]?['OT'])",
+                                                        "LastUpdated": "@utcNow()",
+                                                        "UpdatedBy": "Enhanced_KPI_Capture_v2"
+                                                      }
+                                                    },
+                                                    "host": {
+                                                      "connectionName": "shared_sharepointonline",
+                                                      "operationId": "PatchItem",
+                                                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                                    },
+                                                    "authentication": "@parameters('$authentication')"
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "DT_Processing": {
+                                    "case": "DT",
+                                    "actions": {
+                                      "Process_DT_Record": {
+                                        "type": "Scope",
+                                        "actions": {
+                                          "Enhanced_DT_Processing": {
+                                            "type": "OpenApiConnection",
+                                            "inputs": {
+                                              "parameters": {
+                                                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                                "table": "b2394210-96c0-47b1-b581-815caa17ed09",
+                                                "item": {
+                                                  "Title": "@items('Process_Record_Batch')?['Part']",
+                                                  "field_0": "@formatDateTime(addDays('1899-12-30', int(items('Process_Record_Batch')?['Date'])), 'MM/dd/yyyy')",
+                                                  "Shift": "@items('Process_Record_Batch')?['Shift']",
+                                                  "field_6": "@coalesce(items('Process_Record_Batch')?['4M'], 'N/A')",
+                                                  "field_7": "@coalesce(items('Process_Record_Batch')?['Area'], 'General')",
+                                                  "field_8": "@coalesce(items('Process_Record_Batch')?['Mins'], 0)",
+                                                  "field_9": "@coalesce(items('Process_Record_Batch')?['Cause'], 'Unknown')",
+                                                  "field_10": "@coalesce(items('Process_Record_Batch')?['Problem'], 'General')",
+                                                  "ProcessedBy": "Enhanced_KPI_Capture_v2",
+                                                  "ProcessedDate": "@utcNow()",
+                                                  "Severity": "@if(greater(coalesce(int(items('Process_Record_Batch')?['Mins']), 0), 30), 'High', if(greater(coalesce(int(items('Process_Record_Batch')?['Mins']), 0), 10), 'Medium', 'Low'))"
+                                                }
+                                              },
+                                              "host": {
+                                                "connectionName": "shared_sharepointonline",
+                                                "operationId": "PostItem",
+                                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                              },
+                                              "authentication": "@parameters('$authentication')"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  },
+                                  "MP_Processing": {
+                                    "case": "MP",
+                                    "actions": {
+                                      "Process_MP_Record": {
+                                        "type": "Scope",
+                                        "actions": {
+                                          "Enhanced_MP_Processing": {
+                                            "type": "OpenApiConnection",
+                                            "inputs": {
+                                              "parameters": {
+                                                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                                                "table": "456fc63a-30fd-4908-8a9c-73334e368984",
+                                                "item": {
+                                                  "Title": "@formatDateTime(addDays('1899-12-30', int(items('Process_Record_Batch')?['Date'])), 'MM/dd/yyyy')",
+                                                  "TMPlan": "@coalesce(items('Process_Record_Batch')?['TM Plan'], 0)",
+                                                  "TMAct": "@coalesce(items('Process_Record_Batch')?['TM Act'], 0)",
+                                                  "TMRatio": "@if(greater(coalesce(items('Process_Record_Batch')?['TM Plan'], 0), 0), div(coalesce(items('Process_Record_Batch')?['TM Act'], 0), coalesce(items('Process_Record_Batch')?['TM Plan'], 1)), 0)",
+                                                  "TLPlan": "@coalesce(items('Process_Record_Batch')?['TL Plan'], 0)",
+                                                  "TLAct": "@coalesce(items('Process_Record_Batch')?['TL act'], 0)",
+                                                  "TLinline": "@coalesce(items('Process_Record_Batch')?['TL InLine'], 0)",
+                                                  "Shft": "@items('Process_Record_Batch')?['Shift']",
+                                                  "ProcessedBy": "Enhanced_KPI_Capture_v2",
+                                                  "ProcessedDate": "@utcNow()",
+                                                  "Efficiency": "@if(greater(coalesce(items('Process_Record_Batch')?['TM Plan'], 0), 0), mul(div(coalesce(items('Process_Record_Batch')?['TM Act'], 0), coalesce(items('Process_Record_Batch')?['TM Plan'], 1)), 100), 0)"
+                                                }
+                                              },
+                                              "host": {
+                                                "connectionName": "shared_sharepointonline",
+                                                "operationId": "PostItem",
+                                                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+                                              },
+                                              "authentication": "@parameters('$authentication')"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    }
+                                  }
+                                },
+                                "default": {
+                                  "actions": {
+                                    "Log_Unknown_Sheet_Type": {
+                                      "type": "AppendToArrayVariable",
+                                      "inputs": {
+                                        "name": "ErrorLog",
+                                        "value": {
+                                          "timestamp": "@utcNow()",
+                                          "error": "Unknown sheet type",
+                                          "details": "Sheet: @{items('Parallel_Data_Processing')}",
+                                          "severity": "Medium"
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "runtimeConfiguration": {
+                          "concurrency": {
+                            "repetitions": 5
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "runtimeConfiguration": {
+          "concurrency": {
+            "repetitions": 3
+          }
+        }
+      },
+      "Performance_Analytics": {
+        "runAfter": {
+          "Parallel_Data_Processing": ["Succeeded", "Failed", "Skipped"]
+        },
+        "type": "Scope",
+        "actions": {
+          "Calculate_Performance_Metrics": {
+            "type": "Compose",
+            "inputs": {
+              "totalProcessingTime": "@div(sub(ticks(utcNow()), ticks(variables('ProcessingStartTime'))), 10000000)",
+              "recordsPerSecond": "@if(greater(div(sub(ticks(utcNow()), ticks(variables('ProcessingStartTime'))), 10000000), 0), div(variables('ProcessingMetrics')?['totalRecords'], div(sub(ticks(utcNow()), ticks(variables('ProcessingStartTime'))), 10000000)), 0)",
+              "errorRate": "@if(greater(variables('ProcessingMetrics')?['totalRecords'], 0), div(variables('ProcessingMetrics')?['failedRecords'], variables('ProcessingMetrics')?['totalRecords']), 0)",
+              "successRate": "@if(greater(variables('ProcessingMetrics')?['totalRecords'], 0), div(variables('ProcessingMetrics')?['successfulRecords'], variables('ProcessingMetrics')?['totalRecords']), 0)"
+            }
+          },
+          "Log_Performance_Metrics": {
+            "runAfter": {
+              "Calculate_Performance_Metrics": ["Succeeded"]
+            },
+            "type": "OpenApiConnection",
+            "inputs": {
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "table": "Performance_Log",
+                "item": {
+                  "Title": "KPI_Processing_@{formatDateTime(utcNow(), 'yyyy-MM-dd_HH-mm-ss')}",
+                  "ProcessingDate": "@utcNow()",
+                  "TotalProcessingTime": "@outputs('Calculate_Performance_Metrics')?['totalProcessingTime']",
+                  "RecordsPerSecond": "@outputs('Calculate_Performance_Metrics')?['recordsPerSecond']",
+                  "ErrorRate": "@outputs('Calculate_Performance_Metrics')?['errorRate']",
+                  "SuccessRate": "@outputs('Calculate_Performance_Metrics')?['successRate']",
+                  "TotalRecords": "@variables('ProcessingMetrics')?['totalRecords']",
+                  "ErrorDetails": "@string(variables('ErrorLog'))",
+                  "FlowVersion": "Enhanced_v2.0"
+                }
+              },
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "PostItem",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "authentication": "@parameters('$authentication')"
+            }
+          }
+        }
+      },
+      "Intelligent_Notifications": {
+        "runAfter": {
+          "Performance_Analytics": ["Succeeded"]
+        },
+        "type": "Scope",
+        "actions": {
+          "Check_Performance_Thresholds": {
+            "type": "Condition",
+            "expression": {
+              "or": [
+                {
+                  "greater": [
+                    "@outputs('Calculate_Performance_Metrics')?['errorRate']",
+                    0.1
+                  ]
+                },
+                {
+                  "greater": [
+                    "@outputs('Calculate_Performance_Metrics')?['totalProcessingTime']",
+                    300
+                  ]
+                }
+              ]
+            },
+            "actions": {
+              "Send_Performance_Alert": {
+                "type": "OpenApiConnection",
+                "inputs": {
+                  "parameters": {
+                    "to": "dwindham@apmm-tab.com",
+                    "subject": "KPI Processing Performance Alert",
+                    "body": "KPI Processing completed with performance issues:\n\nProcessing Time: @{outputs('Calculate_Performance_Metrics')?['totalProcessingTime']} seconds\nError Rate: @{mul(outputs('Calculate_Performance_Metrics')?['errorRate'], 100)}%\nSuccess Rate: @{mul(outputs('Calculate_Performance_Metrics')?['successRate'], 100)}%\n\nPlease review the processing logs for detailed information."
+                  },
+                  "host": {
+                    "connectionName": "shared_office365",
+                    "operationId": "SendEmailV2",
+                    "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                  },
+                  "authentication": "@parameters('$authentication')"
+                }
+              }
+            },
+            "else": {
+              "actions": {
+                "Send_Success_Summary": {
+                  "type": "OpenApiConnection",
+                  "inputs": {
+                    "parameters": {
+                      "to": "dwindham@apmm-tab.com",
+                      "subject": "KPI Processing Completed Successfully",
+                      "body": "KPI Processing completed successfully:\n\nProcessing Time: @{outputs('Calculate_Performance_Metrics')?['totalProcessingTime']} seconds\nRecords Processed: @{variables('ProcessingMetrics')?['totalRecords']}\nSuccess Rate: @{mul(outputs('Calculate_Performance_Metrics')?['successRate'], 100)}%\nRecords per Second: @{outputs('Calculate_Performance_Metrics')?['recordsPerSecond']}"
+                    },
+                    "host": {
+                      "connectionName": "shared_office365",
+                      "operationId": "SendEmailV2",
+                      "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+                    },
+                    "authentication": "@parameters('$authentication')"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Cleanup_and_Archive": {
+        "runAfter": {
+          "Intelligent_Notifications": ["Succeeded"]
+        },
+        "type": "Scope",
+        "actions": {
+          "Archive_Processed_File": {
+            "type": "OpenApiConnection",
+            "inputs": {
+              "parameters": {
+                "dataset": "https://apmmtab.sharepoint.com/sites/zone3",
+                "id": "@variables('ProcessingMetrics')?['fileId']",
+                "destination": "/Shared Documents/UnifiedKPI/Archive/@{formatDateTime(utcNow(), 'yyyy/MM')}/",
+                "nameConflictBehavior": "rename"
+              },
+              "host": {
+                "connectionName": "shared_sharepointonline",
+                "operationId": "MoveFile",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_sharepointonline"
+              },
+              "authentication": "@parameters('$authentication')"
+            }
+          }
+        }
+      }
+    }
+  }
+}
